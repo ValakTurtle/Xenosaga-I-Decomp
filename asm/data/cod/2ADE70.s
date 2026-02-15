@@ -2,8 +2,8 @@
 
 .section .data, "wa"
 
-nonmatching __cod_2ADE70_databin
+nonmatching PacketSizeVu0MicroCode, 0x10410
 
-dlabel __cod_2ADE70_databin
+dlabel PacketSizeVu0MicroCode
 .incbin "assets/cod/2ADE70.databin.bin"
-enddlabel __cod_2ADE70_databin
+enddlabel PacketSizeVu0MicroCode

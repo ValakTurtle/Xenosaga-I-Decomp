@@ -79,48 +79,48 @@ dlabel D_004D8A38
 .align 2
 enddlabel D_004D8A38
 
-nonmatching D_004D8A40
+nonmatching WorkEnd
 
-dlabel D_004D8A40
+dlabel WorkEnd
     /* 2D8A40 004D8A40 00000000 */ .word 0x00000000
-enddlabel D_004D8A40
+enddlabel WorkEnd
 
-nonmatching D_004D8A44
+nonmatching main_param_argc
 
-dlabel D_004D8A44
+dlabel main_param_argc
     /* 2D8A44 004D8A44 00000000 */ .word 0x00000000
-enddlabel D_004D8A44
+enddlabel main_param_argc
 
-nonmatching D_004D8A48
+nonmatching main_param_argv
 
-dlabel D_004D8A48
+dlabel main_param_argv
     /* 2D8A48 004D8A48 00000000 */ .word 0x00000000
     /* 2D8A4C 004D8A4C 00000000 */ .word 0x00000000
-enddlabel D_004D8A48
+enddlabel main_param_argv
 
-nonmatching D_004D8A50
+nonmatching saveEffe
 
-dlabel D_004D8A50
+dlabel saveEffe
     /* 2D8A50 004D8A50 00000000 */ .word 0x00000000
-enddlabel D_004D8A50
+enddlabel saveEffe
 
-nonmatching D_004D8A54
+nonmatching shopEffe
 
-dlabel D_004D8A54
+dlabel shopEffe
     /* 2D8A54 004D8A54 00000000 */ .word 0x00000000
-enddlabel D_004D8A54
+enddlabel shopEffe
 
-nonmatching D_004D8A58
+nonmatching evsEffe
 
-dlabel D_004D8A58
+dlabel evsEffe
     /* 2D8A58 004D8A58 00000000 */ .word 0x00000000
-enddlabel D_004D8A58
+enddlabel evsEffe
 
-nonmatching D_004D8A5C
+nonmatching retEffe
 
-dlabel D_004D8A5C
+dlabel retEffe
     /* 2D8A5C 004D8A5C 00000000 */ .word 0x00000000
-enddlabel D_004D8A5C
+enddlabel retEffe
 
 .align 3
 nonmatching D_004D8A60
@@ -152,15 +152,15 @@ dlabel D_004D8A70
 .align 2
 enddlabel D_004D8A70
 
-nonmatching D_004D8A78
+nonmatching SnapDrawCreditFlag
 
-dlabel D_004D8A78
+dlabel SnapDrawCreditFlag
     /* 2D8A78 004D8A78 */ .byte 0x00
-enddlabel D_004D8A78
+enddlabel SnapDrawCreditFlag
 
-nonmatching D_004D8A79
+nonmatching UseTestPath
 
-dlabel D_004D8A79
+dlabel UseTestPath
     /* 2D8A79 004D8A79 */ .byte 0x00
     /* 2D8A7A 004D8A7A */ .byte 0x00
     /* 2D8A7B 004D8A7B */ .byte 0x00
@@ -168,7 +168,7 @@ dlabel D_004D8A79
     /* 2D8A7D 004D8A7D */ .byte 0x00
     /* 2D8A7E 004D8A7E */ .byte 0x00
     /* 2D8A7F 004D8A7F */ .byte 0x00
-enddlabel D_004D8A79
+enddlabel UseTestPath
 
 nonmatching D_004D8A80
 
@@ -5262,7 +5262,7 @@ enddlabel D_004D9A60
 nonmatching D_004D9A68
 
 dlabel D_004D9A68
-    /* 2D9A68 004D9A68 30393100 */ .word func_00313930
+    /* 2D9A68 004D9A68 30393100 */ .word JNT_setInterpMatrix
     /* 2D9A6C 004D9A6C 00000000 */ .word 0x00000000
 enddlabel D_004D9A68
 
@@ -6701,9 +6701,9 @@ dlabel D_004D9EB8
 .align 2
 enddlabel D_004D9EB8
 
-nonmatching D_004D9EC0
+nonmatching root.4
 
-dlabel D_004D9EC0
+dlabel root.4
     /* 2D9EC0 004D9EC0 */ .byte 0x64
     /* 2D9EC1 004D9EC1 */ .byte 0x61
     /* 2D9EC2 004D9EC2 */ .byte 0x74
@@ -6712,11 +6712,11 @@ dlabel D_004D9EC0
     /* 2D9EC5 004D9EC5 */ .byte 0x00
     /* 2D9EC6 004D9EC6 */ .byte 0x00
     /* 2D9EC7 004D9EC7 */ .byte 0x00
-enddlabel D_004D9EC0
+enddlabel root.4
 
-nonmatching D_004D9EC8
+nonmatching dummy.5
 
-dlabel D_004D9EC8
+dlabel dummy.5
     /* 2D9EC8 004D9EC8 */ .byte 0x64
     /* 2D9EC9 004D9EC9 */ .byte 0x75
     /* 2D9ECA 004D9ECA */ .byte 0x6D
@@ -6725,7 +6725,7 @@ dlabel D_004D9EC8
     /* 2D9ECD 004D9ECD */ .byte 0x00
     /* 2D9ECE 004D9ECE */ .byte 0x00
     /* 2D9ECF 004D9ECF */ .byte 0x00
-enddlabel D_004D9EC8
+enddlabel dummy.5
 
 .align 3
 nonmatching D_004D9ED0
@@ -6745,64 +6745,64 @@ dlabel D_004D9ED8
 .align 2
 enddlabel D_004D9ED8
 
-nonmatching D_004D9EE0
+nonmatching base.9
 
-dlabel D_004D9EE0
+dlabel base.9
     /* 2D9EE0 004D9EE0 */ .byte 0x64
     /* 2D9EE1 004D9EE1 */ .byte 0x61
     /* 2D9EE2 004D9EE2 */ .byte 0x74
     /* 2D9EE3 004D9EE3 */ .byte 0x61
     /* 2D9EE4 004D9EE4 */ .byte 0x5C
     /* 2D9EE5 004D9EE5 */ .byte 0x00
-enddlabel D_004D9EE0
+enddlabel base.9
 
-nonmatching D_004D9EE6
+nonmatching ModelPath
 
-dlabel D_004D9EE6
+dlabel ModelPath
     /* 2D9EE6 004D9EE6 */ .byte 0x00
-enddlabel D_004D9EE6
+enddlabel ModelPath
 
-nonmatching D_004D9EE7
+nonmatching ScenePath
 
-dlabel D_004D9EE7
+dlabel ScenePath
     /* 2D9EE7 004D9EE7 */ .byte 0x00
-enddlabel D_004D9EE7
+enddlabel ScenePath
 
-nonmatching D_004D9EE8
+nonmatching GameResourceReadFileCallback
 
-dlabel D_004D9EE8
+dlabel GameResourceReadFileCallback
     /* 2D9EE8 004D9EE8 00000000 */ .word 0x00000000
-enddlabel D_004D9EE8
+enddlabel GameResourceReadFileCallback
 
-nonmatching D_004D9EEC
+nonmatching snapnameno
 
-dlabel D_004D9EEC
+dlabel snapnameno
     /* 2D9EEC 004D9EEC 3F6E3600 */ .word 0x00366E3F
-enddlabel D_004D9EEC
+enddlabel snapnameno
 
-nonmatching D_004D9EF0
+nonmatching snapnamext
 
-dlabel D_004D9EF0
+dlabel snapnamext
     /* 2D9EF0 004D9EF0 446E3600 */ .word 0x00366E44
-enddlabel D_004D9EF0
+enddlabel snapnamext
 
-nonmatching D_004D9EF4
+nonmatching GameMovieTransparent
 
-dlabel D_004D9EF4
+dlabel GameMovieTransparent
     /* 2D9EF4 004D9EF4 */ .byte 0x00
-enddlabel D_004D9EF4
+enddlabel GameMovieTransparent
 
-nonmatching D_004D9EF5
+nonmatching GameMovieAlpha
 
-dlabel D_004D9EF5
+dlabel GameMovieAlpha
     /* 2D9EF5 004D9EF5 */ .byte 0x00
-enddlabel D_004D9EF5
+enddlabel GameMovieAlpha
 
-nonmatching D_004D9EF6
+nonmatching GameMovieFrame
 
-dlabel D_004D9EF6
+dlabel GameMovieFrame
     /* 2D9EF6 004D9EF6 */ .short 0x0000
-enddlabel D_004D9EF6
+enddlabel GameMovieFrame
 
 .align 3
 nonmatching D_004D9EF8
@@ -6915,12 +6915,12 @@ dlabel D_004D9F48
     /* 2D9F4C 004D9F4C 00000000 */ .word 0x00000000
 enddlabel D_004D9F48
 
-nonmatching D_004D9F50
+nonmatching DebugMenuResourceSizeAdd
 
-dlabel D_004D9F50
+dlabel DebugMenuResourceSizeAdd
     /* 2D9F50 004D9F50 00000000 */ .word 0x00000000
     /* 2D9F54 004D9F54 00000000 */ .word 0x00000000
-enddlabel D_004D9F50
+enddlabel DebugMenuResourceSizeAdd
 
 nonmatching D_004D9F58
 
@@ -6928,45 +6928,45 @@ dlabel D_004D9F58
     /* 2D9F58 004D9F58 0B0D0300 */ .word 0x00030D0B
 enddlabel D_004D9F58
 
-nonmatching D_004D9F5C
+nonmatching GameDiskChangeT10K
 
-dlabel D_004D9F5C
+dlabel GameDiskChangeT10K
     /* 2D9F5C 004D9F5C */ .byte 0x00
     /* 2D9F5D 004D9F5D */ .byte 0x00
     /* 2D9F5E 004D9F5E */ .byte 0x00
     /* 2D9F5F 004D9F5F */ .byte 0x00
-enddlabel D_004D9F5C
+enddlabel GameDiskChangeT10K
 
-nonmatching D_004D9F60
+nonmatching rate.2_004D9F60
 
-dlabel D_004D9F60
+dlabel rate.2_004D9F60
     /* 2D9F60 004D9F60 80000000 */ .word 0x00000080
-enddlabel D_004D9F60
+enddlabel rate.2_004D9F60
 
-nonmatching D_004D9F64
+nonmatching dir.3
 
-dlabel D_004D9F64
+dlabel dir.3
     /* 2D9F64 004D9F64 FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004D9F64
+enddlabel dir.3
 
-nonmatching D_004D9F68
+nonmatching rate.8
 
-dlabel D_004D9F68
+dlabel rate.8
     /* 2D9F68 004D9F68 80000000 */ .word 0x00000080
-enddlabel D_004D9F68
+enddlabel rate.8
 
-nonmatching D_004D9F6C
+nonmatching dir.9
 
-dlabel D_004D9F6C
+dlabel dir.9
     /* 2D9F6C 004D9F6C FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004D9F6C
+enddlabel dir.9
 
-nonmatching D_004D9F70
+nonmatching width.35
 
-dlabel D_004D9F70
+dlabel width.35
     /* 2D9F70 004D9F70 00010000 */ .word 0x00000100
     /* 2D9F74 004D9F74 00000000 */ .word 0x00000000
-enddlabel D_004D9F70
+enddlabel width.35
 
 .align 3
 nonmatching D_004D9F78
@@ -6978,20 +6978,24 @@ dlabel D_004D9F78
     /* 2D9F7C 004D9F7C */ .asciz ""
     /* 00000000 */
 .align 2
-.align 3
+enddlabel D_004D9F78
+
+nonmatching test.36
+
+dlabel test.36
     /* 2D9F80 004D9F80 */ .byte 0x15
     /* 2D9F81 004D9F81 */ .byte 0x03
     /* 2D9F82 004D9F82 */ .byte 0x03
-enddlabel D_004D9F78
+enddlabel test.36
 
 nonmatching D_004D9F83
 
 dlabel D_004D9F83
     /* 2D9F83 004D9F83 */ .byte 0x01
-.align 2
-    /* 2D9F84 004D9F84 */ .asciz ""
-    /* 00000000 */
-.align 2
+    /* 2D9F84 004D9F84 */ .byte 0x00
+    /* 2D9F85 004D9F85 */ .byte 0x00
+    /* 2D9F86 004D9F86 */ .byte 0x00
+    /* 2D9F87 004D9F87 */ .byte 0x00
 enddlabel D_004D9F83
 
 nonmatching D_004D9F88
@@ -8094,9 +8098,16 @@ nonmatching D_004DA350
 dlabel D_004DA350
     /* 2DA350 004DA350 A5BBA1BC */ .word 0xBCA1BBA5
     /* 2DA354 004DA354 A5D60000 */ .word 0x0000D6A5
-    /* 2DA358 004DA358 20304050 */ .word 0x50403020
-    /* 2DA35C 004DA35C 00000000 */ .word 0x00000000
 enddlabel D_004DA350
+
+.align 3
+nonmatching tbl.48
+
+dlabel tbl.48
+    /* 2DA358 004DA358 */ .asciz " 0@P"
+    /* 2030405000000000 */
+.align 2
+enddlabel tbl.48
 
 .align 3
 nonmatching D_004DA360
@@ -8105,18 +8116,23 @@ dlabel D_004DA360
     /* 2DA360 004DA360 */ .asciz "%d %d\n"
     /* 25642025640A0000 */
 .align 2
-    /* 2DA368 004DA368 70800000 */ .word 0x00008070
-    /* 2DA36C 004DA36C 00000000 */ .word 0x00000000
 enddlabel D_004DA360
 
-.align 3
-nonmatching D_004DA370
+nonmatching tbl.49
 
-dlabel D_004DA370
+dlabel tbl.49
+    /* 2DA368 004DA368 70800000 */ .word 0x00008070
+    /* 2DA36C 004DA36C 00000000 */ .word 0x00000000
+enddlabel tbl.49
+
+.align 3
+nonmatching h.50
+
+dlabel h.50
     /* 2DA370 004DA370 */ .asciz "host0:"
     /* 686F7374303A0000 */
 .align 2
-enddlabel D_004DA370
+enddlabel h.50
 
 .align 3
 nonmatching D_004DA378
@@ -8175,12 +8191,12 @@ dlabel D_004DA3A0
 .align 2
 enddlabel D_004DA3A0
 
-nonmatching D_004DA3A8
+nonmatching ctrlCodeFlags
 
-dlabel D_004DA3A8
+dlabel ctrlCodeFlags
     /* 2DA3A8 004DA3A8 00000000 */ .word 0x00000000
     /* 2DA3AC 004DA3AC 00000000 */ .word 0x00000000
-enddlabel D_004DA3A8
+enddlabel ctrlCodeFlags
 
 nonmatching D_004DA3B0
 
@@ -8320,75 +8336,75 @@ dlabel D_004DA428
     /* 2DA42C 004DA42C 00000000 */ .word 0x00000000
 enddlabel D_004DA428
 
-nonmatching D_004DA430
+nonmatching debugBasePath
 
-dlabel D_004DA430
+dlabel debugBasePath
     /* 2DA430 004DA430 301D4C00 */ .word 0x004C1D30
-enddlabel D_004DA430
+enddlabel debugBasePath
 
-nonmatching D_004DA434
+nonmatching s_nScriptFadeOutTime
 
-dlabel D_004DA434
+dlabel s_nScriptFadeOutTime
     /* 2DA434 004DA434 1E000000 */ .word 0x0000001E
-enddlabel D_004DA434
+enddlabel s_nScriptFadeOutTime
 
-nonmatching D_004DA438
+nonmatching s_nScriptFadeRequest
 
-dlabel D_004DA438
+dlabel s_nScriptFadeRequest
     /* 2DA438 004DA438 00000000 */ .word 0x00000000
-enddlabel D_004DA438
+enddlabel s_nScriptFadeRequest
 
-nonmatching D_004DA43C
+nonmatching s_nScriptChangeTime
 
-dlabel D_004DA43C
+dlabel s_nScriptChangeTime
     /* 2DA43C 004DA43C */ .byte 0x00
     /* 2DA43D 004DA43D */ .byte 0x00
     /* 2DA43E 004DA43E */ .byte 0x00
     /* 2DA43F 004DA43F */ .byte 0x00
-enddlabel D_004DA43C
+enddlabel s_nScriptChangeTime
 
-nonmatching D_004DA440
+nonmatching s_nScriptSequenceReset
 
-dlabel D_004DA440
+dlabel s_nScriptSequenceReset
     /* 2DA440 004DA440 00000000 */ .word 0x00000000
-enddlabel D_004DA440
+enddlabel s_nScriptSequenceReset
 
-nonmatching D_004DA444
+nonmatching s_nScriptFrameLockEntry
 
-dlabel D_004DA444
+dlabel s_nScriptFrameLockEntry
     /* 2DA444 004DA444 00000000 */ .word 0x00000000
-enddlabel D_004DA444
+enddlabel s_nScriptFrameLockEntry
 
-nonmatching D_004DA448
+nonmatching s_nScriptEventSkipEntry
 
-dlabel D_004DA448
+dlabel s_nScriptEventSkipEntry
     /* 2DA448 004DA448 00000000 */ .word 0x00000000
-enddlabel D_004DA448
+enddlabel s_nScriptEventSkipEntry
 
-nonmatching D_004DA44C
+nonmatching s_nScriptCfTime
 
-dlabel D_004DA44C
+dlabel s_nScriptCfTime
     /* 2DA44C 004DA44C 00000000 */ .word 0x00000000
-enddlabel D_004DA44C
+enddlabel s_nScriptCfTime
 
-nonmatching D_004DA450
+nonmatching s_nScriptEventFin
 
-dlabel D_004DA450
+dlabel s_nScriptEventFin
     /* 2DA450 004DA450 00000000 */ .word 0x00000000
-enddlabel D_004DA450
+enddlabel s_nScriptEventFin
 
-nonmatching D_004DA454
+nonmatching s_nScriptEventActive
 
-dlabel D_004DA454
+dlabel s_nScriptEventActive
     /* 2DA454 004DA454 00000000 */ .word 0x00000000
-enddlabel D_004DA454
+enddlabel s_nScriptEventActive
 
-nonmatching D_004DA458
+nonmatching s_nScriptTalkLock
 
-dlabel D_004DA458
+dlabel s_nScriptTalkLock
     /* 2DA458 004DA458 00000000 */ .word 0x00000000
     /* 2DA45C 004DA45C 00000000 */ .word 0x00000000
-enddlabel D_004DA458
+enddlabel s_nScriptTalkLock
 
 .align 3
 nonmatching D_004DA460
@@ -8400,34 +8416,34 @@ dlabel D_004DA460
 enddlabel D_004DA460
 
 .align 3
-nonmatching D_004DA468
+nonmatching sig.2
 
-dlabel D_004DA468
+dlabel sig.2
     /* 2DA468 004DA468 */ .asciz "()V"
     /* 28295600 */
 .align 2
     /* 2DA46C 004DA46C */ .asciz ""
     /* 00000000 */
 .align 2
-enddlabel D_004DA468
+enddlabel sig.2
 
 .align 3
-nonmatching D_004DA470
+nonmatching sig.3
 
-dlabel D_004DA470
+dlabel sig.3
     /* 2DA470 004DA470 */ .asciz "(I)V"
     /* 2849295600000000 */
 .align 2
-enddlabel D_004DA470
+enddlabel sig.3
 
 .align 3
-nonmatching D_004DA478
+nonmatching sig.4
 
-dlabel D_004DA478
+dlabel sig.4
     /* 2DA478 004DA478 */ .asciz "(II)V"
     /* 2849492956000000 */
 .align 2
-enddlabel D_004DA478
+enddlabel sig.4
 
 .align 3
 nonmatching D_004DA480
@@ -8456,12 +8472,12 @@ dlabel D_004DA490
 .align 2
 enddlabel D_004DA490
 
-nonmatching D_004DA498
+nonmatching lightSave
 
-dlabel D_004DA498
+dlabel lightSave
     /* 2DA498 004DA498 00000000 */ .word 0x00000000
     /* 2DA49C 004DA49C 00000000 */ .word 0x00000000
-enddlabel D_004DA498
+enddlabel lightSave
 
 .align 3
 nonmatching D_004DA4A0
@@ -8550,12 +8566,12 @@ dlabel D_004DA4E0
 .align 2
 enddlabel D_004DA4E0
 
-nonmatching D_004DA4E8
+nonmatching windowOwner
 
-dlabel D_004DA4E8
+dlabel windowOwner
     /* 2DA4E8 004DA4E8 00000000 */ .word 0x00000000
     /* 2DA4EC 004DA4EC 00000000 */ .word 0x00000000
-enddlabel D_004DA4E8
+enddlabel windowOwner
 
 .align 3
 nonmatching D_004DA4F0
@@ -8602,12 +8618,12 @@ dlabel D_004DA510
 .align 2
 enddlabel D_004DA510
 
-nonmatching D_004DA518
+nonmatching visible.0
 
-dlabel D_004DA518
+dlabel visible.0
     /* 2DA518 004DA518 00000000 */ .word 0x00000000
     /* 2DA51C 004DA51C 00000000 */ .word 0x00000000
-enddlabel D_004DA518
+enddlabel visible.0
 
 .align 3
 nonmatching D_004DA520
@@ -8618,23 +8634,23 @@ dlabel D_004DA520
 .align 2
 enddlabel D_004DA520
 
-nonmatching D_004DA524
+nonmatching lightColIndex
 
-dlabel D_004DA524
+dlabel lightColIndex
     /* 2DA524 004DA524 03000000 */ .word 0x00000003
-enddlabel D_004DA524
+enddlabel lightColIndex
 
-nonmatching D_004DA528
+nonmatching lightSpeed
 
-dlabel D_004DA528
+dlabel lightSpeed
     /* 2DA528 004DA528 01000000 */ .word 0x00000001
-enddlabel D_004DA528
+enddlabel lightSpeed
 
-nonmatching D_004DA52C
+nonmatching lightStateOffset
 
-dlabel D_004DA52C
+dlabel lightStateOffset
     /* 2DA52C 004DA52C 00000000 */ .word 0x00000000
-enddlabel D_004DA52C
+enddlabel lightStateOffset
 
 .align 3
 nonmatching D_004DA530
@@ -8678,18 +8694,18 @@ dlabel D_004DA548
 .align 2
 enddlabel D_004DA548
 
-nonmatching D_004DA54C
+nonmatching csr.1
 
-dlabel D_004DA54C
+dlabel csr.1
     /* 2DA54C 004DA54C 00000000 */ .word 0x00000000
-enddlabel D_004DA54C
+enddlabel csr.1
 
-nonmatching D_004DA550
+nonmatching dispy.2
 
-dlabel D_004DA550
-    /* 2DA550 004DA550 20000000 */ .word D_20
+dlabel dispy.2
+    /* 2DA550 004DA550 20000000 */ .word Vu0CallSin
     /* 2DA554 004DA554 00000000 */ .word 0x00000000
-enddlabel D_004DA550
+enddlabel dispy.2
 
 nonmatching D_004DA558
 
@@ -8782,12 +8798,12 @@ dlabel D_004DA5A8
 .align 2
 enddlabel D_004DA5A8
 
-nonmatching D_004DA5B0
+nonmatching ew_send_mode
 
-dlabel D_004DA5B0
+dlabel ew_send_mode
     /* 2DA5B0 004DA5B0 00000000 */ .word 0x00000000
     /* 2DA5B4 004DA5B4 00000000 */ .word 0x00000000
-enddlabel D_004DA5B0
+enddlabel ew_send_mode
 
 nonmatching D_004DA5B8
 
@@ -8796,24 +8812,24 @@ dlabel D_004DA5B8
     /* 2DA5BC 004DA5BC 00000000 */ .word 0x00000000
 enddlabel D_004DA5B8
 
-nonmatching D_004DA5C0
+nonmatching tmp.0
 
-dlabel D_004DA5C0
+dlabel tmp.0
     /* 2DA5C0 004DA5C0 B8A54D00 */ .word D_004DA5B8
     /* 2DA5C4 004DA5C4 00000000 */ .word 0x00000000
-enddlabel D_004DA5C0
+enddlabel tmp.0
 
-nonmatching D_004DA5C8
+nonmatching infoIndex
 
-dlabel D_004DA5C8
+dlabel infoIndex
     /* 2DA5C8 004DA5C8 FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004DA5C8
+enddlabel infoIndex
 
-nonmatching D_004DA5CC
+nonmatching infoLength
 
-dlabel D_004DA5CC
+dlabel infoLength
     /* 2DA5CC 004DA5CC FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004DA5CC
+enddlabel infoLength
 
 nonmatching D_004DA5D0
 
@@ -8825,7 +8841,7 @@ enddlabel D_004DA5D0
 nonmatching D_004DA5D8
 
 dlabel D_004DA5D8
-    /* 2DA5D8 004DA5D8 2A000000 */ .word D_28 + 0x2
+    /* 2DA5D8 004DA5D8 2A000000 */ .word NewVu1AddEnvGsKickWide + 0x2
     /* 2DA5DC 004DA5DC 00000000 */ .word 0x00000000
 enddlabel D_004DA5D8
 
@@ -8848,14 +8864,14 @@ enddlabel D_004DA5E8
 nonmatching D_004DA5F0
 
 dlabel D_004DA5F0
-    /* 2DA5F0 004DA5F0 20000000 */ .word D_20
+    /* 2DA5F0 004DA5F0 20000000 */ .word Vu0CallSin
 enddlabel D_004DA5F0
 
-nonmatching D_004DA5F4
+nonmatching rsrcDefaultPath
 
-dlabel D_004DA5F4
+dlabel rsrcDefaultPath
     /* 2DA5F4 004DA5F4 C0234C00 */ .word D_004C23C0
-enddlabel D_004DA5F4
+enddlabel rsrcDefaultPath
 
 .align 3
 nonmatching D_004DA5F8
@@ -8947,36 +8963,36 @@ dlabel D_004DA638
 .align 2
 enddlabel D_004DA638
 
-nonmatching D_004DA640
+nonmatching dbCX
 
-dlabel D_004DA640
+dlabel dbCX
     /* 2DA640 004DA640 00000000 */ .word 0x00000000
-enddlabel D_004DA640
+enddlabel dbCX
 
-nonmatching D_004DA644
+nonmatching dbCY
 
-dlabel D_004DA644
+dlabel dbCY
     /* 2DA644 004DA644 00000000 */ .word 0x00000000
-enddlabel D_004DA644
+enddlabel dbCY
 
-nonmatching D_004DA648
+nonmatching dbCZ
 
-dlabel D_004DA648
+dlabel dbCZ
     /* 2DA648 004DA648 FFFFFF00 */ .word 0x00FFFFFF
-enddlabel D_004DA648
+enddlabel dbCZ
 
-nonmatching D_004DA64C
+nonmatching dbCH
 
-dlabel D_004DA64C
+dlabel dbCH
     /* 2DA64C 004DA64C 18000000 */ .word 0x00000018
-enddlabel D_004DA64C
+enddlabel dbCH
 
-nonmatching D_004DA650
+nonmatching dbMODE
 
-dlabel D_004DA650
+dlabel dbMODE
     /* 2DA650 004DA650 00000000 */ .word 0x00000000
     /* 2DA654 004DA654 00000000 */ .word 0x00000000
-enddlabel D_004DA650
+enddlabel dbMODE
 
 .align 3
 nonmatching D_004DA658
@@ -9106,12 +9122,12 @@ dlabel D_004DA6D0
 .align 2
 enddlabel D_004DA6D0
 
-nonmatching D_004DA6D8
+nonmatching pipo.2
 
-dlabel D_004DA6D8
+dlabel pipo.2
     /* 2DA6D8 004DA6D8 00000000 */ .float 0
     /* 2DA6DC 004DA6DC 00000000 */ .float 0
-enddlabel D_004DA6D8
+enddlabel pipo.2
 
 nonmatching D_004DA6E0
 
@@ -9127,17 +9143,17 @@ dlabel D_004DA6E8
     /* 2DA6EC 004DA6EC 60000000 */ .word 0x00000060
 enddlabel D_004DA6E8
 
-nonmatching D_004DA6F0
+nonmatching time.10
 
-dlabel D_004DA6F0
+dlabel time.10
     /* 2DA6F0 004DA6F0 00000000 */ .word 0x00000000
-enddlabel D_004DA6F0
+enddlabel time.10
 
-nonmatching D_004DA6F4
+nonmatching no.13
 
-dlabel D_004DA6F4
+dlabel no.13
     /* 2DA6F4 004DA6F4 00000000 */ .word 0x00000000
-enddlabel D_004DA6F4
+enddlabel no.13
 
 nonmatching D_004DA6F8
 
@@ -9185,47 +9201,77 @@ dlabel D_004DA720
 .align 2
 enddlabel D_004DA720
 
-nonmatching D_004DA728
+nonmatching count.18
 
-dlabel D_004DA728
+dlabel count.18
     /* 2DA728 004DA728 00000000 */ .word 0x00000000
     /* 2DA72C 004DA72C 00000000 */ .word 0x00000000
-enddlabel D_004DA728
+enddlabel count.18
 
 .align 3
 nonmatching D_004DA730
 
 dlabel D_004DA730
-    /* 2DA730 004DA730 */ .asciz "%d"
-    /* 25640000 */
-.align 2
-    /* 2DA734 004DA734 */ .asciz ""
-    /* 00000000 */
-.align 2
-    /* 2DA738 004DA738 00DE0000 */ .word 0x0000DE00
+    /* 2DA730 004DA730 */ .byte 0x25
+    /* 2DA731 004DA731 */ .byte 0x64
+    /* 2DA732 004DA732 */ .byte 0x00
 enddlabel D_004DA730
 
-nonmatching D_004DA73C
+nonmatching time.37
 
-dlabel D_004DA73C
+dlabel time.37
+    /* 2DA733 004DA733 */ .byte 0x00
+.align 2
+enddlabel time.37
+
+nonmatching x.50
+
+dlabel x.50
+    /* 2DA734 004DA734 00000000 */ .word 0x00000000
+enddlabel x.50
+
+nonmatching x.51
+
+dlabel x.51
+    /* 2DA738 004DA738 00DE0000 */ .word 0x0000DE00
+enddlabel x.51
+
+nonmatching x.53
+
+dlabel x.53
     /* 2DA73C 004DA73C 00DE0000 */ .word 0x0000DE00
+enddlabel x.53
+
+nonmatching x.55
+
+dlabel x.55
     /* 2DA740 004DA740 00DF0000 */ .word 0x0000DF00
+enddlabel x.55
+
+nonmatching x.57
+
+dlabel x.57
     /* 2DA744 004DA744 00DE0000 */ .word 0x0000DE00
+enddlabel x.57
+
+nonmatching xx.62
+
+dlabel xx.62
     /* 2DA748 004DA748 00000000 */ .word 0x00000000
-enddlabel D_004DA73C
+enddlabel xx.62
 
-nonmatching D_004DA74C
+nonmatching x.71
 
-dlabel D_004DA74C
+dlabel x.71
     /* 2DA74C 004DA74C 00CF0000 */ .word 0x0000CF00
-enddlabel D_004DA74C
+enddlabel x.71
 
-nonmatching D_004DA750
+nonmatching Select.74
 
-dlabel D_004DA750
+dlabel Select.74
     /* 2DA750 004DA750 00000000 */ .word 0x00000000
     /* 2DA754 004DA754 00000000 */ .word 0x00000000
-enddlabel D_004DA750
+enddlabel Select.74
 
 nonmatching D_004DA758
 
@@ -9247,11 +9293,11 @@ dlabel D_004DA768
     /* 2DA768 004DA768 A1E40000 */ .word 0x0000E4A1
 enddlabel D_004DA768
 
-nonmatching D_004DA76C
+nonmatching Select.76
 
-dlabel D_004DA76C
+dlabel Select.76
     /* 2DA76C 004DA76C 00000000 */ .word 0x00000000
-enddlabel D_004DA76C
+enddlabel Select.76
 
 nonmatching D_004DA770
 
@@ -9267,17 +9313,17 @@ dlabel D_004DA778
     /* 2DA77C 004DA77C 00000000 */ .word 0x00000000
 enddlabel D_004DA778
 
-nonmatching D_004DA780
+nonmatching Select.78
 
-dlabel D_004DA780
+dlabel Select.78
     /* 2DA780 004DA780 00000000 */ .word 0x00000000
-enddlabel D_004DA780
+enddlabel Select.78
 
-nonmatching D_004DA784
+nonmatching Select.80
 
-dlabel D_004DA784
+dlabel Select.80
     /* 2DA784 004DA784 00000000 */ .word 0x00000000
-enddlabel D_004DA784
+enddlabel Select.80
 
 nonmatching D_004DA788
 
@@ -9293,12 +9339,12 @@ dlabel D_004DA790
     /* 2DA794 004DA794 A4A40000 */ .word 0x0000A4A4
 enddlabel D_004DA790
 
-nonmatching D_004DA798
+nonmatching Select.82
 
-dlabel D_004DA798
+dlabel Select.82
     /* 2DA798 004DA798 00000000 */ .word 0x00000000
     /* 2DA79C 004DA79C 00000000 */ .word 0x00000000
-enddlabel D_004DA798
+enddlabel Select.82
 
 nonmatching D_004DA7A0
 
@@ -9391,17 +9437,17 @@ dlabel D_004DA800
     /* 2DA804 004DA804 A5E90000 */ .word 0x0000E9A5
 enddlabel D_004DA800
 
-nonmatching D_004DA808
+nonmatching TopMode.86
 
-dlabel D_004DA808
+dlabel TopMode.86
     /* 2DA808 004DA808 00000000 */ .word 0x00000000
-enddlabel D_004DA808
+enddlabel TopMode.86
 
-nonmatching D_004DA80C
+nonmatching test_data
 
-dlabel D_004DA80C
+dlabel test_data
     /* 2DA80C 004DA80C 00000000 */ .word 0x00000000
-enddlabel D_004DA80C
+enddlabel test_data
 
 nonmatching D_004DA810
 
@@ -9412,182 +9458,201 @@ dlabel D_004DA810
     /* 2DA813 004DA813 */ .byte 0x00
 enddlabel D_004DA810
 
-nonmatching D_004DA814
+nonmatching UmnSimulationNo
 
-dlabel D_004DA814
+dlabel UmnSimulationNo
     /* 2DA814 004DA814 00000000 */ .word 0x00000000
-enddlabel D_004DA814
+enddlabel UmnSimulationNo
 
-nonmatching D_004DA818
+nonmatching MenuDrillCall
 
-dlabel D_004DA818
+dlabel MenuDrillCall
     /* 2DA818 004DA818 00000000 */ .word 0x00000000
+enddlabel MenuDrillCall
+
+nonmatching MenuTask_BG
+
+dlabel MenuTask_BG
     /* 2DA81C 004DA81C 00000000 */ .word 0x00000000
-enddlabel D_004DA818
+enddlabel MenuTask_BG
 
-nonmatching D_004DA820
+nonmatching MenuScenarioNo
 
-dlabel D_004DA820
+dlabel MenuScenarioNo
     /* 2DA820 004DA820 00000000 */ .word 0x00000000
-enddlabel D_004DA820
+enddlabel MenuScenarioNo
 
-nonmatching D_004DA824
+nonmatching MenuModelWorkTop
 
-dlabel D_004DA824
+dlabel MenuModelWorkTop
     /* 2DA824 004DA824 00000000 */ .word 0x00000000
-enddlabel D_004DA824
+enddlabel MenuModelWorkTop
 
-nonmatching D_004DA828
+nonmatching mini_game_no
 
-dlabel D_004DA828
+dlabel mini_game_no
     /* 2DA828 004DA828 00000000 */ .word 0x00000000
-enddlabel D_004DA828
+enddlabel mini_game_no
 
-nonmatching D_004DA82C
+nonmatching MenuHddCheck
 
-dlabel D_004DA82C
+dlabel MenuHddCheck
     /* 2DA82C 004DA82C 00000000 */ .word 0x00000000
-enddlabel D_004DA82C
+enddlabel MenuHddCheck
 
-nonmatching D_004DA830
+nonmatching UmnGunoDataBaseTop
 
-dlabel D_004DA830
+dlabel UmnGunoDataBaseTop
     /* 2DA830 004DA830 00000000 */ .word 0x00000000
     /* 2DA834 004DA834 00000000 */ .word 0x00000000
-enddlabel D_004DA830
+enddlabel UmnGunoDataBaseTop
 
-nonmatching D_004DA838
+nonmatching UmnKosmosSpecialBox
 
-dlabel D_004DA838
+dlabel UmnKosmosSpecialBox
     /* 2DA838 004DA838 */ .short 0x0000
     /* 2DA83A 004DA83A */ .short 0x0000
     /* 2DA83C 004DA83C */ .short 0x0000
     /* 2DA83E 004DA83E */ .short 0x0000
-enddlabel D_004DA838
+enddlabel UmnKosmosSpecialBox
 
-nonmatching D_004DA840
+nonmatching MenuTairetuModelXtxAddr
 
-dlabel D_004DA840
+dlabel MenuTairetuModelXtxAddr
     /* 2DA840 004DA840 00000000 */ .word 0x00000000
-enddlabel D_004DA840
+enddlabel MenuTairetuModelXtxAddr
 
-nonmatching D_004DA844
+nonmatching MenuTairetuModelLexAddr
 
-dlabel D_004DA844
+dlabel MenuTairetuModelLexAddr
     /* 2DA844 004DA844 00000000 */ .word 0x00000000
-enddlabel D_004DA844
+enddlabel MenuTairetuModelLexAddr
 
-nonmatching D_004DA848
+nonmatching MenuTairetuModelPointerXtxAddr
 
-dlabel D_004DA848
+dlabel MenuTairetuModelPointerXtxAddr
     /* 2DA848 004DA848 00000000 */ .word 0x00000000
-enddlabel D_004DA848
+enddlabel MenuTairetuModelPointerXtxAddr
 
-nonmatching D_004DA84C
+nonmatching MenuTairetuModelPointerLexAddr
 
-dlabel D_004DA84C
+dlabel MenuTairetuModelPointerLexAddr
     /* 2DA84C 004DA84C 00000000 */ .word 0x00000000
-enddlabel D_004DA84C
+enddlabel MenuTairetuModelPointerLexAddr
 
-nonmatching D_004DA850
+nonmatching debug_flag
 
-dlabel D_004DA850
+dlabel debug_flag
     /* 2DA850 004DA850 00000000 */ .word 0x00000000
-enddlabel D_004DA850
+enddlabel debug_flag
 
-nonmatching D_004DA854
+nonmatching MenuTask
 
-dlabel D_004DA854
+dlabel MenuTask
     /* 2DA854 004DA854 00000000 */ .word 0x00000000
-enddlabel D_004DA854
+enddlabel MenuTask
 
-nonmatching D_004DA858
+nonmatching MenuTask_XMX
 
-dlabel D_004DA858
+dlabel MenuTask_XMX
     /* 2DA858 004DA858 00000000 */ .word 0x00000000
-enddlabel D_004DA858
+enddlabel MenuTask_XMX
 
-nonmatching D_004DA85C
+nonmatching MainMenuWorkEnd
 
-dlabel D_004DA85C
+dlabel MainMenuWorkEnd
     /* 2DA85C 004DA85C 00000000 */ .word 0x00000000
+enddlabel MainMenuWorkEnd
+
+nonmatching model_work
+
+dlabel model_work
     /* 2DA860 004DA860 00000000 */ .word 0x00000000
     /* 2DA864 004DA864 00000000 */ .word 0x00000000
+enddlabel model_work
+
+nonmatching MenuBackRgba
+
+dlabel MenuBackRgba
     /* 2DA868 004DA868 00000000 */ .word 0x00000000
-enddlabel D_004DA85C
+enddlabel MenuBackRgba
 
-nonmatching D_004DA86C
+nonmatching MenuWinAddr
 
-dlabel D_004DA86C
+dlabel MenuWinAddr
     /* 2DA86C 004DA86C 00000000 */ .word 0x00000000
-enddlabel D_004DA86C
+enddlabel MenuWinAddr
 
-nonmatching D_004DA870
+nonmatching MenuLoadCount
 
-dlabel D_004DA870
+dlabel MenuLoadCount
     /* 2DA870 004DA870 00000000 */ .word 0x00000000
-enddlabel D_004DA870
+enddlabel MenuLoadCount
 
-nonmatching D_004DA874
+nonmatching MenuBibrationCount
 
-dlabel D_004DA874
+dlabel MenuBibrationCount
     /* 2DA874 004DA874 */ .byte 0x00
-enddlabel D_004DA874
+enddlabel MenuBibrationCount
 
-nonmatching D_004DA875
+nonmatching MenuBibrationAct
 
-dlabel D_004DA875
+dlabel MenuBibrationAct
     /* 2DA875 004DA875 */ .byte 0x00
-enddlabel D_004DA875
+enddlabel MenuBibrationAct
 
-nonmatching D_004DA876
+nonmatching MenuBibrationSpeed
 
-dlabel D_004DA876
+dlabel MenuBibrationSpeed
     /* 2DA876 004DA876 */ .byte 0x00
-enddlabel D_004DA876
+enddlabel MenuBibrationSpeed
 
-nonmatching D_004DA877
+nonmatching MenuBibrationPad
 
-dlabel D_004DA877
+dlabel MenuBibrationPad
     /* 2DA877 004DA877 */ .byte 0x00
-enddlabel D_004DA877
+enddlabel MenuBibrationPad
 
-nonmatching D_004DA878
+nonmatching MenuBgTask
 
-dlabel D_004DA878
+dlabel MenuBgTask
     /* 2DA878 004DA878 00000000 */ .word 0x00000000
-enddlabel D_004DA878
+enddlabel MenuBgTask
 
-nonmatching D_004DA87C
+nonmatching MenuBgParam
 
-dlabel D_004DA87C
+dlabel MenuBgParam
     /* 2DA87C 004DA87C 00000000 */ .word 0x00000000
-enddlabel D_004DA87C
+enddlabel MenuBgParam
 
-nonmatching D_004DA880
+nonmatching MenuBgCameraId
 
-dlabel D_004DA880
+dlabel MenuBgCameraId
     /* 2DA880 004DA880 00000000 */ .word 0x00000000
-enddlabel D_004DA880
+enddlabel MenuBgCameraId
 
-nonmatching D_004DA884
+nonmatching MenuBgKeepCamera
 
-dlabel D_004DA884
+dlabel MenuBgKeepCamera
     /* 2DA884 004DA884 00000000 */ .word 0x00000000
-enddlabel D_004DA884
+enddlabel MenuBgKeepCamera
 
-nonmatching D_004DA888
+nonmatching MenuBgRgba
 
-dlabel D_004DA888
-    /* 2DA888 004DA888 */ .short 0x0000
-enddlabel D_004DA888
+dlabel MenuBgRgba
+    /* 2DA888 004DA888 */ .byte 0x00
+    /* 2DA889 004DA889 */ .byte 0x00
+enddlabel MenuBgRgba
 
 nonmatching D_004DA88A
 
 dlabel D_004DA88A
     /* 2DA88A 004DA88A */ .byte 0x00
     /* 2DA88B 004DA88B */ .byte 0x00
-    /* 2DA88C 004DA88C 00000000 */ .word 0x00000000
+    /* 2DA88C 004DA88C */ .byte 0x00
+    /* 2DA88D 004DA88D */ .byte 0x00
+    /* 2DA88E 004DA88E */ .byte 0x00
+    /* 2DA88F 004DA88F */ .byte 0x00
 enddlabel D_004DA88A
 
 nonmatching D_004DA890
@@ -9700,43 +9765,43 @@ dlabel D_004DA8F8
     /* 2DA8FC 004DA8FC 00000000 */ .word 0x00000000
 enddlabel D_004DA8F8
 
-nonmatching D_004DA900
+nonmatching MenuVecMat
 
-dlabel D_004DA900
+dlabel MenuVecMat
     /* 2DA900 004DA900 00000000 */ .word 0x00000000
-enddlabel D_004DA900
+enddlabel MenuVecMat
 
-nonmatching D_004DA904
+nonmatching TopStatusWin
 
-dlabel D_004DA904
+dlabel TopStatusWin
     /* 2DA904 004DA904 00000000 */ .word 0x00000000
-enddlabel D_004DA904
+enddlabel TopStatusWin
 
-nonmatching D_004DA908
+nonmatching TopInfo
 
-dlabel D_004DA908
+dlabel TopInfo
     /* 2DA908 004DA908 00000000 */ .word 0x00000000
-enddlabel D_004DA908
+enddlabel TopInfo
 
-nonmatching D_004DA90C
+nonmatching TopMenuWin
 
-dlabel D_004DA90C
+dlabel TopMenuWin
     /* 2DA90C 004DA90C 00000000 */ .word 0x00000000
-enddlabel D_004DA90C
+enddlabel TopMenuWin
 
-nonmatching D_004DA910
+nonmatching TopFaceExWin
 
-dlabel D_004DA910
+dlabel TopFaceExWin
     /* 2DA910 004DA910 00000000 */ .word 0x00000000
     /* 2DA914 004DA914 00000000 */ .word 0x00000000
-enddlabel D_004DA910
+enddlabel TopFaceExWin
 
-nonmatching D_004DA918
+nonmatching msg_spr_count
 
-dlabel D_004DA918
+dlabel msg_spr_count
     /* 2DA918 004DA918 00000000 */ .word 0x00000000
     /* 2DA91C 004DA91C 00000000 */ .word 0x00000000
-enddlabel D_004DA918
+enddlabel msg_spr_count
 
 nonmatching D_004DA920
 
@@ -9779,24 +9844,24 @@ dlabel D_004DA940
     /* 2DA944 004DA944 0000803F */ .word 0x3F800000
 enddlabel D_004DA940
 
-nonmatching D_004DA948
+nonmatching MenuModelTask
 
-dlabel D_004DA948
+dlabel MenuModelTask
     /* 2DA948 004DA948 00000000 */ .word 0x00000000
-enddlabel D_004DA948
+enddlabel MenuModelTask
 
-nonmatching D_004DA94C
+nonmatching MenuModelFlag
 
-dlabel D_004DA94C
+dlabel MenuModelFlag
     /* 2DA94C 004DA94C 00000000 */ .word 0x00000000
-enddlabel D_004DA94C
+enddlabel MenuModelFlag
 
-nonmatching D_004DA950
+nonmatching text.0
 
-dlabel D_004DA950
+dlabel text.0
     /* 2DA950 004DA950 00000000 */ .word 0x00000000
     /* 2DA954 004DA954 00000000 */ .word 0x00000000
-enddlabel D_004DA950
+enddlabel text.0
 
 .align 3
 nonmatching D_004DA958
@@ -9968,42 +10033,42 @@ dlabel D_004DA9D8
     /* 2DA9D8 004DA9D8 01487000 */ .word D_00704801
 enddlabel D_004DA9D8
 
-nonmatching D_004DA9DC
+nonmatching BW3BattleOrDataBase
 
-dlabel D_004DA9DC
+dlabel BW3BattleOrDataBase
     /* 2DA9DC 004DA9DC 00000000 */ .word 0x00000000
-enddlabel D_004DA9DC
+enddlabel BW3BattleOrDataBase
 
-nonmatching D_004DA9E0
+nonmatching BW
 
-dlabel D_004DA9E0
+dlabel BW
     /* 2DA9E0 004DA9E0 00000000 */ .word 0x00000000
-enddlabel D_004DA9E0
+enddlabel BW
 
-nonmatching D_004DA9E4
+nonmatching BW_item
 
-dlabel D_004DA9E4
+dlabel BW_item
     /* 2DA9E4 004DA9E4 00000000 */ .word 0x00000000
-enddlabel D_004DA9E4
+enddlabel BW_item
 
-nonmatching D_004DA9E8
+nonmatching BW2
 
-dlabel D_004DA9E8
+dlabel BW2
     /* 2DA9E8 004DA9E8 00000000 */ .word 0x00000000
-enddlabel D_004DA9E8
+enddlabel BW2
 
-nonmatching D_004DA9EC
+nonmatching BW3
 
-dlabel D_004DA9EC
+dlabel BW3
     /* 2DA9EC 004DA9EC 00000000 */ .word 0x00000000
-enddlabel D_004DA9EC
+enddlabel BW3
 
-nonmatching D_004DA9F0
+nonmatching BW4
 
-dlabel D_004DA9F0
+dlabel BW4
     /* 2DA9F0 004DA9F0 00000000 */ .word 0x00000000
     /* 2DA9F4 004DA9F4 00000000 */ .word 0x00000000
-enddlabel D_004DA9F0
+enddlabel BW4
 
 .align 3
 nonmatching D_004DA9F8
@@ -10187,54 +10252,59 @@ dlabel D_004DAA90
 .align 2
 enddlabel D_004DAA90
 
-nonmatching D_004DAA94
+nonmatching FileWork
 
-dlabel D_004DAA94
+dlabel FileWork
     /* 2DAA94 004DAA94 00000000 */ .word 0x00000000
-enddlabel D_004DAA94
+enddlabel FileWork
 
-nonmatching D_004DAA98
+nonmatching FileTask
 
-dlabel D_004DAA98
+dlabel FileTask
     /* 2DAA98 004DAA98 00000000 */ .word 0x00000000
+enddlabel FileTask
+
+nonmatching FileWorkEndTop
+
+dlabel FileWorkEndTop
     /* 2DAA9C 004DAA9C 00000000 */ .word 0x00000000
-enddlabel D_004DAA98
+enddlabel FileWorkEndTop
 
-nonmatching D_004DAAA0
+nonmatching FileCardDataBuf
 
-dlabel D_004DAAA0
+dlabel FileCardDataBuf
     /* 2DAAA0 004DAAA0 00000000 */ .word 0x00000000
-enddlabel D_004DAAA0
+enddlabel FileCardDataBuf
 
-nonmatching D_004DAAA4
+nonmatching FileSaveData
 
-dlabel D_004DAAA4
+dlabel FileSaveData
     /* 2DAAA4 004DAAA4 00000000 */ .word 0x00000000
-enddlabel D_004DAAA4
+enddlabel FileSaveData
 
-nonmatching D_004DAAA8
+nonmatching FileExistCheckWork
 
-dlabel D_004DAAA8
+dlabel FileExistCheckWork
     /* 2DAAA8 004DAAA8 00000000 */ .word 0x00000000
-enddlabel D_004DAAA8
+enddlabel FileExistCheckWork
 
-nonmatching D_004DAAAC
+nonmatching FileJpegDec
 
-dlabel D_004DAAAC
+dlabel FileJpegDec
     /* 2DAAAC 004DAAAC 00000000 */ .word 0x00000000
-enddlabel D_004DAAAC
+enddlabel FileJpegDec
 
-nonmatching D_004DAAB0
+nonmatching FileObjectData
 
-dlabel D_004DAAB0
+dlabel FileObjectData
     /* 2DAAB0 004DAAB0 00000000 */ .word 0x00000000
-enddlabel D_004DAAB0
+enddlabel FileObjectData
 
-nonmatching D_004DAAB4
+nonmatching FileObjectDataSystem
 
-dlabel D_004DAAB4
+dlabel FileObjectDataSystem
     /* 2DAAB4 004DAAB4 00000000 */ .word 0x00000000
-enddlabel D_004DAAB4
+enddlabel FileObjectDataSystem
 
 .align 3
 nonmatching D_004DAAB8
@@ -10334,65 +10404,65 @@ dlabel D_004DAB08
 .align 2
 enddlabel D_004DAB08
 
-nonmatching D_004DAB10
+nonmatching MenuItemPas
 
-dlabel D_004DAB10
+dlabel MenuItemPas
     /* 2DAB10 004DAB10 00000000 */ .word 0x00000000
-enddlabel D_004DAB10
+enddlabel MenuItemPas
 
-nonmatching D_004DAB14
+nonmatching MenuItemInfo
 
-dlabel D_004DAB14
+dlabel MenuItemInfo
     /* 2DAB14 004DAB14 00000000 */ .word 0x00000000
-enddlabel D_004DAB14
+enddlabel MenuItemInfo
 
-nonmatching D_004DAB18
+nonmatching MenuItemLine
 
-dlabel D_004DAB18
+dlabel MenuItemLine
     /* 2DAB18 004DAB18 00000000 */ .word 0x00000000
-enddlabel D_004DAB18
+enddlabel MenuItemLine
 
-nonmatching D_004DAB1C
+nonmatching MenuItemStatus
 
-dlabel D_004DAB1C
+dlabel MenuItemStatus
     /* 2DAB1C 004DAB1C 00000000 */ .word 0x00000000
-enddlabel D_004DAB1C
+enddlabel MenuItemStatus
 
-nonmatching D_004DAB20
+nonmatching MenuItemStatusAgws
 
-dlabel D_004DAB20
+dlabel MenuItemStatusAgws
     /* 2DAB20 004DAB20 00000000 */ .word 0x00000000
-enddlabel D_004DAB20
+enddlabel MenuItemStatusAgws
 
-nonmatching D_004DAB24
+nonmatching MenuItemList
 
-dlabel D_004DAB24
+dlabel MenuItemList
     /* 2DAB24 004DAB24 00000000 */ .word 0x00000000
-enddlabel D_004DAB24
+enddlabel MenuItemList
 
-nonmatching D_004DAB28
+nonmatching MenuItemSelect
 
-dlabel D_004DAB28
+dlabel MenuItemSelect
     /* 2DAB28 004DAB28 00000000 */ .word 0x00000000
-enddlabel D_004DAB28
+enddlabel MenuItemSelect
 
-nonmatching D_004DAB2C
+nonmatching MenuItemIcon
 
-dlabel D_004DAB2C
+dlabel MenuItemIcon
     /* 2DAB2C 004DAB2C 00000000 */ .word 0x00000000
-enddlabel D_004DAB2C
+enddlabel MenuItemIcon
 
-nonmatching D_004DAB30
+nonmatching MenuItemEx
 
-dlabel D_004DAB30
+dlabel MenuItemEx
     /* 2DAB30 004DAB30 00000000 */ .word 0x00000000
-enddlabel D_004DAB30
+enddlabel MenuItemEx
 
-nonmatching D_004DAB34
+nonmatching MenuItemSegment
 
-dlabel D_004DAB34
+dlabel MenuItemSegment
     /* 2DAB34 004DAB34 00000000 */ .word 0x00000000
-enddlabel D_004DAB34
+enddlabel MenuItemSegment
 
 .align 3
 nonmatching D_004DAB38
@@ -10981,17 +11051,17 @@ dlabel D_004DAD08
 .align 2
 enddlabel D_004DAD08
 
-nonmatching D_004DAD10
+nonmatching map_ex_text
 
-dlabel D_004DAD10
+dlabel map_ex_text
     /* 2DAD10 004DAD10 00000000 */ .word 0x00000000
-enddlabel D_004DAD10
+enddlabel map_ex_text
 
-nonmatching D_004DAD14
+nonmatching save_map_text
 
-dlabel D_004DAD14
+dlabel save_map_text
     /* 2DAD14 004DAD14 00000000 */ .word 0x00000000
-enddlabel D_004DAD14
+enddlabel save_map_text
 
 nonmatching D_004DAD18
 
@@ -11136,7 +11206,7 @@ enddlabel D_004DAD88
 nonmatching D_004DAD90
 
 dlabel D_004DAD90
-    /* 2DAD90 004DAD90 20000000 */ .word D_20
+    /* 2DAD90 004DAD90 20000000 */ .word Vu0CallSin
     /* 2DAD94 004DAD94 00000000 */ .word 0x00000000
 enddlabel D_004DAD90
 
@@ -11366,84 +11436,84 @@ dlabel D_004DAE70
     /* 2DAE74 004DAE74 40000000 */ .word 0x00000040
 enddlabel D_004DAE70
 
-nonmatching D_004DAE78
+nonmatching ParaDataBuf
 
-dlabel D_004DAE78
+dlabel ParaDataBuf
     /* 2DAE78 004DAE78 00000000 */ .word 0x00000000
-enddlabel D_004DAE78
+enddlabel ParaDataBuf
 
-nonmatching D_004DAE7C
+nonmatching CharPas
 
-dlabel D_004DAE7C
+dlabel CharPas
     /* 2DAE7C 004DAE7C 00000000 */ .word 0x00000000
-enddlabel D_004DAE7C
+enddlabel CharPas
 
-nonmatching D_004DAE80
+nonmatching CharInfo
 
-dlabel D_004DAE80
+dlabel CharInfo
     /* 2DAE80 004DAE80 00000000 */ .word 0x00000000
-enddlabel D_004DAE80
+enddlabel CharInfo
 
-nonmatching D_004DAE84
+nonmatching CharCategory
 
-dlabel D_004DAE84
+dlabel CharCategory
     /* 2DAE84 004DAE84 00000000 */ .word 0x00000000
-enddlabel D_004DAE84
+enddlabel CharCategory
 
-nonmatching D_004DAE88
+nonmatching CharMenu
 
-dlabel D_004DAE88
+dlabel CharMenu
     /* 2DAE88 004DAE88 00000000 */ .word 0x00000000
-enddlabel D_004DAE88
+enddlabel CharMenu
 
-nonmatching D_004DAE8C
+nonmatching CharEx
 
-dlabel D_004DAE8C
+dlabel CharEx
     /* 2DAE8C 004DAE8C 00000000 */ .word 0x00000000
-enddlabel D_004DAE8C
+enddlabel CharEx
 
-nonmatching D_004DAE90
+nonmatching CharL1R1
 
-dlabel D_004DAE90
+dlabel CharL1R1
     /* 2DAE90 004DAE90 00000000 */ .word 0x00000000
-enddlabel D_004DAE90
+enddlabel CharL1R1
 
-nonmatching D_004DAE94
+nonmatching CharStatus
 
-dlabel D_004DAE94
+dlabel CharStatus
     /* 2DAE94 004DAE94 00000000 */ .word 0x00000000
-enddlabel D_004DAE94
+enddlabel CharStatus
 
-nonmatching D_004DAE98
+nonmatching CharParameter
 
-dlabel D_004DAE98
+dlabel CharParameter
     /* 2DAE98 004DAE98 00000000 */ .word 0x00000000
-enddlabel D_004DAE98
+enddlabel CharParameter
 
-nonmatching D_004DAE9C
+nonmatching CharWeapon
 
-dlabel D_004DAE9C
+dlabel CharWeapon
     /* 2DAE9C 004DAE9C 00000000 */ .word 0x00000000
-enddlabel D_004DAE9C
+enddlabel CharWeapon
 
-nonmatching D_004DAEA0
+nonmatching CharList
 
-dlabel D_004DAEA0
+dlabel CharList
     /* 2DAEA0 004DAEA0 00000000 */ .word 0x00000000
-enddlabel D_004DAEA0
+enddlabel CharList
 
-nonmatching D_004DAEA4
+nonmatching CharSwitch
 
-dlabel D_004DAEA4
+dlabel CharSwitch
     /* 2DAEA4 004DAEA4 00000000 */ .word 0x00000000
-enddlabel D_004DAEA4
+enddlabel CharSwitch
 
-nonmatching D_004DAEA8
+nonmatching CharPoint
 
-dlabel D_004DAEA8
+dlabel CharPoint
     /* 2DAEA8 004DAEA8 00000000 */ .word 0x00000000
     /* 2DAEAC 004DAEAC 00000000 */ .word 0x00000000
-enddlabel D_004DAEA8
+enddlabel CharPoint
 
 .align 3
 nonmatching D_004DAEB0
@@ -11816,59 +11886,59 @@ dlabel D_004DAFF8
 .align 2
 enddlabel D_004DAFF8
 
-nonmatching D_004DAFFC
+nonmatching AgwsPas
 
-dlabel D_004DAFFC
+dlabel AgwsPas
     /* 2DAFFC 004DAFFC 00000000 */ .word 0x00000000
-enddlabel D_004DAFFC
+enddlabel AgwsPas
 
-nonmatching D_004DB000
+nonmatching AgwsInfo
 
-dlabel D_004DB000
+dlabel AgwsInfo
     /* 2DB000 004DB000 00000000 */ .word 0x00000000
-enddlabel D_004DB000
+enddlabel AgwsInfo
 
-nonmatching D_004DB004
+nonmatching AgwsSelect
 
-dlabel D_004DB004
+dlabel AgwsSelect
     /* 2DB004 004DB004 00000000 */ .word 0x00000000
-enddlabel D_004DB004
+enddlabel AgwsSelect
 
-nonmatching D_004DB008
+nonmatching AgwsList
 
-dlabel D_004DB008
+dlabel AgwsList
     /* 2DB008 004DB008 00000000 */ .word 0x00000000
-enddlabel D_004DB008
+enddlabel AgwsList
 
-nonmatching D_004DB00C
+nonmatching AgwsStatus
 
-dlabel D_004DB00C
+dlabel AgwsStatus
     /* 2DB00C 004DB00C 00000000 */ .word 0x00000000
-enddlabel D_004DB00C
+enddlabel AgwsStatus
 
-nonmatching D_004DB010
+nonmatching AgwsWeapon2
 
-dlabel D_004DB010
+dlabel AgwsWeapon2
     /* 2DB010 004DB010 00000000 */ .word 0x00000000
-enddlabel D_004DB010
+enddlabel AgwsWeapon2
 
-nonmatching D_004DB014
+nonmatching AgwsName
 
-dlabel D_004DB014
+dlabel AgwsName
     /* 2DB014 004DB014 00000000 */ .word 0x00000000
-enddlabel D_004DB014
+enddlabel AgwsName
 
-nonmatching D_004DB018
+nonmatching AgwsFace
 
-dlabel D_004DB018
+dlabel AgwsFace
     /* 2DB018 004DB018 00000000 */ .word 0x00000000
-enddlabel D_004DB018
+enddlabel AgwsFace
 
-nonmatching D_004DB01C
+nonmatching AgwsSwitch
 
-dlabel D_004DB01C
+dlabel AgwsSwitch
     /* 2DB01C 004DB01C 00000000 */ .word 0x00000000
-enddlabel D_004DB01C
+enddlabel AgwsSwitch
 
 .align 3
 nonmatching D_004DB020
@@ -12066,48 +12136,48 @@ dlabel D_004DB0B8
     /* 2DB0BC 004DB0BC 04000500 */ .word 0x00050004
 enddlabel D_004DB0B8
 
-nonmatching D_004DB0C0
+nonmatching SeisanWork
 
-dlabel D_004DB0C0
+dlabel SeisanWork
     /* 2DB0C0 004DB0C0 00000000 */ .word 0x00000000
-enddlabel D_004DB0C0
+enddlabel SeisanWork
 
-nonmatching D_004DB0C4
+nonmatching SeisanBgTask
 
-dlabel D_004DB0C4
+dlabel SeisanBgTask
     /* 2DB0C4 004DB0C4 00000000 */ .word 0x00000000
-enddlabel D_004DB0C4
+enddlabel SeisanBgTask
 
-nonmatching D_004DB0C8
+nonmatching SeisanTask
 
-dlabel D_004DB0C8
+dlabel SeisanTask
     /* 2DB0C8 004DB0C8 00000000 */ .word 0x00000000
-enddlabel D_004DB0C8
+enddlabel SeisanTask
 
-nonmatching D_004DB0CC
+nonmatching SeisanResult
 
-dlabel D_004DB0CC
+dlabel SeisanResult
     /* 2DB0CC 004DB0CC 00000000 */ .word 0x00000000
-enddlabel D_004DB0CC
+enddlabel SeisanResult
 
-nonmatching D_004DB0D0
+nonmatching SeisanMg
 
-dlabel D_004DB0D0
+dlabel SeisanMg
     /* 2DB0D0 004DB0D0 00000000 */ .word 0x00000000
-enddlabel D_004DB0D0
+enddlabel SeisanMg
 
-nonmatching D_004DB0D4
+nonmatching SeisanItemBox
 
-dlabel D_004DB0D4
+dlabel SeisanItemBox
     /* 2DB0D4 004DB0D4 00000000 */ .word 0x00000000
-enddlabel D_004DB0D4
+enddlabel SeisanItemBox
 
-nonmatching D_004DB0D8
+nonmatching SeisanFade
 
-dlabel D_004DB0D8
+dlabel SeisanFade
     /* 2DB0D8 004DB0D8 00000000 */ .word 0x00000000
     /* 2DB0DC 004DB0DC 00000000 */ .word 0x00000000
-enddlabel D_004DB0D8
+enddlabel SeisanFade
 
 .align 3
 nonmatching D_004DB0E0
@@ -12772,65 +12842,65 @@ dlabel D_004DB340
     /* 2DB344 004DB344 25326400 */ .word D_00643225
 enddlabel D_004DB340
 
-nonmatching D_004DB348
+nonmatching MenuEtherDataBuf
 
-dlabel D_004DB348
+dlabel MenuEtherDataBuf
     /* 2DB348 004DB348 00000000 */ .word 0x00000000
-enddlabel D_004DB348
+enddlabel MenuEtherDataBuf
 
-nonmatching D_004DB34C
+nonmatching MenuEtherPas
 
-dlabel D_004DB34C
+dlabel MenuEtherPas
     /* 2DB34C 004DB34C 00000000 */ .word 0x00000000
-enddlabel D_004DB34C
+enddlabel MenuEtherPas
 
-nonmatching D_004DB350
+nonmatching MenuEtherInfo
 
-dlabel D_004DB350
+dlabel MenuEtherInfo
     /* 2DB350 004DB350 00000000 */ .word 0x00000000
-enddlabel D_004DB350
+enddlabel MenuEtherInfo
 
-nonmatching D_004DB354
+nonmatching MenuEtherMenu
 
-dlabel D_004DB354
+dlabel MenuEtherMenu
     /* 2DB354 004DB354 00000000 */ .word 0x00000000
-enddlabel D_004DB354
+enddlabel MenuEtherMenu
 
-nonmatching D_004DB358
+nonmatching MenuEtherEx
 
-dlabel D_004DB358
+dlabel MenuEtherEx
     /* 2DB358 004DB358 00000000 */ .word 0x00000000
-enddlabel D_004DB358
+enddlabel MenuEtherEx
 
-nonmatching D_004DB35C
+nonmatching MenuEtherL1R1
 
-dlabel D_004DB35C
+dlabel MenuEtherL1R1
     /* 2DB35C 004DB35C 00000000 */ .word 0x00000000
-enddlabel D_004DB35C
+enddlabel MenuEtherL1R1
 
-nonmatching D_004DB360
+nonmatching MenuEtherStatus
 
-dlabel D_004DB360
+dlabel MenuEtherStatus
     /* 2DB360 004DB360 00000000 */ .word 0x00000000
-enddlabel D_004DB360
+enddlabel MenuEtherStatus
 
-nonmatching D_004DB364
+nonmatching MenuEtherStatus2
 
-dlabel D_004DB364
+dlabel MenuEtherStatus2
     /* 2DB364 004DB364 00000000 */ .word 0x00000000
-enddlabel D_004DB364
+enddlabel MenuEtherStatus2
 
-nonmatching D_004DB368
+nonmatching MenuEtherList
 
-dlabel D_004DB368
+dlabel MenuEtherList
     /* 2DB368 004DB368 00000000 */ .word 0x00000000
-enddlabel D_004DB368
+enddlabel MenuEtherList
 
-nonmatching D_004DB36C
+nonmatching MenuEtherList2
 
-dlabel D_004DB36C
+dlabel MenuEtherList2
     /* 2DB36C 004DB36C 00000000 */ .word 0x00000000
-enddlabel D_004DB36C
+enddlabel MenuEtherList2
 
 .align 3
 nonmatching D_004DB370
@@ -13323,65 +13393,65 @@ dlabel D_004DB510
     /* 2DB514 004DB514 25326400 */ .word D_00643225
 enddlabel D_004DB510
 
-nonmatching D_004DB518
+nonmatching MenuTecDataBuf
 
-dlabel D_004DB518
+dlabel MenuTecDataBuf
     /* 2DB518 004DB518 00000000 */ .word 0x00000000
-enddlabel D_004DB518
+enddlabel MenuTecDataBuf
 
-nonmatching D_004DB51C
+nonmatching MenuTecPas
 
-dlabel D_004DB51C
+dlabel MenuTecPas
     /* 2DB51C 004DB51C 00000000 */ .word 0x00000000
-enddlabel D_004DB51C
+enddlabel MenuTecPas
 
-nonmatching D_004DB520
+nonmatching MenuTecInfo
 
-dlabel D_004DB520
+dlabel MenuTecInfo
     /* 2DB520 004DB520 00000000 */ .word 0x00000000
-enddlabel D_004DB520
+enddlabel MenuTecInfo
 
-nonmatching D_004DB524
+nonmatching MenuTecMenu
 
-dlabel D_004DB524
+dlabel MenuTecMenu
     /* 2DB524 004DB524 00000000 */ .word 0x00000000
-enddlabel D_004DB524
+enddlabel MenuTecMenu
 
-nonmatching D_004DB528
+nonmatching MenuTecEx
 
-dlabel D_004DB528
+dlabel MenuTecEx
     /* 2DB528 004DB528 00000000 */ .word 0x00000000
-enddlabel D_004DB528
+enddlabel MenuTecEx
 
-nonmatching D_004DB52C
+nonmatching MenuTecL1R1
 
-dlabel D_004DB52C
+dlabel MenuTecL1R1
     /* 2DB52C 004DB52C 00000000 */ .word 0x00000000
-enddlabel D_004DB52C
+enddlabel MenuTecL1R1
 
-nonmatching D_004DB530
+nonmatching MenuTecStatus
 
-dlabel D_004DB530
+dlabel MenuTecStatus
     /* 2DB530 004DB530 00000000 */ .word 0x00000000
-enddlabel D_004DB530
+enddlabel MenuTecStatus
 
-nonmatching D_004DB534
+nonmatching MenuTecList
 
-dlabel D_004DB534
+dlabel MenuTecList
     /* 2DB534 004DB534 00000000 */ .word 0x00000000
-enddlabel D_004DB534
+enddlabel MenuTecList
 
-nonmatching D_004DB538
+nonmatching MenuTecList2
 
-dlabel D_004DB538
+dlabel MenuTecList2
     /* 2DB538 004DB538 00000000 */ .word 0x00000000
-enddlabel D_004DB538
+enddlabel MenuTecList2
 
-nonmatching D_004DB53C
+nonmatching MenuTecSetWin
 
-dlabel D_004DB53C
+dlabel MenuTecSetWin
     /* 2DB53C 004DB53C 00000000 */ .word 0x00000000
-enddlabel D_004DB53C
+enddlabel MenuTecSetWin
 
 .align 3
 nonmatching D_004DB540
@@ -13511,31 +13581,31 @@ dlabel D_004DB5B0
     /* 2DB5B4 004DB5B4 25326400 */ .word D_00643225
 enddlabel D_004DB5B0
 
-nonmatching D_004DB5B8
+nonmatching MenuSystemPas
 
-dlabel D_004DB5B8
+dlabel MenuSystemPas
     /* 2DB5B8 004DB5B8 00000000 */ .word 0x00000000
-enddlabel D_004DB5B8
+enddlabel MenuSystemPas
 
-nonmatching D_004DB5BC
+nonmatching MenuSystemInfo
 
-dlabel D_004DB5BC
+dlabel MenuSystemInfo
     /* 2DB5BC 004DB5BC 00000000 */ .word 0x00000000
-enddlabel D_004DB5BC
+enddlabel MenuSystemInfo
 
-nonmatching D_004DB5C0
+nonmatching MenuSystemMenu
 
-dlabel D_004DB5C0
+dlabel MenuSystemMenu
     /* 2DB5C0 004DB5C0 00000000 */ .word 0x00000000
     /* 2DB5C4 004DB5C4 00000000 */ .word 0x00000000
-enddlabel D_004DB5C0
+enddlabel MenuSystemMenu
 
-nonmatching D_004DB5C8
+nonmatching _CountTime
 
-dlabel D_004DB5C8
+dlabel _CountTime
     /* 2DB5C8 004DB5C8 00000000 */ .word 0x00000000
     /* 2DB5CC 004DB5CC 00000000 */ .word 0x00000000
-enddlabel D_004DB5C8
+enddlabel _CountTime
 
 .align 3
 nonmatching D_004DB5D0
@@ -13691,65 +13761,65 @@ dlabel D_004DB650
     /* 2DB654 004DB654 6C6C0000 */ .word 0x00006C6C
 enddlabel D_004DB650
 
-nonmatching D_004DB658
+nonmatching SkillDataBuf
 
-dlabel D_004DB658
+dlabel SkillDataBuf
     /* 2DB658 004DB658 00000000 */ .word 0x00000000
-enddlabel D_004DB658
+enddlabel SkillDataBuf
 
-nonmatching D_004DB65C
+nonmatching MenuSkillPas
 
-dlabel D_004DB65C
+dlabel MenuSkillPas
     /* 2DB65C 004DB65C 00000000 */ .word 0x00000000
-enddlabel D_004DB65C
+enddlabel MenuSkillPas
 
-nonmatching D_004DB660
+nonmatching MenuSkillInfo
 
-dlabel D_004DB660
+dlabel MenuSkillInfo
     /* 2DB660 004DB660 00000000 */ .word 0x00000000
-enddlabel D_004DB660
+enddlabel MenuSkillInfo
 
-nonmatching D_004DB664
+nonmatching MenuSkillStatus
 
-dlabel D_004DB664
+dlabel MenuSkillStatus
     /* 2DB664 004DB664 00000000 */ .word 0x00000000
-enddlabel D_004DB664
+enddlabel MenuSkillStatus
 
-nonmatching D_004DB668
+nonmatching MenuSkillMenu
 
-dlabel D_004DB668
+dlabel MenuSkillMenu
     /* 2DB668 004DB668 00000000 */ .word 0x00000000
-enddlabel D_004DB668
+enddlabel MenuSkillMenu
 
-nonmatching D_004DB66C
+nonmatching MenuSkillEx
 
-dlabel D_004DB66C
+dlabel MenuSkillEx
     /* 2DB66C 004DB66C 00000000 */ .word 0x00000000
-enddlabel D_004DB66C
+enddlabel MenuSkillEx
 
-nonmatching D_004DB670
+nonmatching MenuSkillL1R1
 
-dlabel D_004DB670
+dlabel MenuSkillL1R1
     /* 2DB670 004DB670 00000000 */ .word 0x00000000
-enddlabel D_004DB670
+enddlabel MenuSkillL1R1
 
-nonmatching D_004DB674
+nonmatching MenuSkillSetList
 
-dlabel D_004DB674
+dlabel MenuSkillSetList
     /* 2DB674 004DB674 00000000 */ .word 0x00000000
-enddlabel D_004DB674
+enddlabel MenuSkillSetList
 
-nonmatching D_004DB678
+nonmatching MenuSkillCategory
 
-dlabel D_004DB678
+dlabel MenuSkillCategory
     /* 2DB678 004DB678 00000000 */ .word 0x00000000
-enddlabel D_004DB678
+enddlabel MenuSkillCategory
 
-nonmatching D_004DB67C
+nonmatching MenuSkillList
 
-dlabel D_004DB67C
+dlabel MenuSkillList
     /* 2DB67C 004DB67C 00000000 */ .word 0x00000000
-enddlabel D_004DB67C
+enddlabel MenuSkillList
 
 nonmatching D_004DB680
 
@@ -13758,48 +13828,48 @@ dlabel D_004DB680
     /* 2DB684 004DB684 02120000 */ .word 0x00001202
 enddlabel D_004DB680
 
-nonmatching D_004DB688
+nonmatching EtherTreeSystem
 
-dlabel D_004DB688
+dlabel EtherTreeSystem
     /* 2DB688 004DB688 00000000 */ .word 0x00000000
-enddlabel D_004DB688
+enddlabel EtherTreeSystem
 
-nonmatching D_004DB68C
+nonmatching EtherTreeObject
 
-dlabel D_004DB68C
+dlabel EtherTreeObject
     /* 2DB68C 004DB68C 00000000 */ .word 0x00000000
-enddlabel D_004DB68C
+enddlabel EtherTreeObject
 
-nonmatching D_004DB690
+nonmatching EtherTreeObjectP
 
-dlabel D_004DB690
+dlabel EtherTreeObjectP
     /* 2DB690 004DB690 00000000 */ .word 0x00000000
-enddlabel D_004DB690
+enddlabel EtherTreeObjectP
 
-nonmatching D_004DB694
+nonmatching EtherTreeLine
 
-dlabel D_004DB694
+dlabel EtherTreeLine
     /* 2DB694 004DB694 00000000 */ .word 0x00000000
-enddlabel D_004DB694
+enddlabel EtherTreeLine
 
-nonmatching D_004DB698
+nonmatching EtherTreeLine2
 
-dlabel D_004DB698
+dlabel EtherTreeLine2
     /* 2DB698 004DB698 00000000 */ .word 0x00000000
-enddlabel D_004DB698
+enddlabel EtherTreeLine2
 
-nonmatching D_004DB69C
+nonmatching EtherTreeRight
 
-dlabel D_004DB69C
+dlabel EtherTreeRight
     /* 2DB69C 004DB69C 00000000 */ .word 0x00000000
-enddlabel D_004DB69C
+enddlabel EtherTreeRight
 
-nonmatching D_004DB6A0
+nonmatching EtherTreeBlack
 
-dlabel D_004DB6A0
+dlabel EtherTreeBlack
     /* 2DB6A0 004DB6A0 00000000 */ .word 0x00000000
     /* 2DB6A4 004DB6A4 00000000 */ .word 0x00000000
-enddlabel D_004DB6A0
+enddlabel EtherTreeBlack
 
 nonmatching D_004DB6A8
 
@@ -13829,47 +13899,47 @@ dlabel D_004DB6B8
 .align 2
 enddlabel D_004DB6B8
 
-nonmatching D_004DB6C0
+nonmatching rgba.0
 
-dlabel D_004DB6C0
+dlabel rgba.0
     /* 2DB6C0 004DB6C0 FF000000 */ .word 0x000000FF
     /* 2DB6C4 004DB6C4 00FF0000 */ .word 0x0000FF00
-enddlabel D_004DB6C0
+enddlabel rgba.0
 
-nonmatching D_004DB6C8
+nonmatching MapNo
 
-dlabel D_004DB6C8
+dlabel MapNo
     /* 2DB6C8 004DB6C8 00000000 */ .word 0x00000000
     /* 2DB6CC 004DB6CC 00000000 */ .word 0x00000000
-enddlabel D_004DB6C8
+enddlabel MapNo
 
-nonmatching D_004DB6D0
+nonmatching dispflg
 
-dlabel D_004DB6D0
+dlabel dispflg
     /* 2DB6D0 004DB6D0 */ .byte 0x00
-enddlabel D_004DB6D0
+enddlabel dispflg
 
-nonmatching D_004DB6D1
+nonmatching lineflg
 
-dlabel D_004DB6D1
+dlabel lineflg
     /* 2DB6D1 004DB6D1 */ .byte 0x00
-enddlabel D_004DB6D1
+enddlabel lineflg
 
-nonmatching D_004DB6D2
+nonmatching printflg
 
-dlabel D_004DB6D2
+dlabel printflg
     /* 2DB6D2 004DB6D2 */ .byte 0x00
-enddlabel D_004DB6D2
+enddlabel printflg
 
-nonmatching D_004DB6D3
+nonmatching collflg
 
-dlabel D_004DB6D3
+dlabel collflg
     /* 2DB6D3 004DB6D3 */ .byte 0x00
     /* 2DB6D4 004DB6D4 */ .byte 0x00
     /* 2DB6D5 004DB6D5 */ .byte 0x00
     /* 2DB6D6 004DB6D6 */ .byte 0x00
     /* 2DB6D7 004DB6D7 */ .byte 0x00
-enddlabel D_004DB6D3
+enddlabel collflg
 
 .align 3
 nonmatching D_004DB6D8
@@ -14100,25 +14170,25 @@ dlabel D_004DB780
 enddlabel D_004DB780
 
 .align 3
-nonmatching D_004DB788
+nonmatching deb.0
 
-dlabel D_004DB788
+dlabel deb.0
     /* 2DB788 004DB788 */ .asciz "NULL"
     /* 4E554C4C00000000 */
 .align 2
-enddlabel D_004DB788
+enddlabel deb.0
 
-nonmatching D_004DB790
+nonmatching debmode
 
-dlabel D_004DB790
+dlabel debmode
     /* 2DB790 004DB790 00000000 */ .word 0x00000000
-enddlabel D_004DB790
+enddlabel debmode
 
-nonmatching D_004DB794
+nonmatching cursol.0
 
-dlabel D_004DB794
+dlabel cursol.0
     /* 2DB794 004DB794 00000000 */ .word 0x00000000
-enddlabel D_004DB794
+enddlabel cursol.0
 
 nonmatching D_004DB798
 
@@ -14126,11 +14196,11 @@ dlabel D_004DB798
     /* 2DB798 004DB798 A1E40000 */ .word 0x0000E4A1
 enddlabel D_004DB798
 
-nonmatching D_004DB79C
+nonmatching page.1
 
-dlabel D_004DB79C
+dlabel page.1
     /* 2DB79C 004DB79C 00000000 */ .word 0x00000000
-enddlabel D_004DB79C
+enddlabel page.1
 
 .align 3
 nonmatching D_004DB7A0
@@ -14141,11 +14211,11 @@ dlabel D_004DB7A0
 .align 2
 enddlabel D_004DB7A0
 
-nonmatching D_004DB7A4
+nonmatching page.2
 
-dlabel D_004DB7A4
+dlabel page.2
     /* 2DB7A4 004DB7A4 00000000 */ .word 0x00000000
-enddlabel D_004DB7A4
+enddlabel page.2
 
 .align 3
 nonmatching D_004DB7A8
@@ -14216,19 +14286,19 @@ dlabel D_004DB7E8
 .align 2
 enddlabel D_004DB7E8
 
-nonmatching D_004DB7F0
+nonmatching Times
 
-dlabel D_004DB7F0
+dlabel Times
     /* 2DB7F0 004DB7F0 */ .short 0x0000
-enddlabel D_004DB7F0
+enddlabel Times
 
-nonmatching D_004DB7F2
+nonmatching NowTester
 
-dlabel D_004DB7F2
+dlabel NowTester
     /* 2DB7F2 004DB7F2 */ .short 0x0000
     /* 2DB7F4 004DB7F4 */ .short 0x0000
     /* 2DB7F6 004DB7F6 */ .short 0x0000
-enddlabel D_004DB7F2
+enddlabel NowTester
 
 nonmatching D_004DB7F8
 
@@ -14265,61 +14335,71 @@ dlabel D_004DB818
     /* 2DB81C 004DB81C */ .short 0x0000
 enddlabel D_004DB818
 
-nonmatching D_004DB81E
+nonmatching CoolDown.0
 
-dlabel D_004DB81E
+dlabel CoolDown.0
     /* 2DB81E 004DB81E */ .short 0x0000
-enddlabel D_004DB81E
+enddlabel CoolDown.0
 
-nonmatching D_004DB820
+nonmatching CoolDown.1
 
-dlabel D_004DB820
+dlabel CoolDown.1
     /* 2DB820 004DB820 00000000 */ .word 0x00000000
-enddlabel D_004DB820
+enddlabel CoolDown.1
 
-nonmatching D_004DB824
+nonmatching AdrsEnemyPreset
 
-dlabel D_004DB824
+dlabel AdrsEnemyPreset
     /* 2DB824 004DB824 00000000 */ .word 0x00000000
-enddlabel D_004DB824
+enddlabel AdrsEnemyPreset
 
-nonmatching D_004DB828
+nonmatching AdrsEnemySpline
 
-dlabel D_004DB828
+dlabel AdrsEnemySpline
     /* 2DB828 004DB828 00000000 */ .word 0x00000000
-enddlabel D_004DB828
+enddlabel AdrsEnemySpline
 
-nonmatching D_004DB82C
+nonmatching AdrsEnemyExclamation
 
-dlabel D_004DB82C
+dlabel AdrsEnemyExclamation
     /* 2DB82C 004DB82C 00000000 */ .word 0x00000000
-enddlabel D_004DB82C
+enddlabel AdrsEnemyExclamation
 
-nonmatching D_004DB830
+nonmatching AdrsEnemyQuestion
 
-dlabel D_004DB830
+dlabel AdrsEnemyQuestion
     /* 2DB830 004DB830 00000000 */ .word 0x00000000
-enddlabel D_004DB830
+enddlabel AdrsEnemyQuestion
 
-nonmatching D_004DB834
+nonmatching AdrsEnemySphere
 
-dlabel D_004DB834
+dlabel AdrsEnemySphere
     /* 2DB834 004DB834 00000000 */ .word 0x00000000
-enddlabel D_004DB834
+enddlabel AdrsEnemySphere
 
-nonmatching D_004DB838
+nonmatching AdrsEnemySquare
 
-dlabel D_004DB838
+dlabel AdrsEnemySquare
     /* 2DB838 004DB838 00000000 */ .word 0x00000000
-enddlabel D_004DB838
+enddlabel AdrsEnemySquare
 
-nonmatching D_004DB83C
+nonmatching AdrsEnemy
 
-dlabel D_004DB83C
+dlabel AdrsEnemy
     /* 2DB83C 004DB83C 00000000 */ .word 0x00000000
+enddlabel AdrsEnemy
+
+nonmatching MostNearActor
+
+dlabel MostNearActor
     /* 2DB840 004DB840 00000000 */ .word 0x00000000
+enddlabel MostNearActor
+
+nonmatching MostNear
+
+dlabel MostNear
     /* 2DB844 004DB844 00000000 */ .word 0x00000000
-enddlabel D_004DB83C
+enddlabel MostNear
 
 .align 3
 nonmatching D_004DB848
@@ -14330,24 +14410,24 @@ dlabel D_004DB848
 .align 2
 enddlabel D_004DB848
 
-nonmatching D_004DB850
+nonmatching NowLadderStep
 
-dlabel D_004DB850
+dlabel NowLadderStep
     /* 2DB850 004DB850 */ .short 0x0000
-enddlabel D_004DB850
+enddlabel NowLadderStep
 
-nonmatching D_004DB852
+nonmatching SelNum
 
-dlabel D_004DB852
+dlabel SelNum
     /* 2DB852 004DB852 */ .short 0xFFFF
-enddlabel D_004DB852
+enddlabel SelNum
 
-nonmatching D_004DB854
+nonmatching PhCunt
 
-dlabel D_004DB854
+dlabel PhCunt
     /* 2DB854 004DB854 */ .short 0x0000
     /* 2DB856 004DB856 */ .short 0x0000
-enddlabel D_004DB854
+enddlabel PhCunt
 
 .align 3
 nonmatching D_004DB858
@@ -14358,19 +14438,19 @@ dlabel D_004DB858
 .align 2
 enddlabel D_004DB858
 
-nonmatching D_004DB860
+nonmatching DebugActor
 
-dlabel D_004DB860
+dlabel DebugActor
     /* 2DB860 004DB860 */ .short 0x0000
-enddlabel D_004DB860
+enddlabel DebugActor
 
-nonmatching D_004DB862
+nonmatching Page.0
 
-dlabel D_004DB862
+dlabel Page.0
     /* 2DB862 004DB862 */ .short 0x0000
     /* 2DB864 004DB864 */ .short 0x0000
     /* 2DB866 004DB866 */ .short 0x0000
-enddlabel D_004DB862
+enddlabel Page.0
 
 nonmatching D_004DB868
 
@@ -14675,18 +14755,23 @@ dlabel D_004DB9A0
     /* 2DB9A0 004DB9A0 A2AD0000 */ .word 0x0000ADA2
 enddlabel D_004DB9A0
 
-nonmatching D_004DB9A4
+nonmatching EventID
 
-dlabel D_004DB9A4
+dlabel EventID
     /* 2DB9A4 004DB9A4 */ .short 0x0000
-enddlabel D_004DB9A4
+enddlabel EventID
 
-nonmatching D_004DB9A6
+nonmatching FlagExEvent
 
-dlabel D_004DB9A6
+dlabel FlagExEvent
     /* 2DB9A6 004DB9A6 */ .byte 0x00
+enddlabel FlagExEvent
+
+nonmatching FlagOnEvent
+
+dlabel FlagOnEvent
     /* 2DB9A7 004DB9A7 */ .byte 0x00
-enddlabel D_004DB9A6
+enddlabel FlagOnEvent
 
 nonmatching D_004DB9A8
 
@@ -14702,19 +14787,19 @@ dlabel D_004DB9B0
     /* 2DB9B4 004DB9B4 00000000 */ .word 0x00000000
 enddlabel D_004DB9B0
 
-nonmatching D_004DB9B8
+nonmatching DataSpline
 
-dlabel D_004DB9B8
+dlabel DataSpline
     /* 2DB9B8 004DB9B8 00000000 */ .word 0x00000000
     /* 2DB9BC 004DB9BC 00000000 */ .word 0x00000000
-enddlabel D_004DB9B8
+enddlabel DataSpline
 
-nonmatching D_004DB9C0
+nonmatching csr
 
-dlabel D_004DB9C0
+dlabel csr
     /* 2DB9C0 004DB9C0 00000000 */ .word 0x00000000
     /* 2DB9C4 004DB9C4 00000000 */ .word 0x00000000
-enddlabel D_004DB9C0
+enddlabel csr
 
 nonmatching D_004DB9C8
 
@@ -14730,95 +14815,95 @@ dlabel D_004DB9D0
     /* 2DB9D4 004DB9D4 6E740000 */ .word 0x0000746E
 enddlabel D_004DB9D0
 
-nonmatching D_004DB9D8
+nonmatching mode_004DB9D8
 
-dlabel D_004DB9D8
+dlabel mode_004DB9D8
     /* 2DB9D8 004DB9D8 00000000 */ .word 0x00000000
-enddlabel D_004DB9D8
+enddlabel mode_004DB9D8
 
-nonmatching D_004DB9DC
+nonmatching hit
 
-dlabel D_004DB9DC
+dlabel hit
     /* 2DB9DC 004DB9DC 00000000 */ .word 0x00000000
-enddlabel D_004DB9DC
+enddlabel hit
 
-nonmatching D_004DB9E0
+nonmatching filelist
 
-dlabel D_004DB9E0
+dlabel filelist
     /* 2DB9E0 004DB9E0 00000000 */ .word 0x00000000
-enddlabel D_004DB9E0
+enddlabel filelist
 
-nonmatching D_004DB9E4
+nonmatching gridlexTop
 
-dlabel D_004DB9E4
+dlabel gridlexTop
     /* 2DB9E4 004DB9E4 00000000 */ .word 0x00000000
-enddlabel D_004DB9E4
+enddlabel gridlexTop
 
-nonmatching D_004DB9E8
+nonmatching gridxtxTop
 
-dlabel D_004DB9E8
+dlabel gridxtxTop
     /* 2DB9E8 004DB9E8 00000000 */ .word 0x00000000
-enddlabel D_004DB9E8
+enddlabel gridxtxTop
 
-nonmatching D_004DB9EC
+nonmatching hamalexTop
 
-dlabel D_004DB9EC
+dlabel hamalexTop
     /* 2DB9EC 004DB9EC 00000000 */ .word 0x00000000
-enddlabel D_004DB9EC
+enddlabel hamalexTop
 
-nonmatching D_004DB9F0
+nonmatching hamaxtxTop
 
-dlabel D_004DB9F0
+dlabel hamaxtxTop
     /* 2DB9F0 004DB9F0 00000000 */ .word 0x00000000
-enddlabel D_004DB9F0
+enddlabel hamaxtxTop
 
-nonmatching D_004DB9F4
+nonmatching cfScript
 
-dlabel D_004DB9F4
+dlabel cfScript
     /* 2DB9F4 004DB9F4 00000000 */ .word 0x00000000
-enddlabel D_004DB9F4
+enddlabel cfScript
 
-nonmatching D_004DB9F8
+nonmatching loaded
 
-dlabel D_004DB9F8
+dlabel loaded
     /* 2DB9F8 004DB9F8 */ .short 0x0000
-enddlabel D_004DB9F8
+enddlabel loaded
 
-nonmatching D_004DB9FA
+nonmatching mapdisp
 
-dlabel D_004DB9FA
+dlabel mapdisp
     /* 2DB9FA 004DB9FA */ .short 0x0001
-enddlabel D_004DB9FA
+enddlabel mapdisp
 
-nonmatching D_004DB9FC
+nonmatching casdisp
 
-dlabel D_004DB9FC
+dlabel casdisp
     /* 2DB9FC 004DB9FC */ .short 0x0000
-enddlabel D_004DB9FC
+enddlabel casdisp
 
-nonmatching D_004DB9FE
+nonmatching tgtdisp
 
-dlabel D_004DB9FE
+dlabel tgtdisp
     /* 2DB9FE 004DB9FE */ .short 0x0000
-enddlabel D_004DB9FE
+enddlabel tgtdisp
 
-nonmatching D_004DBA00
+nonmatching sftMode
 
-dlabel D_004DBA00
+dlabel sftMode
     /* 2DBA00 004DBA00 00000000 */ .word 0x00000000
-enddlabel D_004DBA00
+enddlabel sftMode
 
-nonmatching D_004DBA04
+nonmatching _sdrawFloor
 
-dlabel D_004DBA04
+dlabel _sdrawFloor
     /* 2DBA04 004DBA04 */ .short 0x0000
-enddlabel D_004DBA04
+enddlabel _sdrawFloor
 
-nonmatching D_004DBA06
+nonmatching _debugPause
 
-dlabel D_004DBA06
+dlabel _debugPause
     /* 2DBA06 004DBA06 */ .short 0x0000
-enddlabel D_004DBA06
+enddlabel _debugPause
 
 .align 3
 nonmatching D_004DBA08
@@ -14829,17 +14914,17 @@ dlabel D_004DBA08
 .align 2
 enddlabel D_004DBA08
 
-nonmatching D_004DBA10
+nonmatching cur.2
 
-dlabel D_004DBA10
+dlabel cur.2
     /* 2DBA10 004DBA10 00000000 */ .word 0x00000000
-enddlabel D_004DBA10
+enddlabel cur.2
 
-nonmatching D_004DBA14
+nonmatching menumax.4
 
-dlabel D_004DBA14
+dlabel menumax.4
     /* 2DBA14 004DBA14 05000000 */ .word 0x00000005
-enddlabel D_004DBA14
+enddlabel menumax.4
 
 .align 3
 nonmatching D_004DBA18
@@ -14850,18 +14935,18 @@ dlabel D_004DBA18
 .align 2
 enddlabel D_004DBA18
 
-nonmatching D_004DBA1C
+nonmatching cur.5
 
-dlabel D_004DBA1C
+dlabel cur.5
     /* 2DBA1C 004DBA1C 01000000 */ .word 0x00000001
-enddlabel D_004DBA1C
+enddlabel cur.5
 
-nonmatching D_004DBA20
+nonmatching cur.6
 
-dlabel D_004DBA20
+dlabel cur.6
     /* 2DBA20 004DBA20 01000000 */ .word 0x00000001
     /* 2DBA24 004DBA24 00000000 */ .word 0x00000000
-enddlabel D_004DBA20
+enddlabel cur.6
 
 .align 3
 nonmatching D_004DBA28
@@ -14872,17 +14957,17 @@ dlabel D_004DBA28
 .align 2
 enddlabel D_004DBA28
 
-nonmatching D_004DBA30
+nonmatching cur.7
 
-dlabel D_004DBA30
+dlabel cur.7
     /* 2DBA30 004DBA30 59020000 */ .word 0x00000259
-enddlabel D_004DBA30
+enddlabel cur.7
 
-nonmatching D_004DBA34
+nonmatching handle.9
 
-dlabel D_004DBA34
+dlabel handle.9
     /* 2DBA34 004DBA34 00000000 */ .word 0x00000000
-enddlabel D_004DBA34
+enddlabel handle.9
 
 .align 3
 nonmatching D_004DBA38
@@ -14902,17 +14987,17 @@ dlabel D_004DBA40
 .align 2
 enddlabel D_004DBA40
 
-nonmatching D_004DBA48
+nonmatching _draw3D
 
-dlabel D_004DBA48
+dlabel _draw3D
     /* 2DBA48 004DBA48 00000000 */ .word 0x00000000
-enddlabel D_004DBA48
+enddlabel _draw3D
 
-nonmatching D_004DBA4C
+nonmatching _nEffect2D
 
-dlabel D_004DBA4C
+dlabel _nEffect2D
     /* 2DBA4C 004DBA4C 00000000 */ .word 0x00000000
-enddlabel D_004DBA4C
+enddlabel _nEffect2D
 
 .align 3
 nonmatching D_004DBA50
@@ -14932,104 +15017,109 @@ dlabel D_004DBA58
 .align 2
 enddlabel D_004DBA58
 
-nonmatching D_004DBA60
+nonmatching eft.5
 
-dlabel D_004DBA60
+dlabel eft.5
     /* 2DBA60 004DBA60 FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004DBA60
+enddlabel eft.5
 
-nonmatching D_004DBA64
+nonmatching _parentLine
 
-dlabel D_004DBA64
+dlabel _parentLine
     /* 2DBA64 004DBA64 FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004DBA64
+enddlabel _parentLine
 
-nonmatching D_004DBA68
+nonmatching _gravity
 
-dlabel D_004DBA68
+dlabel _gravity
     /* 2DBA68 004DBA68 00000000 */ .float 0
-enddlabel D_004DBA68
+enddlabel _gravity
 
-nonmatching D_004DBA6C
+nonmatching _colision
 
-dlabel D_004DBA6C
+dlabel _colision
     /* 2DBA6C 004DBA6C 00000000 */ .float 0
-enddlabel D_004DBA6C
+enddlabel _colision
 
-nonmatching D_004DBA70
+nonmatching _height
 
-dlabel D_004DBA70
+dlabel _height
     /* 2DBA70 004DBA70 00000000 */ .float 0
-enddlabel D_004DBA70
+enddlabel _height
 
-nonmatching D_004DBA74
+nonmatching _revDirZ
 
-dlabel D_004DBA74
+dlabel _revDirZ
     /* 2DBA74 004DBA74 */ .short 0x0000
-enddlabel D_004DBA74
+enddlabel _revDirZ
 
-nonmatching D_004DBA76
+nonmatching _initialize
 
-dlabel D_004DBA76
+dlabel _initialize
     /* 2DBA76 004DBA76 */ .short 0x0000
-enddlabel D_004DBA76
+enddlabel _initialize
 
-nonmatching D_004DBA78
+nonmatching _hitFlag
 
-dlabel D_004DBA78
+dlabel _hitFlag
     /* 2DBA78 004DBA78 */ .short 0x0000
-enddlabel D_004DBA78
+enddlabel _hitFlag
 
-nonmatching D_004DBA7A
+nonmatching _hitSignal
 
-dlabel D_004DBA7A
+dlabel _hitSignal
     /* 2DBA7A 004DBA7A */ .short 0x0000
-enddlabel D_004DBA7A
+enddlabel _hitSignal
 
-nonmatching D_004DBA7C
+nonmatching _seSignal
 
-dlabel D_004DBA7C
+dlabel _seSignal
     /* 2DBA7C 004DBA7C */ .short 0x0000
-enddlabel D_004DBA7C
+enddlabel _seSignal
 
-nonmatching D_004DBA7E
+nonmatching _sefBattleMode
 
-dlabel D_004DBA7E
+dlabel _sefBattleMode
     /* 2DBA7E 004DBA7E */ .short 0x0000
-enddlabel D_004DBA7E
+enddlabel _sefBattleMode
 
-nonmatching D_004DBA80
+nonmatching atanTbl.0
 
-dlabel D_004DBA80
+dlabel atanTbl.0
     /* 2DBA80 004DBA80 C0FA4020 */ .word 0x2040FAC0
-enddlabel D_004DBA80
+enddlabel atanTbl.0
 
-nonmatching D_004DBA84
+nonmatching sefRandSeed
 
-dlabel D_004DBA84
+dlabel sefRandSeed
     /* 2DBA84 004DBA84 78563412 */ .word 0x12345678
-enddlabel D_004DBA84
+enddlabel sefRandSeed
 
-nonmatching D_004DBA88
+nonmatching _schridx.1
 
-dlabel D_004DBA88
+dlabel _schridx.1
     /* 2DBA88 004DBA88 00000000 */ .word 0x00000000
-enddlabel D_004DBA88
+enddlabel _schridx.1
 
-nonmatching D_004DBA8C
+nonmatching _nowEftNo
 
-dlabel D_004DBA8C
+dlabel _nowEftNo
     /* 2DBA8C 004DBA8C 00000000 */ .word 0x00000000
-enddlabel D_004DBA8C
+enddlabel _nowEftNo
 
-nonmatching D_004DBA90
+nonmatching srsLoadMode
 
-dlabel D_004DBA90
+dlabel srsLoadMode
     /* 2DBA90 004DBA90 00000000 */ .word 0x00000000
     /* 2DBA94 004DBA94 00000000 */ .word 0x00000000
+enddlabel srsLoadMode
+
+nonmatching _loadCommonData
+
+dlabel _loadCommonData
     /* 2DBA98 004DBA98 A0BA4D00 */ .word D_004DBAA0
     /* 2DBA9C 004DBA9C 00000000 */ .word 0x00000000
-enddlabel D_004DBA90
+enddlabel _loadCommonData
 
 .align 3
 nonmatching D_004DBAA0
@@ -15040,12 +15130,12 @@ dlabel D_004DBAA0
 .align 2
 enddlabel D_004DBAA0
 
-nonmatching D_004DBAA8
+nonmatching _loadCfCommonData
 
-dlabel D_004DBAA8
+dlabel _loadCfCommonData
     /* 2DBAA8 004DBAA8 B0BA4D00 */ .word D_004DBAB0
     /* 2DBAAC 004DBAAC 00000000 */ .word 0x00000000
-enddlabel D_004DBAA8
+enddlabel _loadCfCommonData
 
 .align 3
 nonmatching D_004DBAB0
@@ -15192,18 +15282,18 @@ dlabel D_004DBB28
 .align 2
 enddlabel D_004DBB28
 
-nonmatching D_004DBB30
+nonmatching _cmdPut
 
-dlabel D_004DBB30
+dlabel _cmdPut
     /* 2DBB30 004DBB30 */ .short 0x0000
     /* 2DBB32 004DBB32 */ .short 0x0000
-enddlabel D_004DBB30
+enddlabel _cmdPut
 
-nonmatching D_004DBB34
+nonmatching _scMslCate
 
-dlabel D_004DBB34
+dlabel _scMslCate
     /* 2DBB34 004DBB34 00000000 */ .word 0x00000000
-enddlabel D_004DBB34
+enddlabel _scMslCate
 
 .align 3
 nonmatching D_004DBB38
@@ -15230,57 +15320,57 @@ dlabel D_004DBB48
 .align 2
 enddlabel D_004DBB48
 
-nonmatching D_004DBB50
+nonmatching _nowScript
 
-dlabel D_004DBB50
+dlabel _nowScript
     /* 2DBB50 004DBB50 */ .short 0x0000
     /* 2DBB52 004DBB52 */ .short 0x0000
-enddlabel D_004DBB50
+enddlabel _nowScript
 
-nonmatching D_004DBB54
+nonmatching _nowEvent
 
-dlabel D_004DBB54
+dlabel _nowEvent
     /* 2DBB54 004DBB54 */ .short 0x0000
     /* 2DBB56 004DBB56 */ .short 0x0000
-enddlabel D_004DBB54
+enddlabel _nowEvent
 
-nonmatching D_004DBB58
+nonmatching _nowDataIdx
 
-dlabel D_004DBB58
+dlabel _nowDataIdx
     /* 2DBB58 004DBB58 00000000 */ .word 0x00000000
-enddlabel D_004DBB58
+enddlabel _nowDataIdx
 
-nonmatching D_004DBB5C
+nonmatching _sdvAmbFrame
 
-dlabel D_004DBB5C
+dlabel _sdvAmbFrame
     /* 2DBB5C 004DBB5C 00000000 */ .word 0x00000000
-enddlabel D_004DBB5C
+enddlabel _sdvAmbFrame
 
-nonmatching D_004DBB60
+nonmatching _sdvAmbState
 
-dlabel D_004DBB60
+dlabel _sdvAmbState
     /* 2DBB60 004DBB60 00000000 */ .word 0x00000000
-enddlabel D_004DBB60
+enddlabel _sdvAmbState
 
-nonmatching D_004DBB64
+nonmatching serial.3
 
-dlabel D_004DBB64
+dlabel serial.3
     /* 2DBB64 004DBB64 00000000 */ .word 0x00000000
-enddlabel D_004DBB64
+enddlabel serial.3
 
-nonmatching D_004DBB68
+nonmatching moneyBox
 
-dlabel D_004DBB68
+dlabel moneyBox
     /* 2DBB68 004DBB68 00000000 */ .word 0x00000000
     /* 2DBB6C 004DBB6C 00000000 */ .word 0x00000000
-enddlabel D_004DBB68
+enddlabel moneyBox
 
-nonmatching D_004DBB70
+nonmatching mefObjSysFlags
 
-dlabel D_004DBB70
+dlabel mefObjSysFlags
     /* 2DBB70 004DBB70 00000000 */ .word 0x00000000
     /* 2DBB74 004DBB74 00000000 */ .word 0x00000000
-enddlabel D_004DBB70
+enddlabel mefObjSysFlags
 
 .align 3
 nonmatching D_004DBB78
@@ -15294,12 +15384,12 @@ dlabel D_004DBB78
 .align 2
 enddlabel D_004DBB78
 
-nonmatching D_004DBB80
+nonmatching vmDebugMask
 
-dlabel D_004DBB80
+dlabel vmDebugMask
     /* 2DBB80 004DBB80 00000000 */ .word 0x00000000
     /* 2DBB84 004DBB84 00000000 */ .word 0x00000000
-enddlabel D_004DBB80
+enddlabel vmDebugMask
 
 .align 3
 nonmatching D_004DBB88
@@ -16606,17 +16696,17 @@ dlabel D_004DBFD0
 .align 2
 enddlabel D_004DBFD0
 
-nonmatching D_004DBFD8
+nonmatching constStringTable
 
-dlabel D_004DBFD8
+dlabel constStringTable
     /* 2DBFD8 004DBFD8 00000000 */ .word 0x00000000
-enddlabel D_004DBFD8
+enddlabel constStringTable
 
-nonmatching D_004DBFDC
+nonmatching constStringCount
 
-dlabel D_004DBFDC
+dlabel constStringCount
     /* 2DBFDC 004DBFDC 00000000 */ .word 0x00000000
-enddlabel D_004DBFDC
+enddlabel constStringCount
 
 .align 3
 nonmatching D_004DBFE0
@@ -16732,17 +16822,17 @@ dlabel D_004DC038
 .align 2
 enddlabel D_004DC038
 
-nonmatching D_004DC040
+nonmatching classBoolean
 
-dlabel D_004DC040
+dlabel classBoolean
     /* 2DC040 004DC040 00000000 */ .word 0x00000000
-enddlabel D_004DC040
+enddlabel classBoolean
 
-nonmatching D_004DC044
+nonmatching classClass
 
-dlabel D_004DC044
-    /* 2DC044 004DC044 D0077C00 */ .word D_007C07D0
-enddlabel D_004DC044
+dlabel classClass
+    /* 2DC044 004DC044 D0077C00 */ .word _dummyClass
+enddlabel classClass
 
 .align 3
 nonmatching D_004DC048
@@ -16798,16 +16888,16 @@ dlabel D_004DC068
 .align 2
 enddlabel D_004DC068
 
-nonmatching D_004DC070
+nonmatching s_nMpeg2ReserveCrossFade
 
-dlabel D_004DC070
+dlabel s_nMpeg2ReserveCrossFade
     /* 2DC070 004DC070 00000000 */ .word 0x00000000
     /* 2DC074 004DC074 00000000 */ .word 0x00000000
-enddlabel D_004DC070
+enddlabel s_nMpeg2ReserveCrossFade
 
-nonmatching D_004DC078
+nonmatching ext.2_004DC078
 
-dlabel D_004DC078
+dlabel ext.2_004DC078
     /* 2DC078 004DC078 */ .byte 0x2E
     /* 2DC079 004DC079 */ .byte 0x70
     /* 2DC07A 004DC07A */ .byte 0x73
@@ -16816,7 +16906,7 @@ dlabel D_004DC078
     /* 2DC07D 004DC07D */ .byte 0x00
     /* 2DC07E 004DC07E */ .byte 0x00
     /* 2DC07F 004DC07F */ .byte 0x00
-enddlabel D_004DC078
+enddlabel ext.2_004DC078
 
 .align 3
 nonmatching D_004DC080
@@ -16854,11 +16944,11 @@ dlabel D_004DC098
 .align 2
 enddlabel D_004DC098
 
-nonmatching D_004DC09C
+nonmatching JAVA_tmpString
 
-dlabel D_004DC09C
+dlabel JAVA_tmpString
     /* 2DC09C 004DC09C 00000000 */ .word 0x00000000
-enddlabel D_004DC09C
+enddlabel JAVA_tmpString
 
 .align 3
 nonmatching D_004DC0A0
@@ -17376,12 +17466,12 @@ dlabel D_004DC208
 .align 2
 enddlabel D_004DC208
 
-nonmatching D_004DC210
+nonmatching actMatrixHeap
 
-dlabel D_004DC210
+dlabel actMatrixHeap
     /* 2DC210 004DC210 00000000 */ .word 0x00000000
     /* 2DC214 004DC214 00000000 */ .word 0x00000000
-enddlabel D_004DC210
+enddlabel actMatrixHeap
 
 .align 3
 nonmatching D_004DC218
@@ -17431,21 +17521,21 @@ dlabel D_004DC238
 .align 2
 enddlabel D_004DC238
 
-nonmatching D_004DC240
+nonmatching camDisp
 
-dlabel D_004DC240
+dlabel camDisp
     /* 2DC240 004DC240 00000000 */ .word 0x00000000
-enddlabel D_004DC240
+enddlabel camDisp
 
-nonmatching D_004DC244
+nonmatching fcv2Step
 
-dlabel D_004DC244
+dlabel fcv2Step
     /* 2DC244 004DC244 8988083D */ .float 0.03333333507
-enddlabel D_004DC244
+enddlabel fcv2Step
 
-nonmatching D_004DC248
+nonmatching flagSmoothHair
 
-dlabel D_004DC248
+dlabel flagSmoothHair
     /* 2DC248 004DC248 */ .byte 0x00
     /* 2DC249 004DC249 */ .byte 0x00
     /* 2DC24A 004DC24A */ .byte 0x00
@@ -17454,14 +17544,14 @@ dlabel D_004DC248
     /* 2DC24D 004DC24D */ .byte 0x00
     /* 2DC24E 004DC24E */ .byte 0x00
     /* 2DC24F 004DC24F */ .byte 0x00
-enddlabel D_004DC248
+enddlabel flagSmoothHair
 
-nonmatching D_004DC250
+nonmatching s_fEyeOffset
 
-dlabel D_004DC250
+dlabel s_fEyeOffset
     /* 2DC250 004DC250 00000000 */ .float 0
     /* 2DC254 004DC254 00000000 */ .float 0
-enddlabel D_004DC250
+enddlabel s_fEyeOffset
 
 .align 3
 nonmatching D_004DC258
@@ -17490,72 +17580,72 @@ dlabel D_004DC268
 .align 2
 enddlabel D_004DC268
 
-nonmatching D_004DC270
+nonmatching collibuf
 
-dlabel D_004DC270
+dlabel collibuf
     /* 2DC270 004DC270 00000000 */ .word 0x00000000
-enddlabel D_004DC270
+enddlabel collibuf
 
-nonmatching D_004DC274
+nonmatching ibuf
 
-dlabel D_004DC274
+dlabel ibuf
     /* 2DC274 004DC274 00000000 */ .word 0x00000000
-enddlabel D_004DC274
+enddlabel ibuf
 
-nonmatching D_004DC278
+nonmatching startjnt
 
-dlabel D_004DC278
+dlabel startjnt
     /* 2DC278 004DC278 4A000000 */ .word 0x0000004A
-enddlabel D_004DC278
+enddlabel startjnt
 
-nonmatching D_004DC27C
+nonmatching skirtColliSize
 
-dlabel D_004DC27C
+dlabel skirtColliSize
     /* 2DC27C 004DC27C 0000803F */ .float 1
-enddlabel D_004DC27C
+enddlabel skirtColliSize
 
-nonmatching D_004DC280
+nonmatching skirtColliSizeB
 
-dlabel D_004DC280
+dlabel skirtColliSizeB
     /* 2DC280 004DC280 0000803F */ .float 1
-enddlabel D_004DC280
+enddlabel skirtColliSizeB
 
-nonmatching D_004DC284
+nonmatching skirtColliSizeS
 
-dlabel D_004DC284
+dlabel skirtColliSizeS
     /* 2DC284 004DC284 0000803F */ .float 1
-enddlabel D_004DC284
+enddlabel skirtColliSizeS
 
-nonmatching D_004DC288
+nonmatching skirtColliFootRad
 
-dlabel D_004DC288
+dlabel skirtColliFootRad
     /* 2DC288 004DC288 CDCC4C3D */ .float 0.05000000075
-enddlabel D_004DC288
+enddlabel skirtColliFootRad
 
-nonmatching D_004DC28C
+nonmatching rootBorn
 
-dlabel D_004DC28C
+dlabel rootBorn
     /* 2DC28C 004DC28C 00000000 */ .word 0x00000000
-enddlabel D_004DC28C
+enddlabel rootBorn
 
-nonmatching D_004DC290
+nonmatching wind
 
-dlabel D_004DC290
-    /* 2DC290 004DC290 F0AC4700 */ .word D_0047ACF0
-enddlabel D_004DC290
+dlabel wind
+    /* 2DC290 004DC290 F0AC4700 */ .word _wind
+enddlabel wind
 
-nonmatching D_004DC294
+nonmatching wave
 
-dlabel D_004DC294
+dlabel wave
     /* 2DC294 004DC294 00000000 */ .float 0
-enddlabel D_004DC294
+enddlabel wave
 
-nonmatching D_004DC298
+nonmatching waverad
 
-dlabel D_004DC298
+dlabel waverad
     /* 2DC298 004DC298 00000000 */ .float 0
     /* 2DC29C 004DC29C 00000000 */ .float 0
-enddlabel D_004DC298
+enddlabel waverad
 
 nonmatching D_004DC2A0
 
@@ -17564,11 +17654,11 @@ dlabel D_004DC2A0
     /* 2DC2A4 004DC2A4 02000000 */ .word 0x00000002
 enddlabel D_004DC2A0
 
-nonmatching D_004DC2A8
+nonmatching tbl.1_004DC2A8
 
-dlabel D_004DC2A8
+dlabel tbl.1_004DC2A8
     /* 2DC2A8 004DC2A8 */ .byte 0x00
-enddlabel D_004DC2A8
+enddlabel tbl.1_004DC2A8
 
 nonmatching D_004DC2A9
 
@@ -17582,12 +17672,12 @@ dlabel D_004DC2A9
     /* 2DC2AF 004DC2AF */ .byte 0x01
 enddlabel D_004DC2A9
 
-nonmatching D_004DC2B0
+nonmatching act_align.0
 
-dlabel D_004DC2B0
+dlabel act_align.0
     /* 2DC2B0 004DC2B0 0001FFFF */ .word 0xFFFF0100
     /* 2DC2B4 004DC2B4 FFFF0000 */ .word D_FFFF
-enddlabel D_004DC2B0
+enddlabel act_align.0
 
 nonmatching D_004DC2B8
 
@@ -17609,8 +17699,13 @@ nonmatching D_004DC2C8
 
 dlabel D_004DC2C8
     /* 2DC2C8 004DC2C8 0B257300 */ .word D_0073250B
-    /* 2DC2CC 004DC2CC 00000000 */ .word 0x00000000
 enddlabel D_004DC2C8
+
+nonmatching ActiveMenuNo
+
+dlabel ActiveMenuNo
+    /* 2DC2CC 004DC2CC 00000000 */ .word 0x00000000
+enddlabel ActiveMenuNo
 
 .align 3
 nonmatching D_004DC2D0
@@ -17639,9 +17734,9 @@ dlabel D_004DC2E0
 .align 2
 enddlabel D_004DC2E0
 
-nonmatching D_004DC2E8
+nonmatching root.0
 
-dlabel D_004DC2E8
+dlabel root.0
     /* 2DC2E8 004DC2E8 */ .byte 0x64
     /* 2DC2E9 004DC2E9 */ .byte 0x61
     /* 2DC2EA 004DC2EA */ .byte 0x74
@@ -17650,11 +17745,11 @@ dlabel D_004DC2E8
     /* 2DC2ED 004DC2ED */ .byte 0x00
     /* 2DC2EE 004DC2EE */ .byte 0x00
     /* 2DC2EF 004DC2EF */ .byte 0x00
-enddlabel D_004DC2E8
+enddlabel root.0
 
-nonmatching D_004DC2F0
+nonmatching hdd_head.6
 
-dlabel D_004DC2F0
+dlabel hdd_head.6
     /* 2DC2F0 004DC2F0 */ .byte 0x70
     /* 2DC2F1 004DC2F1 */ .byte 0x66
     /* 2DC2F2 004DC2F2 */ .byte 0x73
@@ -17663,7 +17758,7 @@ dlabel D_004DC2F0
     /* 2DC2F5 004DC2F5 */ .byte 0x2F
     /* 2DC2F6 004DC2F6 */ .byte 0x00
     /* 2DC2F7 004DC2F7 */ .byte 0x00
-enddlabel D_004DC2F0
+enddlabel hdd_head.6
 
 .align 3
 nonmatching D_004DC2F8
@@ -17713,9 +17808,9 @@ dlabel D_004DC310
 .align 2
 enddlabel D_004DC310
 
-nonmatching D_004DC318
+nonmatching tail.9
 
-dlabel D_004DC318
+dlabel tail.9
     /* 2DC318 004DC318 */ .byte 0x2E
     /* 2DC319 004DC319 */ .byte 0x49
     /* 2DC31A 004DC31A */ .byte 0x52
@@ -17724,11 +17819,11 @@ dlabel D_004DC318
     /* 2DC31D 004DC31D */ .byte 0x31
     /* 2DC31E 004DC31E */ .byte 0x00
     /* 2DC31F 004DC31F */ .byte 0x00
-enddlabel D_004DC318
+enddlabel tail.9
 
-nonmatching D_004DC320
+nonmatching tail.11
 
-dlabel D_004DC320
+dlabel tail.11
     /* 2DC320 004DC320 */ .byte 0x2E
     /* 2DC321 004DC321 */ .byte 0x4F
     /* 2DC322 004DC322 */ .byte 0x56
@@ -17737,7 +17832,7 @@ dlabel D_004DC320
     /* 2DC325 004DC325 */ .byte 0x31
     /* 2DC326 004DC326 */ .byte 0x00
     /* 2DC327 004DC327 */ .byte 0x00
-enddlabel D_004DC320
+enddlabel tail.11
 
 .align 3
 nonmatching D_004DC328
@@ -17748,33 +17843,33 @@ dlabel D_004DC328
 .align 2
 enddlabel D_004DC328
 
-nonmatching D_004DC32C
+nonmatching sw
 
-dlabel D_004DC32C
+dlabel sw
     /* 2DC32C 004DC32C 00000070 */ .word 0x70000000
-enddlabel D_004DC32C
+enddlabel sw
 
 .align 3
-nonmatching D_004DC330
+nonmatching SoundEffectPath
 
-dlabel D_004DC330
+dlabel SoundEffectPath
     /* 2DC330 004DC330 */ .asciz "sed\\"
     /* 7365645C00000000 */
 .align 2
-enddlabel D_004DC330
+enddlabel SoundEffectPath
 
 .align 3
-nonmatching D_004DC338
+nonmatching SoundSequencePath
 
-dlabel D_004DC338
+dlabel SoundSequencePath
     /* 2DC338 004DC338 */ .asciz "smd\\"
     /* 736D645C00000000 */
 .align 2
-enddlabel D_004DC338
+enddlabel SoundSequencePath
 
-nonmatching D_004DC340
+nonmatching ext.0
 
-dlabel D_004DC340
+dlabel ext.0
     /* 2DC340 004DC340 */ .byte 0x2E
     /* 2DC341 004DC341 */ .byte 0x53
     /* 2DC342 004DC342 */ .byte 0x57
@@ -17783,11 +17878,11 @@ dlabel D_004DC340
     /* 2DC345 004DC345 */ .byte 0x00
     /* 2DC346 004DC346 */ .byte 0x00
     /* 2DC347 004DC347 */ .byte 0x00
-enddlabel D_004DC340
+enddlabel ext.0
 
-nonmatching D_004DC348
+nonmatching ext.1
 
-dlabel D_004DC348
+dlabel ext.1
     /* 2DC348 004DC348 */ .byte 0x2E
     /* 2DC349 004DC349 */ .byte 0x53
     /* 2DC34A 004DC34A */ .byte 0x45
@@ -17796,11 +17891,11 @@ dlabel D_004DC348
     /* 2DC34D 004DC34D */ .byte 0x00
     /* 2DC34E 004DC34E */ .byte 0x00
     /* 2DC34F 004DC34F */ .byte 0x00
-enddlabel D_004DC348
+enddlabel ext.1
 
-nonmatching D_004DC350
+nonmatching ext.2_004DC350
 
-dlabel D_004DC350
+dlabel ext.2_004DC350
     /* 2DC350 004DC350 */ .byte 0x2E
     /* 2DC351 004DC351 */ .byte 0x53
     /* 2DC352 004DC352 */ .byte 0x4D
@@ -17809,15 +17904,14 @@ dlabel D_004DC350
     /* 2DC355 004DC355 */ .byte 0x00
     /* 2DC356 004DC356 */ .byte 0x00
     /* 2DC357 004DC357 */ .byte 0x00
-    /* 2DC358 004DC358 */ .byte 0x2D
-    /* 2DC359 004DC359 */ .byte 0x7F
-    /* 2DC35A 004DC35A */ .byte 0x7C
-    /* 2DC35B 004DC35B */ .byte 0x2F
-    /* 2DC35C 004DC35C */ .byte 0x00
-    /* 2DC35D 004DC35D */ .byte 0x00
-    /* 2DC35E 004DC35E */ .byte 0x00
-    /* 2DC35F 004DC35F */ .byte 0x00
-enddlabel D_004DC350
+enddlabel ext.2_004DC350
+
+nonmatching anim.4_004DC358
+
+dlabel anim.4_004DC358
+    /* 2DC358 004DC358 2D7F7C2F */ .word 0x2F7C7F2D
+    /* 2DC35C 004DC35C 00000000 */ .word 0x00000000
+enddlabel anim.4_004DC358
 
 .align 3
 nonmatching D_004DC360
@@ -17921,11 +18015,11 @@ dlabel D_004DC3A8
 .align 2
 enddlabel D_004DC3A8
 
-nonmatching D_004DC3B0
+nonmatching HddInstallCBparam
 
-dlabel D_004DC3B0
+dlabel HddInstallCBparam
     /* 2DC3B0 004DC3B0 00000000 */ .word 0x00000000
-enddlabel D_004DC3B0
+enddlabel HddInstallCBparam
 
 nonmatching D_004DC3B4
 
@@ -17933,34 +18027,34 @@ dlabel D_004DC3B4
     /* 2DC3B4 004DC3B4 00000080 */ .float -0
 enddlabel D_004DC3B4
 
-nonmatching D_004DC3B8
+nonmatching StudioEntrySkip
 
-dlabel D_004DC3B8
+dlabel StudioEntrySkip
     /* 2DC3B8 004DC3B8 00000000 */ .word 0x00000000
-enddlabel D_004DC3B8
+enddlabel StudioEntrySkip
 
-nonmatching D_004DC3BC
+nonmatching FLAG_FRAME_60
 
-dlabel D_004DC3BC
+dlabel FLAG_FRAME_60
     /* 2DC3BC 004DC3BC */ .byte 0x00
     /* 2DC3BD 004DC3BD */ .byte 0x00
     /* 2DC3BE 004DC3BE */ .byte 0x00
     /* 2DC3BF 004DC3BF */ .byte 0x00
-enddlabel D_004DC3BC
+enddlabel FLAG_FRAME_60
 
-nonmatching D_004DC3C0
+nonmatching s_nGblFadeInit
 
-dlabel D_004DC3C0
+dlabel s_nGblFadeInit
     /* 2DC3C0 004DC3C0 00000000 */ .word 0x00000000
-enddlabel D_004DC3C0
+enddlabel s_nGblFadeInit
 
-nonmatching D_004DC3C4
+nonmatching s_nGblFade
 
-dlabel D_004DC3C4
+dlabel s_nGblFade
     /* 2DC3C4 004DC3C4 */ .byte 0x00
     /* 2DC3C5 004DC3C5 */ .byte 0x00
     /* 2DC3C6 004DC3C6 */ .byte 0x00
-enddlabel D_004DC3C4
+enddlabel s_nGblFade
 
 nonmatching D_004DC3C7
 
@@ -17968,252 +18062,252 @@ dlabel D_004DC3C7
     /* 2DC3C7 004DC3C7 */ .byte 0x00
 enddlabel D_004DC3C7
 
-nonmatching D_004DC3C8
+nonmatching s_nClearFrame
 
-dlabel D_004DC3C8
+dlabel s_nClearFrame
     /* 2DC3C8 004DC3C8 00000000 */ .word 0x00000000
-enddlabel D_004DC3C8
+enddlabel s_nClearFrame
 
-nonmatching D_004DC3CC
+nonmatching FrameCount
 
-dlabel D_004DC3CC
+dlabel FrameCount
     /* 2DC3CC 004DC3CC 00000000 */ .word 0x00000000
-enddlabel D_004DC3CC
+enddlabel FrameCount
 
-nonmatching D_004DC3D0
+nonmatching LoopCount
 
-dlabel D_004DC3D0
+dlabel LoopCount
     /* 2DC3D0 004DC3D0 00000000 */ .word 0x00000000
-enddlabel D_004DC3D0
+enddlabel LoopCount
 
-nonmatching D_004DC3D4
+nonmatching VSyncCount
 
-dlabel D_004DC3D4
+dlabel VSyncCount
     /* 2DC3D4 004DC3D4 00000000 */ .word 0x00000000
-enddlabel D_004DC3D4
+enddlabel VSyncCount
 
-nonmatching D_004DC3D8
+nonmatching ScanLineInterpolate
 
-dlabel D_004DC3D8
+dlabel ScanLineInterpolate
     /* 2DC3D8 004DC3D8 00000000 */ .word 0x00000000
     /* 2DC3DC 004DC3DC 00000000 */ .word 0x00000000
-enddlabel D_004DC3D8
+enddlabel ScanLineInterpolate
 
-nonmatching D_004DC3E0
+nonmatching s_pMapLast
 
-dlabel D_004DC3E0
+dlabel s_pMapLast
     /* 2DC3E0 004DC3E0 00000000 */ .word 0x00000000
-enddlabel D_004DC3E0
+enddlabel s_pMapLast
 
-nonmatching D_004DC3E4
+nonmatching s_nCircleShadow
 
-dlabel D_004DC3E4
+dlabel s_nCircleShadow
     /* 2DC3E4 004DC3E4 00000000 */ .word 0x00000000
-enddlabel D_004DC3E4
+enddlabel s_nCircleShadow
 
-nonmatching D_004DC3E8
+nonmatching s_nParentBuf
 
-dlabel D_004DC3E8
+dlabel s_nParentBuf
     /* 2DC3E8 004DC3E8 00000000 */ .word 0x00000000
-enddlabel D_004DC3E8
+enddlabel s_nParentBuf
 
-nonmatching D_004DC3EC
+nonmatching s_nToumeiNum
 
-dlabel D_004DC3EC
+dlabel s_nToumeiNum
     /* 2DC3EC 004DC3EC 00000000 */ .word 0x00000000
-enddlabel D_004DC3EC
+enddlabel s_nToumeiNum
 
-nonmatching D_004DC3F0
+nonmatching s_nShadowVec
 
-dlabel D_004DC3F0
+dlabel s_nShadowVec
     /* 2DC3F0 004DC3F0 00000000 */ .word 0x00000000
-enddlabel D_004DC3F0
+enddlabel s_nShadowVec
 
-nonmatching D_004DC3F4
+nonmatching s_nMapShadowParts
 
-dlabel D_004DC3F4
+dlabel s_nMapShadowParts
     /* 2DC3F4 004DC3F4 00000000 */ .word 0x00000000
-enddlabel D_004DC3F4
+enddlabel s_nMapShadowParts
 
-nonmatching D_004DC3F8
+nonmatching s_fSortOffsetEntry
 
-dlabel D_004DC3F8
+dlabel s_fSortOffsetEntry
     /* 2DC3F8 004DC3F8 00000000 */ .word 0x00000000
-enddlabel D_004DC3F8
+enddlabel s_fSortOffsetEntry
 
-nonmatching D_004DC3FC
+nonmatching s_fSortOffset
 
-dlabel D_004DC3FC
+dlabel s_fSortOffset
     /* 2DC3FC 004DC3FC 00000000 */ .float 0
-enddlabel D_004DC3FC
+enddlabel s_fSortOffset
 
-nonmatching D_004DC400
+nonmatching s_nParent
 
-dlabel D_004DC400
+dlabel s_nParent
     /* 2DC400 004DC400 00000000 */ .word 0x00000000
-enddlabel D_004DC400
+enddlabel s_nParent
 
-nonmatching D_004DC404
+nonmatching s_nClip
 
-dlabel D_004DC404
+dlabel s_nClip
     /* 2DC404 004DC404 00000000 */ .word 0x00000000
-enddlabel D_004DC404
+enddlabel s_nClip
 
-nonmatching D_004DC408
+nonmatching s_nShapeNum
 
-dlabel D_004DC408
+dlabel s_nShapeNum
     /* 2DC408 004DC408 00000000 */ .word 0x00000000
-enddlabel D_004DC408
+enddlabel s_nShapeNum
 
-nonmatching D_004DC40C
+nonmatching s_nDispVisible
 
-dlabel D_004DC40C
+dlabel s_nDispVisible
     /* 2DC40C 004DC40C FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004DC40C
+enddlabel s_nDispVisible
 
-nonmatching D_004DC410
+nonmatching s_nMapClip
 
-dlabel D_004DC410
+dlabel s_nMapClip
     /* 2DC410 004DC410 00000000 */ .word 0x00000000
-enddlabel D_004DC410
+enddlabel s_nMapClip
 
-nonmatching D_004DC414
+nonmatching s_nStencilVal
 
-dlabel D_004DC414
+dlabel s_nStencilVal
     /* 2DC414 004DC414 00000080 */ .word D_80000000
-enddlabel D_004DC414
+enddlabel s_nStencilVal
 
-nonmatching D_004DC418
+nonmatching s_nCount
 
-dlabel D_004DC418
+dlabel s_nCount
     /* 2DC418 004DC418 00000000 */ .word 0x00000000
-enddlabel D_004DC418
+enddlabel s_nCount
 
-nonmatching D_004DC41C
+nonmatching s_nPacketSignal
 
-dlabel D_004DC41C
+dlabel s_nPacketSignal
     /* 2DC41C 004DC41C 00000000 */ .word 0x00000000
-enddlabel D_004DC41C
+enddlabel s_nPacketSignal
 
-nonmatching D_004DC420
+nonmatching s_nModel
 
-dlabel D_004DC420
+dlabel s_nModel
     /* 2DC420 004DC420 00000000 */ .word 0x00000000
-enddlabel D_004DC420
+enddlabel s_nModel
 
-nonmatching D_004DC424
+nonmatching s_nBlocks
 
-dlabel D_004DC424
+dlabel s_nBlocks
     /* 2DC424 004DC424 01000000 */ .word 0x00000001
-enddlabel D_004DC424
+enddlabel s_nBlocks
 
-nonmatching D_004DC428
+nonmatching s_nDirect
 
-dlabel D_004DC428
+dlabel s_nDirect
     /* 2DC428 004DC428 00000000 */ .word 0x00000000
-enddlabel D_004DC428
+enddlabel s_nDirect
 
-nonmatching D_004DC42C
+nonmatching s_nBlocksAlpha
 
-dlabel D_004DC42C
+dlabel s_nBlocksAlpha
     /* 2DC42C 004DC42C 00000000 */ .word 0x00000000
-enddlabel D_004DC42C
+enddlabel s_nBlocksAlpha
 
-nonmatching D_004DC430
+nonmatching s_nBlocksAlphaLast
 
-dlabel D_004DC430
+dlabel s_nBlocksAlphaLast
     /* 2DC430 004DC430 00000000 */ .word 0x00000000
-enddlabel D_004DC430
+enddlabel s_nBlocksAlphaLast
 
-nonmatching D_004DC434
+nonmatching s_nAnotherStudio
 
-dlabel D_004DC434
+dlabel s_nAnotherStudio
     /* 2DC434 004DC434 00000000 */ .word 0x00000000
-enddlabel D_004DC434
+enddlabel s_nAnotherStudio
 
-nonmatching D_004DC438
+nonmatching s_nUseStealth
 
-dlabel D_004DC438
+dlabel s_nUseStealth
     /* 2DC438 004DC438 00000000 */ .word 0x00000000
-enddlabel D_004DC438
+enddlabel s_nUseStealth
 
-nonmatching D_004DC43C
+nonmatching s_nUseGnosys
 
-dlabel D_004DC43C
+dlabel s_nUseGnosys
     /* 2DC43C 004DC43C 00000000 */ .word 0x00000000
-enddlabel D_004DC43C
+enddlabel s_nUseGnosys
 
-nonmatching D_004DC440
+nonmatching s_nUseZwrite
 
-dlabel D_004DC440
+dlabel s_nUseZwrite
     /* 2DC440 004DC440 00000000 */ .word 0x00000000
-enddlabel D_004DC440
+enddlabel s_nUseZwrite
 
-nonmatching D_004DC444
+nonmatching s_nUseBackBuffer
 
-dlabel D_004DC444
+dlabel s_nUseBackBuffer
     /* 2DC444 004DC444 00000000 */ .word 0x00000000
-enddlabel D_004DC444
+enddlabel s_nUseBackBuffer
 
-nonmatching D_004DC448
+nonmatching s_nMapAlphaEntry
 
-dlabel D_004DC448
+dlabel s_nMapAlphaEntry
     /* 2DC448 004DC448 00000000 */ .word 0x00000000
-enddlabel D_004DC448
+enddlabel s_nMapAlphaEntry
 
-nonmatching D_004DC44C
+nonmatching s_nEffectWrite
 
-dlabel D_004DC44C
+dlabel s_nEffectWrite
     /* 2DC44C 004DC44C 01000000 */ .word 0x00000001
-enddlabel D_004DC44C
+enddlabel s_nEffectWrite
 
-nonmatching D_004DC450
+nonmatching s_nMapLast
 
-dlabel D_004DC450
+dlabel s_nMapLast
     /* 2DC450 004DC450 00000000 */ .word 0x00000000
-enddlabel D_004DC450
+enddlabel s_nMapLast
 
-nonmatching D_004DC454
+nonmatching s_nFadeDoit
 
-dlabel D_004DC454
+dlabel s_nFadeDoit
     /* 2DC454 004DC454 00000000 */ .word 0x00000000
-enddlabel D_004DC454
+enddlabel s_nFadeDoit
 
-nonmatching D_004DC458
+nonmatching s_nPause
 
-dlabel D_004DC458
+dlabel s_nPause
     /* 2DC458 004DC458 00000000 */ .word 0x00000000
-enddlabel D_004DC458
+enddlabel s_nPause
 
-nonmatching D_004DC45C
+nonmatching s_nMenu
 
-dlabel D_004DC45C
+dlabel s_nMenu
     /* 2DC45C 004DC45C 00000000 */ .word 0x00000000
-enddlabel D_004DC45C
+enddlabel s_nMenu
 
-nonmatching D_004DC460
+nonmatching s_nFrameLockOff
 
-dlabel D_004DC460
+dlabel s_nFrameLockOff
     /* 2DC460 004DC460 00000000 */ .word 0x00000000
-enddlabel D_004DC460
+enddlabel s_nFrameLockOff
 
-nonmatching D_004DC464
+nonmatching s_nMainCameraWarp
 
-dlabel D_004DC464
+dlabel s_nMainCameraWarp
     /* 2DC464 004DC464 00000000 */ .word 0x00000000
-enddlabel D_004DC464
+enddlabel s_nMainCameraWarp
 
-nonmatching D_004DC468
+nonmatching s_nRenderCancel
 
-dlabel D_004DC468
+dlabel s_nRenderCancel
     /* 2DC468 004DC468 00000000 */ .word 0x00000000
-enddlabel D_004DC468
+enddlabel s_nRenderCancel
 
-nonmatching D_004DC46C
+nonmatching s_nRenderCancelOld
 
-dlabel D_004DC46C
+dlabel s_nRenderCancelOld
     /* 2DC46C 004DC46C 00000000 */ .word 0x00000000
-enddlabel D_004DC46C
+enddlabel s_nRenderCancelOld
 
 .align 3
 nonmatching D_004DC470
@@ -18236,96 +18330,96 @@ dlabel D_004DC478
 .align 2
 enddlabel D_004DC478
 
-nonmatching D_004DC480
+nonmatching g_nPacketOver
 
-dlabel D_004DC480
+dlabel g_nPacketOver
     /* 2DC480 004DC480 00000000 */ .word 0x00000000
-enddlabel D_004DC480
+enddlabel g_nPacketOver
 
-nonmatching D_004DC484
+nonmatching g_nGsEntry
 
-dlabel D_004DC484
+dlabel g_nGsEntry
     /* 2DC484 004DC484 00000000 */ .word 0x00000000
-enddlabel D_004DC484
+enddlabel g_nGsEntry
 
-nonmatching D_004DC488
+nonmatching s_pPacket
 
-dlabel D_004DC488
+dlabel s_pPacket
     /* 2DC488 004DC488 00000000 */ .word 0x00000000
-enddlabel D_004DC488
+enddlabel s_pPacket
 
-nonmatching D_004DC48C
+nonmatching s_pCacheTexture
 
-dlabel D_004DC48C
+dlabel s_pCacheTexture
     /* 2DC48C 004DC48C 00000000 */ .word 0x00000000
-enddlabel D_004DC48C
+enddlabel s_pCacheTexture
 
-nonmatching D_004DC490
+nonmatching s_pMatrixCache
 
-dlabel D_004DC490
+dlabel s_pMatrixCache
     /* 2DC490 004DC490 00000000 */ .word 0x00000000
-enddlabel D_004DC490
+enddlabel s_pMatrixCache
 
-nonmatching D_004DC494
+nonmatching s_pModelCache
 
-dlabel D_004DC494
+dlabel s_pModelCache
     /* 2DC494 004DC494 00000000 */ .word 0x00000000
-enddlabel D_004DC494
+enddlabel s_pModelCache
 
-nonmatching D_004DC498
+nonmatching s_pModelLayout
 
-dlabel D_004DC498
+dlabel s_pModelLayout
     /* 2DC498 004DC498 00000000 */ .word 0x00000000
-enddlabel D_004DC498
+enddlabel s_pModelLayout
 
-nonmatching D_004DC49C
+nonmatching s_nModelParts
 
-dlabel D_004DC49C
+dlabel s_nModelParts
     /* 2DC49C 004DC49C 00000000 */ .word 0x00000000
-enddlabel D_004DC49C
+enddlabel s_nModelParts
 
-nonmatching D_004DC4A0
+nonmatching s_pLightLayout
 
-dlabel D_004DC4A0
+dlabel s_pLightLayout
     /* 2DC4A0 004DC4A0 00000000 */ .word 0x00000000
-enddlabel D_004DC4A0
+enddlabel s_pLightLayout
 
-nonmatching D_004DC4A4
+nonmatching s_nLightPara
 
-dlabel D_004DC4A4
+dlabel s_nLightPara
     /* 2DC4A4 004DC4A4 00000000 */ .word 0x00000000
-enddlabel D_004DC4A4
+enddlabel s_nLightPara
 
-nonmatching D_004DC4A8
+nonmatching s_nProgType
 
-dlabel D_004DC4A8
+dlabel s_nProgType
     /* 2DC4A8 004DC4A8 FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004DC4A8
+enddlabel s_nProgType
 
-nonmatching D_004DC4AC
+nonmatching s_nPixelTestType
 
-dlabel D_004DC4AC
+dlabel s_nPixelTestType
     /* 2DC4AC 004DC4AC 00000000 */ .word 0x00000000
-enddlabel D_004DC4AC
+enddlabel s_nPixelTestType
 
-nonmatching D_004DC4B0
+nonmatching s_nReflRotType
 
-dlabel D_004DC4B0
+dlabel s_nReflRotType
     /* 2DC4B0 004DC4B0 FFFFFFFF */ .word 0xFFFFFFFF
-enddlabel D_004DC4B0
+enddlabel s_nReflRotType
 
-nonmatching D_004DC4B4
+nonmatching s_inReflRotX
 
-dlabel D_004DC4B4
+dlabel s_inReflRotX
     /* 2DC4B4 004DC4B4 00000000 */ .float 0
-enddlabel D_004DC4B4
+enddlabel s_inReflRotX
 
-nonmatching D_004DC4B8
+nonmatching s_inReflRotY
 
-dlabel D_004DC4B8
+dlabel s_inReflRotY
     /* 2DC4B8 004DC4B8 00000000 */ .float 0
     /* 2DC4BC 004DC4BC 00000000 */ .float 0
-enddlabel D_004DC4B8
+enddlabel s_inReflRotY
 
 .align 3
 nonmatching D_004DC4C0
@@ -18354,1797 +18448,8 @@ dlabel D_004DC4D0
     /* 2DC4D0 004DC4D0 00000000 */ .word 0x00000000
 enddlabel D_004DC4D0
 
-nonmatching D_004DC4D4
+nonmatching s_nIgnoreCulling
 
-dlabel D_004DC4D4
+dlabel s_nIgnoreCulling
     /* 2DC4D4 004DC4D4 00000000 */ .word 0x00000000
-    /* 2DC4D8 004DC4D8 00000000 */ .word 0x00000000
-    /* 2DC4DC 004DC4DC 00000000 */ .word 0x00000000
-    /* 2DC4E0 004DC4E0 00000000 */ .word 0x00000000
-    /* 2DC4E4 004DC4E4 00000000 */ .word 0x00000000
-    /* 2DC4E8 004DC4E8 00000000 */ .word 0x00000000
-    /* 2DC4EC 004DC4EC 00000000 */ .word 0x00000000
-    /* 2DC4F0 004DC4F0 00000000 */ .word 0x00000000
-    /* 2DC4F4 004DC4F4 00000000 */ .word 0x00000000
-    /* 2DC4F8 004DC4F8 00000000 */ .word 0x00000000
-    /* 2DC4FC 004DC4FC 00000000 */ .word 0x00000000
-enddlabel D_004DC4D4
-
-nonmatching D_004DC500
-
-dlabel D_004DC500
-    /* 2DC500 004DC500 00000000 */ .word 0x00000000
-    /* 2DC504 004DC504 00000000 */ .word 0x00000000
-    /* 2DC508 004DC508 00000000 */ .word 0x00000000
-    /* 2DC50C 004DC50C 00000000 */ .word 0x00000000
-enddlabel D_004DC500
-
-nonmatching D_004DC510
-
-dlabel D_004DC510
-    /* 2DC510 004DC510 00000000 */ .word 0x00000000
-    /* 2DC514 004DC514 00000000 */ .word 0x00000000
-enddlabel D_004DC510
-
-nonmatching D_004DC518
-
-dlabel D_004DC518
-    /* 2DC518 004DC518 00000000 */ .word 0x00000000
-enddlabel D_004DC518
-
-nonmatching D_004DC51C
-
-dlabel D_004DC51C
-    /* 2DC51C 004DC51C 00000000 */ .float 0
-enddlabel D_004DC51C
-
-nonmatching D_004DC520
-
-dlabel D_004DC520
-    /* 2DC520 004DC520 00000000 */ .word 0x00000000
-enddlabel D_004DC520
-
-nonmatching D_004DC524
-
-dlabel D_004DC524
-    /* 2DC524 004DC524 00000000 */ .word 0x00000000
-enddlabel D_004DC524
-
-nonmatching D_004DC528
-
-dlabel D_004DC528
-    /* 2DC528 004DC528 00000000 */ .word 0x00000000
-enddlabel D_004DC528
-
-nonmatching D_004DC52C
-
-dlabel D_004DC52C
-    /* 2DC52C 004DC52C 00000000 */ .float 0
-enddlabel D_004DC52C
-
-nonmatching D_004DC530
-
-dlabel D_004DC530
-    /* 2DC530 004DC530 00000000 */ .word 0x00000000
-enddlabel D_004DC530
-
-nonmatching D_004DC534
-
-dlabel D_004DC534
-    /* 2DC534 004DC534 00000000 */ .float 0
-enddlabel D_004DC534
-
-nonmatching D_004DC538
-
-dlabel D_004DC538
-    /* 2DC538 004DC538 00000000 */ .float 0
-enddlabel D_004DC538
-
-nonmatching D_004DC53C
-
-dlabel D_004DC53C
-    /* 2DC53C 004DC53C 00000000 */ .word 0x00000000
-enddlabel D_004DC53C
-
-nonmatching D_004DC540
-
-dlabel D_004DC540
-    /* 2DC540 004DC540 00000000 */ .word 0x00000000
-enddlabel D_004DC540
-
-nonmatching D_004DC544
-
-dlabel D_004DC544
-    /* 2DC544 004DC544 */ .byte 0x00
-    /* 2DC545 004DC545 */ .byte 0x00
-    /* 2DC546 004DC546 */ .byte 0x00
-    /* 2DC547 004DC547 */ .byte 0x00
-enddlabel D_004DC544
-
-nonmatching D_004DC548
-
-dlabel D_004DC548
-    /* 2DC548 004DC548 00000000 */ .word 0x00000000
-enddlabel D_004DC548
-
-nonmatching D_004DC54C
-
-dlabel D_004DC54C
-    /* 2DC54C 004DC54C */ .byte 0x00
-    /* 2DC54D 004DC54D */ .byte 0x00
-    /* 2DC54E 004DC54E */ .byte 0x00
-    /* 2DC54F 004DC54F */ .byte 0x00
-enddlabel D_004DC54C
-
-nonmatching D_004DC550
-
-dlabel D_004DC550
-    /* 2DC550 004DC550 00000000 */ .word 0x00000000
-enddlabel D_004DC550
-
-nonmatching D_004DC554
-
-dlabel D_004DC554
-    /* 2DC554 004DC554 00000000 */ .word 0x00000000
-enddlabel D_004DC554
-
-nonmatching D_004DC558
-
-dlabel D_004DC558
-    /* 2DC558 004DC558 */ .byte 0x00
-enddlabel D_004DC558
-
-nonmatching D_004DC559
-
-dlabel D_004DC559
-    /* 2DC559 004DC559 */ .byte 0x00
-    /* 2DC55A 004DC55A */ .byte 0x00
-    /* 2DC55B 004DC55B */ .byte 0x00
-enddlabel D_004DC559
-
-nonmatching D_004DC55C
-
-dlabel D_004DC55C
-    /* 2DC55C 004DC55C 00000000 */ .word 0x00000000
-enddlabel D_004DC55C
-
-nonmatching D_004DC560
-
-dlabel D_004DC560
-    /* 2DC560 004DC560 00000000 */ .word 0x00000000
-enddlabel D_004DC560
-
-nonmatching D_004DC564
-
-dlabel D_004DC564
-    /* 2DC564 004DC564 00000000 */ .word 0x00000000
-enddlabel D_004DC564
-
-nonmatching D_004DC568
-
-dlabel D_004DC568
-    /* 2DC568 004DC568 00000000 */ .word 0x00000000
-enddlabel D_004DC568
-
-nonmatching D_004DC56C
-
-dlabel D_004DC56C
-    /* 2DC56C 004DC56C 00000000 */ .word 0x00000000
-enddlabel D_004DC56C
-
-nonmatching D_004DC570
-
-dlabel D_004DC570
-    /* 2DC570 004DC570 */ .short 0x0000
-enddlabel D_004DC570
-
-nonmatching D_004DC572
-
-dlabel D_004DC572
-    /* 2DC572 004DC572 */ .short 0x0000
-enddlabel D_004DC572
-
-nonmatching D_004DC574
-
-dlabel D_004DC574
-    /* 2DC574 004DC574 00000000 */ .word 0x00000000
-enddlabel D_004DC574
-
-nonmatching D_004DC578
-
-dlabel D_004DC578
-    /* 2DC578 004DC578 00000000 */ .word 0x00000000
-enddlabel D_004DC578
-
-nonmatching D_004DC57C
-
-dlabel D_004DC57C
-    /* 2DC57C 004DC57C 00000000 */ .word 0x00000000
-enddlabel D_004DC57C
-
-nonmatching D_004DC580
-
-dlabel D_004DC580
-    /* 2DC580 004DC580 00000000 */ .word 0x00000000
-enddlabel D_004DC580
-
-nonmatching D_004DC584
-
-dlabel D_004DC584
-    /* 2DC584 004DC584 00000000 */ .word 0x00000000
-enddlabel D_004DC584
-
-nonmatching D_004DC588
-
-dlabel D_004DC588
-    /* 2DC588 004DC588 00000000 */ .word 0x00000000
-enddlabel D_004DC588
-
-nonmatching D_004DC58C
-
-dlabel D_004DC58C
-    /* 2DC58C 004DC58C 00000000 */ .word 0x00000000
-enddlabel D_004DC58C
-
-nonmatching D_004DC590
-
-dlabel D_004DC590
-    /* 2DC590 004DC590 */ .byte 0x00
-    /* 2DC591 004DC591 */ .byte 0x00
-    /* 2DC592 004DC592 */ .byte 0x00
-enddlabel D_004DC590
-
-nonmatching D_004DC593
-
-dlabel D_004DC593
-    /* 2DC593 004DC593 */ .byte 0x00
-enddlabel D_004DC593
-
-nonmatching D_004DC594
-
-dlabel D_004DC594
-    /* 2DC594 004DC594 00000000 */ .word 0x00000000
-enddlabel D_004DC594
-
-nonmatching D_004DC598
-
-dlabel D_004DC598
-    /* 2DC598 004DC598 00000000 */ .word 0x00000000
-enddlabel D_004DC598
-
-nonmatching D_004DC59C
-
-dlabel D_004DC59C
-    /* 2DC59C 004DC59C 00000000 */ .word 0x00000000
-enddlabel D_004DC59C
-
-nonmatching D_004DC5A0
-
-dlabel D_004DC5A0
-    /* 2DC5A0 004DC5A0 00000000 */ .word 0x00000000
-enddlabel D_004DC5A0
-
-nonmatching D_004DC5A4
-
-dlabel D_004DC5A4
-    /* 2DC5A4 004DC5A4 00000000 */ .word 0x00000000
-enddlabel D_004DC5A4
-
-nonmatching D_004DC5A8
-
-dlabel D_004DC5A8
-    /* 2DC5A8 004DC5A8 00000000 */ .word 0x00000000
-enddlabel D_004DC5A8
-
-nonmatching D_004DC5AC
-
-dlabel D_004DC5AC
-    /* 2DC5AC 004DC5AC 00000000 */ .word 0x00000000
-enddlabel D_004DC5AC
-
-nonmatching D_004DC5B0
-
-dlabel D_004DC5B0
-    /* 2DC5B0 004DC5B0 00000000 */ .word 0x00000000
-enddlabel D_004DC5B0
-
-nonmatching D_004DC5B4
-
-dlabel D_004DC5B4
-    /* 2DC5B4 004DC5B4 00000000 */ .word 0x00000000
-enddlabel D_004DC5B4
-
-nonmatching D_004DC5B8
-
-dlabel D_004DC5B8
-    /* 2DC5B8 004DC5B8 00000000 */ .word 0x00000000
-enddlabel D_004DC5B8
-
-nonmatching D_004DC5BC
-
-dlabel D_004DC5BC
-    /* 2DC5BC 004DC5BC 00000000 */ .word 0x00000000
-enddlabel D_004DC5BC
-
-nonmatching D_004DC5C0
-
-dlabel D_004DC5C0
-    /* 2DC5C0 004DC5C0 00000000 */ .word 0x00000000
-enddlabel D_004DC5C0
-
-nonmatching D_004DC5C4
-
-dlabel D_004DC5C4
-    /* 2DC5C4 004DC5C4 00000000 */ .float 0
-enddlabel D_004DC5C4
-
-nonmatching D_004DC5C8
-
-dlabel D_004DC5C8
-    /* 2DC5C8 004DC5C8 00000000 */ .word 0x00000000
-enddlabel D_004DC5C8
-
-nonmatching D_004DC5CC
-
-dlabel D_004DC5CC
-    /* 2DC5CC 004DC5CC 00000000 */ .word 0x00000000
-enddlabel D_004DC5CC
-
-nonmatching D_004DC5D0
-
-dlabel D_004DC5D0
-    /* 2DC5D0 004DC5D0 */ .short 0x0000
-    /* 2DC5D2 004DC5D2 */ .short 0x0000
-enddlabel D_004DC5D0
-
-nonmatching D_004DC5D4
-
-dlabel D_004DC5D4
-    /* 2DC5D4 004DC5D4 00000000 */ .word 0x00000000
-enddlabel D_004DC5D4
-
-nonmatching D_004DC5D8
-
-dlabel D_004DC5D8
-    /* 2DC5D8 004DC5D8 00000000 */ .word 0x00000000
-    /* 2DC5DC 004DC5DC 00000000 */ .word 0x00000000
-enddlabel D_004DC5D8
-
-nonmatching D_004DC5E0
-
-dlabel D_004DC5E0
-    /* 2DC5E0 004DC5E0 */ .short 0x0000
-    /* 2DC5E2 004DC5E2 */ .short 0x0000
-    /* 2DC5E4 004DC5E4 */ .byte 0x00
-enddlabel D_004DC5E0
-
-nonmatching D_004DC5E5
-
-dlabel D_004DC5E5
-    /* 2DC5E5 004DC5E5 */ .byte 0x00
-    /* 2DC5E6 004DC5E6 */ .short 0x0000
-enddlabel D_004DC5E5
-
-nonmatching D_004DC5E8
-
-dlabel D_004DC5E8
-    /* 2DC5E8 004DC5E8 */ .byte 0x00
-    /* 2DC5E9 004DC5E9 */ .byte 0x00
-    /* 2DC5EA 004DC5EA */ .byte 0x00
-    /* 2DC5EB 004DC5EB */ .byte 0x00
-    /* 2DC5EC 004DC5EC */ .byte 0x00
-    /* 2DC5ED 004DC5ED */ .byte 0x00
-    /* 2DC5EE 004DC5EE */ .byte 0x00
-    /* 2DC5EF 004DC5EF */ .byte 0x00
-enddlabel D_004DC5E8
-
-nonmatching D_004DC5F0
-
-dlabel D_004DC5F0
-    /* 2DC5F0 004DC5F0 00000000 */ .word 0x00000000
-    /* 2DC5F4 004DC5F4 00000000 */ .word 0x00000000
-enddlabel D_004DC5F0
-
-nonmatching D_004DC5F8
-
-dlabel D_004DC5F8
-    /* 2DC5F8 004DC5F8 00000000 */ .word 0x00000000
-enddlabel D_004DC5F8
-
-nonmatching D_004DC5FC
-
-dlabel D_004DC5FC
-    /* 2DC5FC 004DC5FC 00000000 */ .word 0x00000000
-enddlabel D_004DC5FC
-
-nonmatching D_004DC600
-
-dlabel D_004DC600
-    /* 2DC600 004DC600 00000000 */ .word 0x00000000
-enddlabel D_004DC600
-
-nonmatching D_004DC604
-
-dlabel D_004DC604
-    /* 2DC604 004DC604 00000000 */ .word 0x00000000
-enddlabel D_004DC604
-
-nonmatching D_004DC608
-
-dlabel D_004DC608
-    /* 2DC608 004DC608 00000000 */ .word 0x00000000
-enddlabel D_004DC608
-
-nonmatching D_004DC60C
-
-dlabel D_004DC60C
-    /* 2DC60C 004DC60C 00000000 */ .word 0x00000000
-enddlabel D_004DC60C
-
-nonmatching D_004DC610
-
-dlabel D_004DC610
-    /* 2DC610 004DC610 */ .byte 0x00
-    /* 2DC611 004DC611 */ .byte 0x00
-    /* 2DC612 004DC612 */ .byte 0x00
-    /* 2DC613 004DC613 */ .byte 0x00
-enddlabel D_004DC610
-
-nonmatching D_004DC614
-
-dlabel D_004DC614
-    /* 2DC614 004DC614 00000000 */ .word 0x00000000
-enddlabel D_004DC614
-
-nonmatching D_004DC618
-
-dlabel D_004DC618
-    /* 2DC618 004DC618 00000000 */ .float 0
-enddlabel D_004DC618
-
-nonmatching D_004DC61C
-
-dlabel D_004DC61C
-    /* 2DC61C 004DC61C 00000000 */ .float 0
-enddlabel D_004DC61C
-
-nonmatching D_004DC620
-
-dlabel D_004DC620
-    /* 2DC620 004DC620 00000000 */ .float 0
-enddlabel D_004DC620
-
-nonmatching D_004DC624
-
-dlabel D_004DC624
-    /* 2DC624 004DC624 00000000 */ .float 0
-enddlabel D_004DC624
-
-nonmatching D_004DC628
-
-dlabel D_004DC628
-    /* 2DC628 004DC628 00000000 */ .float 0
-enddlabel D_004DC628
-
-nonmatching D_004DC62C
-
-dlabel D_004DC62C
-    /* 2DC62C 004DC62C 00000000 */ .word 0x00000000
-enddlabel D_004DC62C
-
-nonmatching D_004DC630
-
-dlabel D_004DC630
-    /* 2DC630 004DC630 00000000 */ .float 0
-enddlabel D_004DC630
-
-nonmatching D_004DC634
-
-dlabel D_004DC634
-    /* 2DC634 004DC634 00000000 */ .word 0x00000000
-enddlabel D_004DC634
-
-nonmatching D_004DC638
-
-dlabel D_004DC638
-    /* 2DC638 004DC638 00000000 */ .word 0x00000000
-enddlabel D_004DC638
-
-nonmatching D_004DC63C
-
-dlabel D_004DC63C
-    /* 2DC63C 004DC63C 00000000 */ .word 0x00000000
-enddlabel D_004DC63C
-
-nonmatching D_004DC640
-
-dlabel D_004DC640
-    /* 2DC640 004DC640 00000000 */ .word 0x00000000
-enddlabel D_004DC640
-
-nonmatching D_004DC644
-
-dlabel D_004DC644
-    /* 2DC644 004DC644 00000000 */ .word 0x00000000
-enddlabel D_004DC644
-
-nonmatching D_004DC648
-
-dlabel D_004DC648
-    /* 2DC648 004DC648 00000000 */ .word 0x00000000
-enddlabel D_004DC648
-
-nonmatching D_004DC64C
-
-dlabel D_004DC64C
-    /* 2DC64C 004DC64C 00000000 */ .float 0
-enddlabel D_004DC64C
-
-nonmatching D_004DC650
-
-dlabel D_004DC650
-    /* 2DC650 004DC650 00000000 */ .float 0
-enddlabel D_004DC650
-
-nonmatching D_004DC654
-
-dlabel D_004DC654
-    /* 2DC654 004DC654 00000000 */ .float 0
-enddlabel D_004DC654
-
-nonmatching D_004DC658
-
-dlabel D_004DC658
-    /* 2DC658 004DC658 00000000 */ .word 0x00000000
-enddlabel D_004DC658
-
-nonmatching D_004DC65C
-
-dlabel D_004DC65C
-    /* 2DC65C 004DC65C 00000000 */ .word 0x00000000
-enddlabel D_004DC65C
-
-nonmatching D_004DC660
-
-dlabel D_004DC660
-    /* 2DC660 004DC660 00000000 */ .float 0
-enddlabel D_004DC660
-
-nonmatching D_004DC664
-
-dlabel D_004DC664
-    /* 2DC664 004DC664 00000000 */ .word 0x00000000
-enddlabel D_004DC664
-
-nonmatching D_004DC668
-
-dlabel D_004DC668
-    /* 2DC668 004DC668 00000000 */ .word 0x00000000
-enddlabel D_004DC668
-
-nonmatching D_004DC66C
-
-dlabel D_004DC66C
-    /* 2DC66C 004DC66C 00000000 */ .word 0x00000000
-enddlabel D_004DC66C
-
-nonmatching D_004DC670
-
-dlabel D_004DC670
-    /* 2DC670 004DC670 00000000 */ .word 0x00000000
-enddlabel D_004DC670
-
-nonmatching D_004DC674
-
-dlabel D_004DC674
-    /* 2DC674 004DC674 00000000 */ .word 0x00000000
-enddlabel D_004DC674
-
-nonmatching D_004DC678
-
-dlabel D_004DC678
-    /* 2DC678 004DC678 00000000 */ .word 0x00000000
-    /* 2DC67C 004DC67C 00000000 */ .word 0x00000000
-enddlabel D_004DC678
-
-nonmatching D_004DC680
-
-dlabel D_004DC680
-    /* 2DC680 004DC680 00000000 */ .word 0x00000000
-enddlabel D_004DC680
-
-nonmatching D_004DC684
-
-dlabel D_004DC684
-    /* 2DC684 004DC684 00000000 */ .word 0x00000000
-enddlabel D_004DC684
-
-nonmatching D_004DC688
-
-dlabel D_004DC688
-    /* 2DC688 004DC688 00000000 */ .word 0x00000000
-enddlabel D_004DC688
-
-nonmatching D_004DC68C
-
-dlabel D_004DC68C
-    /* 2DC68C 004DC68C 00000000 */ .word 0x00000000
-enddlabel D_004DC68C
-
-nonmatching D_004DC690
-
-dlabel D_004DC690
-    /* 2DC690 004DC690 00000000 */ .word 0x00000000
-enddlabel D_004DC690
-
-nonmatching D_004DC694
-
-dlabel D_004DC694
-    /* 2DC694 004DC694 00000000 */ .word 0x00000000
-enddlabel D_004DC694
-
-nonmatching D_004DC698
-
-dlabel D_004DC698
-    /* 2DC698 004DC698 00000000 */ .word 0x00000000
-enddlabel D_004DC698
-
-nonmatching D_004DC69C
-
-dlabel D_004DC69C
-    /* 2DC69C 004DC69C 00000000 */ .word 0x00000000
-enddlabel D_004DC69C
-
-nonmatching D_004DC6A0
-
-dlabel D_004DC6A0
-    /* 2DC6A0 004DC6A0 00000000 */ .word 0x00000000
-enddlabel D_004DC6A0
-
-nonmatching D_004DC6A4
-
-dlabel D_004DC6A4
-    /* 2DC6A4 004DC6A4 00000000 */ .word 0x00000000
-enddlabel D_004DC6A4
-
-nonmatching D_004DC6A8
-
-dlabel D_004DC6A8
-    /* 2DC6A8 004DC6A8 00000000 */ .word 0x00000000
-    /* 2DC6AC 004DC6AC 00000000 */ .word 0x00000000
-enddlabel D_004DC6A8
-
-nonmatching D_004DC6B0
-
-dlabel D_004DC6B0
-    /* 2DC6B0 004DC6B0 00000000 */ .word 0x00000000
-enddlabel D_004DC6B0
-
-nonmatching D_004DC6B4
-
-dlabel D_004DC6B4
-    /* 2DC6B4 004DC6B4 00000000 */ .word 0x00000000
-enddlabel D_004DC6B4
-
-nonmatching D_004DC6B8
-
-dlabel D_004DC6B8
-    /* 2DC6B8 004DC6B8 00000000 */ .word 0x00000000
-enddlabel D_004DC6B8
-
-nonmatching D_004DC6BC
-
-dlabel D_004DC6BC
-    /* 2DC6BC 004DC6BC 00000000 */ .word 0x00000000
-enddlabel D_004DC6BC
-
-nonmatching D_004DC6C0
-
-dlabel D_004DC6C0
-    /* 2DC6C0 004DC6C0 00000000 */ .word 0x00000000
-    /* 2DC6C4 004DC6C4 00000000 */ .word 0x00000000
-enddlabel D_004DC6C0
-
-nonmatching D_004DC6C8
-
-dlabel D_004DC6C8
-    /* 2DC6C8 004DC6C8 00000000 */ .word 0x00000000
-enddlabel D_004DC6C8
-
-nonmatching D_004DC6CC
-
-dlabel D_004DC6CC
-    /* 2DC6CC 004DC6CC */ .byte 0x00
-    /* 2DC6CD 004DC6CD */ .byte 0x00
-    /* 2DC6CE 004DC6CE */ .byte 0x00
-    /* 2DC6CF 004DC6CF */ .byte 0x00
-enddlabel D_004DC6CC
-
-nonmatching D_004DC6D0
-
-dlabel D_004DC6D0
-    /* 2DC6D0 004DC6D0 00000000 */ .word 0x00000000
-    /* 2DC6D4 004DC6D4 */ .byte 0x00
-    /* 2DC6D5 004DC6D5 */ .byte 0x00
-    /* 2DC6D6 004DC6D6 */ .byte 0x00
-enddlabel D_004DC6D0
-
-nonmatching D_004DC6D7
-
-dlabel D_004DC6D7
-    /* 2DC6D7 004DC6D7 */ .byte 0x00
-enddlabel D_004DC6D7
-
-nonmatching D_004DC6D8
-
-dlabel D_004DC6D8
-    /* 2DC6D8 004DC6D8 00000000 */ .word 0x00000000
-enddlabel D_004DC6D8
-
-nonmatching D_004DC6DC
-
-dlabel D_004DC6DC
-    /* 2DC6DC 004DC6DC */ .byte 0x00
-enddlabel D_004DC6DC
-
-nonmatching D_004DC6DD
-
-dlabel D_004DC6DD
-    /* 2DC6DD 004DC6DD */ .byte 0x00
-enddlabel D_004DC6DD
-
-nonmatching D_004DC6DE
-
-dlabel D_004DC6DE
-    /* 2DC6DE 004DC6DE */ .byte 0x00
-enddlabel D_004DC6DE
-
-nonmatching D_004DC6DF
-
-dlabel D_004DC6DF
-    /* 2DC6DF 004DC6DF */ .byte 0x00
-enddlabel D_004DC6DF
-
-nonmatching D_004DC6E0
-
-dlabel D_004DC6E0
-    /* 2DC6E0 004DC6E0 */ .byte 0x00
-    /* 2DC6E1 004DC6E1 */ .byte 0x00
-    /* 2DC6E2 004DC6E2 */ .byte 0x00
-    /* 2DC6E3 004DC6E3 */ .byte 0x00
-enddlabel D_004DC6E0
-
-nonmatching D_004DC6E4
-
-dlabel D_004DC6E4
-    /* 2DC6E4 004DC6E4 00000000 */ .word 0x00000000
-enddlabel D_004DC6E4
-
-nonmatching D_004DC6E8
-
-dlabel D_004DC6E8
-    /* 2DC6E8 004DC6E8 00000000 */ .word 0x00000000
-    /* 2DC6EC 004DC6EC 00000000 */ .word 0x00000000
-enddlabel D_004DC6E8
-
-nonmatching D_004DC6F0
-
-dlabel D_004DC6F0
-    /* 2DC6F0 004DC6F0 00000000 */ .word 0x00000000
-enddlabel D_004DC6F0
-
-nonmatching D_004DC6F4
-
-dlabel D_004DC6F4
-    /* 2DC6F4 004DC6F4 00000000 */ .word 0x00000000
-enddlabel D_004DC6F4
-
-nonmatching D_004DC6F8
-
-dlabel D_004DC6F8
-    /* 2DC6F8 004DC6F8 00000000 */ .word 0x00000000
-    /* 2DC6FC 004DC6FC 00000000 */ .word 0x00000000
-enddlabel D_004DC6F8
-
-nonmatching D_004DC700
-
-dlabel D_004DC700
-    /* 2DC700 004DC700 00000000 */ .float 0
-    /* 2DC704 004DC704 00000000 */ .float 0
-enddlabel D_004DC700
-
-nonmatching D_004DC708
-
-dlabel D_004DC708
-    /* 2DC708 004DC708 00000000 */ .word 0x00000000
-enddlabel D_004DC708
-
-nonmatching D_004DC70C
-
-dlabel D_004DC70C
-    /* 2DC70C 004DC70C 00000000 */ .word 0x00000000
-enddlabel D_004DC70C
-
-nonmatching D_004DC710
-
-dlabel D_004DC710
-    /* 2DC710 004DC710 00000000 */ .word 0x00000000
-enddlabel D_004DC710
-
-nonmatching D_004DC714
-
-dlabel D_004DC714
-    /* 2DC714 004DC714 00000000 */ .word 0x00000000
-enddlabel D_004DC714
-
-nonmatching D_004DC718
-
-dlabel D_004DC718
-    /* 2DC718 004DC718 00000000 */ .word 0x00000000
-enddlabel D_004DC718
-
-nonmatching D_004DC71C
-
-dlabel D_004DC71C
-    /* 2DC71C 004DC71C 00000000 */ .word 0x00000000
-enddlabel D_004DC71C
-
-nonmatching D_004DC720
-
-dlabel D_004DC720
-    /* 2DC720 004DC720 00000000 */ .word 0x00000000
-    /* 2DC724 004DC724 00000000 */ .word 0x00000000
-enddlabel D_004DC720
-
-nonmatching D_004DC728
-
-dlabel D_004DC728
-    /* 2DC728 004DC728 00000000 */ .word 0x00000000
-enddlabel D_004DC728
-
-nonmatching D_004DC72C
-
-dlabel D_004DC72C
-    /* 2DC72C 004DC72C 00000000 */ .word 0x00000000
-enddlabel D_004DC72C
-
-nonmatching D_004DC730
-
-dlabel D_004DC730
-    /* 2DC730 004DC730 00000000 */ .word 0x00000000
-enddlabel D_004DC730
-
-nonmatching D_004DC734
-
-dlabel D_004DC734
-    /* 2DC734 004DC734 00000000 */ .word 0x00000000
-enddlabel D_004DC734
-
-nonmatching D_004DC738
-
-dlabel D_004DC738
-    /* 2DC738 004DC738 00000000 */ .word 0x00000000
-    /* 2DC73C 004DC73C 00000000 */ .word 0x00000000
-enddlabel D_004DC738
-
-nonmatching D_004DC740
-
-dlabel D_004DC740
-    /* 2DC740 004DC740 00000000 */ .word 0x00000000
-enddlabel D_004DC740
-
-nonmatching D_004DC744
-
-dlabel D_004DC744
-    /* 2DC744 004DC744 00000000 */ .word 0x00000000
-enddlabel D_004DC744
-
-nonmatching D_004DC748
-
-dlabel D_004DC748
-    /* 2DC748 004DC748 00000000 */ .word 0x00000000
-enddlabel D_004DC748
-
-nonmatching D_004DC74C
-
-dlabel D_004DC74C
-    /* 2DC74C 004DC74C 00000000 */ .word 0x00000000
-    /* 2DC750 004DC750 */ .short 0x0000
-enddlabel D_004DC74C
-
-nonmatching D_004DC752
-
-dlabel D_004DC752
-    /* 2DC752 004DC752 */ .short 0x0000
-    /* 2DC754 004DC754 */ .short 0x0000
-enddlabel D_004DC752
-
-nonmatching D_004DC756
-
-dlabel D_004DC756
-    /* 2DC756 004DC756 */ .short 0x0000
-enddlabel D_004DC756
-
-nonmatching D_004DC758
-
-dlabel D_004DC758
-    /* 2DC758 004DC758 00000000 */ .word 0x00000000
-enddlabel D_004DC758
-
-nonmatching D_004DC75C
-
-dlabel D_004DC75C
-    /* 2DC75C 004DC75C 00000000 */ .word 0x00000000
-enddlabel D_004DC75C
-
-nonmatching D_004DC760
-
-dlabel D_004DC760
-    /* 2DC760 004DC760 00000000 */ .word 0x00000000
-enddlabel D_004DC760
-
-nonmatching D_004DC764
-
-dlabel D_004DC764
-    /* 2DC764 004DC764 00000000 */ .word 0x00000000
-enddlabel D_004DC764
-
-nonmatching D_004DC768
-
-dlabel D_004DC768
-    /* 2DC768 004DC768 00000000 */ .word 0x00000000
-enddlabel D_004DC768
-
-nonmatching D_004DC76C
-
-dlabel D_004DC76C
-    /* 2DC76C 004DC76C 00000000 */ .word 0x00000000
-enddlabel D_004DC76C
-
-nonmatching D_004DC770
-
-dlabel D_004DC770
-    /* 2DC770 004DC770 00000000 */ .word 0x00000000
-enddlabel D_004DC770
-
-nonmatching D_004DC774
-
-dlabel D_004DC774
-    /* 2DC774 004DC774 00000000 */ .word 0x00000000
-enddlabel D_004DC774
-
-nonmatching D_004DC778
-
-dlabel D_004DC778
-    /* 2DC778 004DC778 00000000 */ .word 0x00000000
-enddlabel D_004DC778
-
-nonmatching D_004DC77C
-
-dlabel D_004DC77C
-    /* 2DC77C 004DC77C 00000000 */ .word 0x00000000
-enddlabel D_004DC77C
-
-nonmatching D_004DC780
-
-dlabel D_004DC780
-    /* 2DC780 004DC780 00000000 */ .word 0x00000000
-enddlabel D_004DC780
-
-nonmatching D_004DC784
-
-dlabel D_004DC784
-    /* 2DC784 004DC784 00000000 */ .word 0x00000000
-enddlabel D_004DC784
-
-nonmatching D_004DC788
-
-dlabel D_004DC788
-    /* 2DC788 004DC788 00000000 */ .word 0x00000000
-enddlabel D_004DC788
-
-nonmatching D_004DC78C
-
-dlabel D_004DC78C
-    /* 2DC78C 004DC78C 00000000 */ .word 0x00000000
-enddlabel D_004DC78C
-
-nonmatching D_004DC790
-
-dlabel D_004DC790
-    /* 2DC790 004DC790 00000000 */ .word 0x00000000
-enddlabel D_004DC790
-
-nonmatching D_004DC794
-
-dlabel D_004DC794
-    /* 2DC794 004DC794 00000000 */ .word 0x00000000
-enddlabel D_004DC794
-
-nonmatching D_004DC798
-
-dlabel D_004DC798
-    /* 2DC798 004DC798 00000000 */ .word 0x00000000
-enddlabel D_004DC798
-
-nonmatching D_004DC79C
-
-dlabel D_004DC79C
-    /* 2DC79C 004DC79C 00000000 */ .word 0x00000000
-enddlabel D_004DC79C
-
-nonmatching D_004DC7A0
-
-dlabel D_004DC7A0
-    /* 2DC7A0 004DC7A0 00000000 */ .word 0x00000000
-enddlabel D_004DC7A0
-
-nonmatching D_004DC7A4
-
-dlabel D_004DC7A4
-    /* 2DC7A4 004DC7A4 00000000 */ .word 0x00000000
-enddlabel D_004DC7A4
-
-nonmatching D_004DC7A8
-
-dlabel D_004DC7A8
-    /* 2DC7A8 004DC7A8 00000000 */ .word 0x00000000
-enddlabel D_004DC7A8
-
-nonmatching D_004DC7AC
-
-dlabel D_004DC7AC
-    /* 2DC7AC 004DC7AC 00000000 */ .word 0x00000000
-enddlabel D_004DC7AC
-
-nonmatching D_004DC7B0
-
-dlabel D_004DC7B0
-    /* 2DC7B0 004DC7B0 00000000 */ .word 0x00000000
-enddlabel D_004DC7B0
-
-nonmatching D_004DC7B4
-
-dlabel D_004DC7B4
-    /* 2DC7B4 004DC7B4 00000000 */ .word 0x00000000
-enddlabel D_004DC7B4
-
-nonmatching D_004DC7B8
-
-dlabel D_004DC7B8
-    /* 2DC7B8 004DC7B8 00000000 */ .word 0x00000000
-enddlabel D_004DC7B8
-
-nonmatching D_004DC7BC
-
-dlabel D_004DC7BC
-    /* 2DC7BC 004DC7BC 00000000 */ .word 0x00000000
-enddlabel D_004DC7BC
-
-nonmatching D_004DC7C0
-
-dlabel D_004DC7C0
-    /* 2DC7C0 004DC7C0 00000000 */ .word 0x00000000
-enddlabel D_004DC7C0
-
-nonmatching D_004DC7C4
-
-dlabel D_004DC7C4
-    /* 2DC7C4 004DC7C4 00000000 */ .word 0x00000000
-enddlabel D_004DC7C4
-
-nonmatching D_004DC7C8
-
-dlabel D_004DC7C8
-    /* 2DC7C8 004DC7C8 00000000 */ .word 0x00000000
-enddlabel D_004DC7C8
-
-nonmatching D_004DC7CC
-
-dlabel D_004DC7CC
-    /* 2DC7CC 004DC7CC 00000000 */ .word 0x00000000
-enddlabel D_004DC7CC
-
-nonmatching D_004DC7D0
-
-dlabel D_004DC7D0
-    /* 2DC7D0 004DC7D0 00000000 */ .word 0x00000000
-enddlabel D_004DC7D0
-
-nonmatching D_004DC7D4
-
-dlabel D_004DC7D4
-    /* 2DC7D4 004DC7D4 00000000 */ .word 0x00000000
-enddlabel D_004DC7D4
-
-nonmatching D_004DC7D8
-
-dlabel D_004DC7D8
-    /* 2DC7D8 004DC7D8 00000000 */ .word 0x00000000
-enddlabel D_004DC7D8
-
-nonmatching D_004DC7DC
-
-dlabel D_004DC7DC
-    /* 2DC7DC 004DC7DC 00000000 */ .word 0x00000000
-enddlabel D_004DC7DC
-
-nonmatching D_004DC7E0
-
-dlabel D_004DC7E0
-    /* 2DC7E0 004DC7E0 00000000 */ .word 0x00000000
-enddlabel D_004DC7E0
-
-nonmatching D_004DC7E4
-
-dlabel D_004DC7E4
-    /* 2DC7E4 004DC7E4 00000000 */ .word 0x00000000
-enddlabel D_004DC7E4
-
-nonmatching D_004DC7E8
-
-dlabel D_004DC7E8
-    /* 2DC7E8 004DC7E8 00000000 */ .word 0x00000000
-enddlabel D_004DC7E8
-
-nonmatching D_004DC7EC
-
-dlabel D_004DC7EC
-    /* 2DC7EC 004DC7EC 00000000 */ .word 0x00000000
-enddlabel D_004DC7EC
-
-nonmatching D_004DC7F0
-
-dlabel D_004DC7F0
-    /* 2DC7F0 004DC7F0 00000000 */ .word 0x00000000
-enddlabel D_004DC7F0
-
-nonmatching D_004DC7F4
-
-dlabel D_004DC7F4
-    /* 2DC7F4 004DC7F4 00000000 */ .word 0x00000000
-enddlabel D_004DC7F4
-
-nonmatching D_004DC7F8
-
-dlabel D_004DC7F8
-    /* 2DC7F8 004DC7F8 00000000 */ .word 0x00000000
-enddlabel D_004DC7F8
-
-nonmatching D_004DC7FC
-
-dlabel D_004DC7FC
-    /* 2DC7FC 004DC7FC 00000000 */ .word 0x00000000
-enddlabel D_004DC7FC
-
-nonmatching D_004DC800
-
-dlabel D_004DC800
-    /* 2DC800 004DC800 00000000 */ .word 0x00000000
-enddlabel D_004DC800
-
-nonmatching D_004DC804
-
-dlabel D_004DC804
-    /* 2DC804 004DC804 00000000 */ .word 0x00000000
-enddlabel D_004DC804
-
-nonmatching D_004DC808
-
-dlabel D_004DC808
-    /* 2DC808 004DC808 00000000 */ .word 0x00000000
-enddlabel D_004DC808
-
-nonmatching D_004DC80C
-
-dlabel D_004DC80C
-    /* 2DC80C 004DC80C 00000000 */ .word 0x00000000
-enddlabel D_004DC80C
-
-nonmatching D_004DC810
-
-dlabel D_004DC810
-    /* 2DC810 004DC810 00000000 */ .word 0x00000000
-    /* 2DC814 004DC814 00000000 */ .word 0x00000000
-    /* 2DC818 004DC818 00000000 */ .word 0x00000000
-    /* 2DC81C 004DC81C 00000000 */ .word 0x00000000
-    /* 2DC820 004DC820 00000000 */ .word 0x00000000
-    /* 2DC824 004DC824 00000000 */ .word 0x00000000
-    /* 2DC828 004DC828 00000000 */ .word 0x00000000
-    /* 2DC82C 004DC82C 00000000 */ .word 0x00000000
-    /* 2DC830 004DC830 00000000 */ .word 0x00000000
-    /* 2DC834 004DC834 00000000 */ .word 0x00000000
-    /* 2DC838 004DC838 00000000 */ .word 0x00000000
-    /* 2DC83C 004DC83C 00000000 */ .word 0x00000000
-    /* 2DC840 004DC840 00000000 */ .word 0x00000000
-    /* 2DC844 004DC844 00000000 */ .word 0x00000000
-    /* 2DC848 004DC848 00000000 */ .word 0x00000000
-    /* 2DC84C 004DC84C 00000000 */ .word 0x00000000
-    /* 2DC850 004DC850 00000000 */ .word 0x00000000
-    /* 2DC854 004DC854 00000000 */ .word 0x00000000
-    /* 2DC858 004DC858 00000000 */ .word 0x00000000
-    /* 2DC85C 004DC85C 00000000 */ .word 0x00000000
-    /* 2DC860 004DC860 00000000 */ .word 0x00000000
-    /* 2DC864 004DC864 00000000 */ .word 0x00000000
-    /* 2DC868 004DC868 00000000 */ .word 0x00000000
-    /* 2DC86C 004DC86C 00000000 */ .word 0x00000000
-    /* 2DC870 004DC870 00000000 */ .word 0x00000000
-    /* 2DC874 004DC874 00000000 */ .word 0x00000000
-    /* 2DC878 004DC878 00000000 */ .word 0x00000000
-    /* 2DC87C 004DC87C 00000000 */ .word 0x00000000
-enddlabel D_004DC810
-
-nonmatching D_004DC880
-
-dlabel D_004DC880
-    /* 2DC880 004DC880 00000000 */ .word 0x00000000
-    /* 2DC884 004DC884 00000000 */ .word 0x00000000
-    /* 2DC888 004DC888 00000000 */ .word 0x00000000
-    /* 2DC88C 004DC88C 00000000 */ .word 0x00000000
-    /* 2DC890 004DC890 00000000 */ .word 0x00000000
-    /* 2DC894 004DC894 00000000 */ .word 0x00000000
-    /* 2DC898 004DC898 00000000 */ .word 0x00000000
-    /* 2DC89C 004DC89C 00000000 */ .word 0x00000000
-    /* 2DC8A0 004DC8A0 00000000 */ .word 0x00000000
-    /* 2DC8A4 004DC8A4 00000000 */ .word 0x00000000
-    /* 2DC8A8 004DC8A8 00000000 */ .word 0x00000000
-    /* 2DC8AC 004DC8AC 00000000 */ .word 0x00000000
-    /* 2DC8B0 004DC8B0 00000000 */ .word 0x00000000
-    /* 2DC8B4 004DC8B4 00000000 */ .word 0x00000000
-    /* 2DC8B8 004DC8B8 00000000 */ .word 0x00000000
-    /* 2DC8BC 004DC8BC 00000000 */ .word 0x00000000
-    /* 2DC8C0 004DC8C0 00000000 */ .word 0x00000000
-    /* 2DC8C4 004DC8C4 00000000 */ .word 0x00000000
-    /* 2DC8C8 004DC8C8 00000000 */ .word 0x00000000
-    /* 2DC8CC 004DC8CC 00000000 */ .word 0x00000000
-    /* 2DC8D0 004DC8D0 00000000 */ .word 0x00000000
-    /* 2DC8D4 004DC8D4 00000000 */ .word 0x00000000
-    /* 2DC8D8 004DC8D8 00000000 */ .word 0x00000000
-    /* 2DC8DC 004DC8DC 00000000 */ .word 0x00000000
-    /* 2DC8E0 004DC8E0 00000000 */ .word 0x00000000
-    /* 2DC8E4 004DC8E4 00000000 */ .word 0x00000000
-    /* 2DC8E8 004DC8E8 00000000 */ .word 0x00000000
-    /* 2DC8EC 004DC8EC 00000000 */ .word 0x00000000
-    /* 2DC8F0 004DC8F0 00000000 */ .word 0x00000000
-    /* 2DC8F4 004DC8F4 00000000 */ .word 0x00000000
-    /* 2DC8F8 004DC8F8 00000000 */ .word 0x00000000
-    /* 2DC8FC 004DC8FC 00000000 */ .word 0x00000000
-    /* 2DC900 004DC900 00000000 */ .word 0x00000000
-    /* 2DC904 004DC904 00000000 */ .word 0x00000000
-    /* 2DC908 004DC908 00000000 */ .word 0x00000000
-    /* 2DC90C 004DC90C 00000000 */ .word 0x00000000
-    /* 2DC910 004DC910 00000000 */ .word 0x00000000
-    /* 2DC914 004DC914 00000000 */ .word 0x00000000
-    /* 2DC918 004DC918 00000000 */ .word 0x00000000
-    /* 2DC91C 004DC91C 00000000 */ .word 0x00000000
-    /* 2DC920 004DC920 00000000 */ .word 0x00000000
-    /* 2DC924 004DC924 00000000 */ .word 0x00000000
-    /* 2DC928 004DC928 00000000 */ .word 0x00000000
-    /* 2DC92C 004DC92C 00000000 */ .word 0x00000000
-    /* 2DC930 004DC930 00000000 */ .word 0x00000000
-    /* 2DC934 004DC934 00000000 */ .word 0x00000000
-    /* 2DC938 004DC938 00000000 */ .word 0x00000000
-    /* 2DC93C 004DC93C 00000000 */ .word 0x00000000
-    /* 2DC940 004DC940 00000000 */ .word 0x00000000
-    /* 2DC944 004DC944 00000000 */ .word 0x00000000
-    /* 2DC948 004DC948 00000000 */ .word 0x00000000
-    /* 2DC94C 004DC94C 00000000 */ .word 0x00000000
-    /* 2DC950 004DC950 00000000 */ .word 0x00000000
-    /* 2DC954 004DC954 00000000 */ .word 0x00000000
-    /* 2DC958 004DC958 00000000 */ .word 0x00000000
-    /* 2DC95C 004DC95C 00000000 */ .word 0x00000000
-    /* 2DC960 004DC960 00000000 */ .word 0x00000000
-    /* 2DC964 004DC964 00000000 */ .word 0x00000000
-    /* 2DC968 004DC968 00000000 */ .word 0x00000000
-    /* 2DC96C 004DC96C 00000000 */ .word 0x00000000
-    /* 2DC970 004DC970 00000000 */ .word 0x00000000
-    /* 2DC974 004DC974 00000000 */ .word 0x00000000
-    /* 2DC978 004DC978 00000000 */ .word 0x00000000
-    /* 2DC97C 004DC97C 00000000 */ .word 0x00000000
-    /* 2DC980 004DC980 00000000 */ .word 0x00000000
-    /* 2DC984 004DC984 00000000 */ .word 0x00000000
-    /* 2DC988 004DC988 00000000 */ .word 0x00000000
-    /* 2DC98C 004DC98C 00000000 */ .word 0x00000000
-    /* 2DC990 004DC990 00000000 */ .word 0x00000000
-    /* 2DC994 004DC994 00000000 */ .word 0x00000000
-    /* 2DC998 004DC998 00000000 */ .word 0x00000000
-    /* 2DC99C 004DC99C 00000000 */ .word 0x00000000
-    /* 2DC9A0 004DC9A0 00000000 */ .word 0x00000000
-    /* 2DC9A4 004DC9A4 00000000 */ .word 0x00000000
-    /* 2DC9A8 004DC9A8 00000000 */ .word 0x00000000
-    /* 2DC9AC 004DC9AC 00000000 */ .word 0x00000000
-    /* 2DC9B0 004DC9B0 00000000 */ .word 0x00000000
-    /* 2DC9B4 004DC9B4 00000000 */ .word 0x00000000
-    /* 2DC9B8 004DC9B8 00000000 */ .word 0x00000000
-    /* 2DC9BC 004DC9BC 00000000 */ .word 0x00000000
-    /* 2DC9C0 004DC9C0 00000000 */ .word 0x00000000
-    /* 2DC9C4 004DC9C4 00000000 */ .word 0x00000000
-    /* 2DC9C8 004DC9C8 00000000 */ .word 0x00000000
-    /* 2DC9CC 004DC9CC 00000000 */ .word 0x00000000
-enddlabel D_004DC880
-
-nonmatching D_004DC9D0
-
-dlabel D_004DC9D0
-    /* 2DC9D0 004DC9D0 00000000 */ .word 0x00000000
-    /* 2DC9D4 004DC9D4 00000000 */ .word 0x00000000
-    /* 2DC9D8 004DC9D8 00000000 */ .word 0x00000000
-    /* 2DC9DC 004DC9DC 00000000 */ .word 0x00000000
-enddlabel D_004DC9D0
-
-nonmatching D_004DC9E0
-
-dlabel D_004DC9E0
-    /* 2DC9E0 004DC9E0 00000000 */ .word 0x00000000
-    /* 2DC9E4 004DC9E4 00000000 */ .word 0x00000000
-    /* 2DC9E8 004DC9E8 00000000 */ .word 0x00000000
-    /* 2DC9EC 004DC9EC 00000000 */ .word 0x00000000
-    /* 2DC9F0 004DC9F0 00000000 */ .word 0x00000000
-    /* 2DC9F4 004DC9F4 00000000 */ .word 0x00000000
-    /* 2DC9F8 004DC9F8 00000000 */ .word 0x00000000
-    /* 2DC9FC 004DC9FC 00000000 */ .word 0x00000000
-    /* 2DCA00 004DCA00 00000000 */ .word 0x00000000
-    /* 2DCA04 004DCA04 00000000 */ .word 0x00000000
-    /* 2DCA08 004DCA08 00000000 */ .word 0x00000000
-    /* 2DCA0C 004DCA0C 00000000 */ .word 0x00000000
-    /* 2DCA10 004DCA10 00000000 */ .word 0x00000000
-    /* 2DCA14 004DCA14 00000000 */ .word 0x00000000
-    /* 2DCA18 004DCA18 00000000 */ .word 0x00000000
-    /* 2DCA1C 004DCA1C 00000000 */ .word 0x00000000
-enddlabel D_004DC9E0
-
-nonmatching D_004DCA20
-
-dlabel D_004DCA20
-    /* 2DCA20 004DCA20 00000000 */ .word 0x00000000
-    /* 2DCA24 004DCA24 00000000 */ .word 0x00000000
-    /* 2DCA28 004DCA28 00000000 */ .word 0x00000000
-    /* 2DCA2C 004DCA2C 00000000 */ .word 0x00000000
-enddlabel D_004DCA20
-
-nonmatching D_004DCA30
-
-dlabel D_004DCA30
-    /* 2DCA30 004DCA30 00000000 */ .word 0x00000000
-    /* 2DCA34 004DCA34 00000000 */ .word 0x00000000
-    /* 2DCA38 004DCA38 00000000 */ .word 0x00000000
-    /* 2DCA3C 004DCA3C 00000000 */ .word 0x00000000
-    /* 2DCA40 004DCA40 00000000 */ .word 0x00000000
-    /* 2DCA44 004DCA44 00000000 */ .word 0x00000000
-    /* 2DCA48 004DCA48 00000000 */ .word 0x00000000
-    /* 2DCA4C 004DCA4C 00000000 */ .word 0x00000000
-    /* 2DCA50 004DCA50 00000000 */ .word 0x00000000
-    /* 2DCA54 004DCA54 00000000 */ .word 0x00000000
-    /* 2DCA58 004DCA58 00000000 */ .word 0x00000000
-    /* 2DCA5C 004DCA5C 00000000 */ .word 0x00000000
-    /* 2DCA60 004DCA60 00000000 */ .word 0x00000000
-    /* 2DCA64 004DCA64 00000000 */ .word 0x00000000
-    /* 2DCA68 004DCA68 00000000 */ .word 0x00000000
-    /* 2DCA6C 004DCA6C 00000000 */ .word 0x00000000
-enddlabel D_004DCA30
-
-nonmatching D_004DCA70
-
-dlabel D_004DCA70
-    /* 2DCA70 004DCA70 00000000 */ .word 0x00000000
-    /* 2DCA74 004DCA74 00000000 */ .word 0x00000000
-    /* 2DCA78 004DCA78 00000000 */ .word 0x00000000
-    /* 2DCA7C 004DCA7C 00000000 */ .word 0x00000000
-enddlabel D_004DCA70
-
-nonmatching D_004DCA80
-
-dlabel D_004DCA80
-    /* 2DCA80 004DCA80 00000000 */ .word 0x00000000
-    /* 2DCA84 004DCA84 00000000 */ .word 0x00000000
-    /* 2DCA88 004DCA88 00000000 */ .word 0x00000000
-    /* 2DCA8C 004DCA8C 00000000 */ .word 0x00000000
-    /* 2DCA90 004DCA90 00000000 */ .word 0x00000000
-    /* 2DCA94 004DCA94 00000000 */ .word 0x00000000
-    /* 2DCA98 004DCA98 00000000 */ .word 0x00000000
-    /* 2DCA9C 004DCA9C 00000000 */ .word 0x00000000
-    /* 2DCAA0 004DCAA0 00000000 */ .word 0x00000000
-    /* 2DCAA4 004DCAA4 00000000 */ .word 0x00000000
-    /* 2DCAA8 004DCAA8 00000000 */ .word 0x00000000
-    /* 2DCAAC 004DCAAC 00000000 */ .word 0x00000000
-    /* 2DCAB0 004DCAB0 00000000 */ .word 0x00000000
-    /* 2DCAB4 004DCAB4 00000000 */ .word 0x00000000
-    /* 2DCAB8 004DCAB8 00000000 */ .word 0x00000000
-    /* 2DCABC 004DCABC 00000000 */ .word 0x00000000
-enddlabel D_004DCA80
-
-nonmatching D_004DCAC0
-
-dlabel D_004DCAC0
-    /* 2DCAC0 004DCAC0 00000000 */ .float 0
-    /* 2DCAC4 004DCAC4 00000000 */ .float 0
-    /* 2DCAC8 004DCAC8 00000000 */ .float 0
-    /* 2DCACC 004DCACC 00000000 */ .float 0
-enddlabel D_004DCAC0
-
-nonmatching D_004DCAD0
-
-dlabel D_004DCAD0
-    /* 2DCAD0 004DCAD0 00000000 */ .word 0x00000000
-    /* 2DCAD4 004DCAD4 00000000 */ .word 0x00000000
-    /* 2DCAD8 004DCAD8 00000000 */ .word 0x00000000
-    /* 2DCADC 004DCADC 00000000 */ .word 0x00000000
-    /* 2DCAE0 004DCAE0 00000000 */ .word 0x00000000
-    /* 2DCAE4 004DCAE4 00000000 */ .word 0x00000000
-    /* 2DCAE8 004DCAE8 00000000 */ .word 0x00000000
-    /* 2DCAEC 004DCAEC 00000000 */ .word 0x00000000
-    /* 2DCAF0 004DCAF0 00000000 */ .word 0x00000000
-    /* 2DCAF4 004DCAF4 00000000 */ .word 0x00000000
-    /* 2DCAF8 004DCAF8 00000000 */ .word 0x00000000
-    /* 2DCAFC 004DCAFC 00000000 */ .word 0x00000000
-enddlabel D_004DCAD0
-
-nonmatching D_004DCB00
-
-dlabel D_004DCB00
-    /* 2DCB00 004DCB00 */ .short 0x0000
-    /* 2DCB02 004DCB02 */ .short 0x0000
-enddlabel D_004DCB00
-
-nonmatching D_004DCB04
-
-dlabel D_004DCB04
-    /* 2DCB04 004DCB04 00000000 */ .word 0x00000000
-    /* 2DCB08 004DCB08 00000000 */ .word 0x00000000
-    /* 2DCB0C 004DCB0C 00000000 */ .word 0x00000000
-    /* 2DCB10 004DCB10 00000000 */ .word 0x00000000
-    /* 2DCB14 004DCB14 00000000 */ .word 0x00000000
-    /* 2DCB18 004DCB18 00000000 */ .word 0x00000000
-    /* 2DCB1C 004DCB1C 00000000 */ .word 0x00000000
-    /* 2DCB20 004DCB20 00000000 */ .word 0x00000000
-    /* 2DCB24 004DCB24 00000000 */ .word 0x00000000
-    /* 2DCB28 004DCB28 00000000 */ .word 0x00000000
-    /* 2DCB2C 004DCB2C 00000000 */ .word 0x00000000
-    /* 2DCB30 004DCB30 00000000 */ .word 0x00000000
-    /* 2DCB34 004DCB34 00000000 */ .word 0x00000000
-    /* 2DCB38 004DCB38 00000000 */ .word 0x00000000
-    /* 2DCB3C 004DCB3C 00000000 */ .word 0x00000000
-    /* 2DCB40 004DCB40 00000000 */ .word 0x00000000
-    /* 2DCB44 004DCB44 00000000 */ .word 0x00000000
-    /* 2DCB48 004DCB48 00000000 */ .word 0x00000000
-    /* 2DCB4C 004DCB4C 00000000 */ .word 0x00000000
-    /* 2DCB50 004DCB50 00000000 */ .word 0x00000000
-    /* 2DCB54 004DCB54 00000000 */ .word 0x00000000
-    /* 2DCB58 004DCB58 00000000 */ .word 0x00000000
-    /* 2DCB5C 004DCB5C 00000000 */ .word 0x00000000
-    /* 2DCB60 004DCB60 00000000 */ .word 0x00000000
-    /* 2DCB64 004DCB64 00000000 */ .word 0x00000000
-    /* 2DCB68 004DCB68 00000000 */ .word 0x00000000
-    /* 2DCB6C 004DCB6C 00000000 */ .word 0x00000000
-    /* 2DCB70 004DCB70 00000000 */ .word 0x00000000
-    /* 2DCB74 004DCB74 00000000 */ .word 0x00000000
-    /* 2DCB78 004DCB78 00000000 */ .word 0x00000000
-    /* 2DCB7C 004DCB7C 00000000 */ .word 0x00000000
-    /* 2DCB80 004DCB80 00000000 */ .word 0x00000000
-    /* 2DCB84 004DCB84 00000000 */ .word 0x00000000
-    /* 2DCB88 004DCB88 00000000 */ .word 0x00000000
-    /* 2DCB8C 004DCB8C 00000000 */ .word 0x00000000
-    /* 2DCB90 004DCB90 00000000 */ .word 0x00000000
-    /* 2DCB94 004DCB94 00000000 */ .word 0x00000000
-    /* 2DCB98 004DCB98 00000000 */ .word 0x00000000
-    /* 2DCB9C 004DCB9C 00000000 */ .word 0x00000000
-enddlabel D_004DCB04
-
-nonmatching D_004DCBA0
-
-dlabel D_004DCBA0
-    /* 2DCBA0 004DCBA0 */ .byte 0x00
-    /* 2DCBA1 004DCBA1 */ .byte 0x00
-    /* 2DCBA2 004DCBA2 */ .byte 0x00
-    /* 2DCBA3 004DCBA3 */ .byte 0x00
-    /* 2DCBA4 004DCBA4 */ .byte 0x00
-    /* 2DCBA5 004DCBA5 */ .byte 0x00
-    /* 2DCBA6 004DCBA6 */ .byte 0x00
-    /* 2DCBA7 004DCBA7 */ .byte 0x00
-    /* 2DCBA8 004DCBA8 */ .byte 0x00
-    /* 2DCBA9 004DCBA9 */ .byte 0x00
-    /* 2DCBAA 004DCBAA */ .byte 0x00
-    /* 2DCBAB 004DCBAB */ .byte 0x00
-    /* 2DCBAC 004DCBAC */ .byte 0x00
-    /* 2DCBAD 004DCBAD */ .byte 0x00
-    /* 2DCBAE 004DCBAE */ .byte 0x00
-    /* 2DCBAF 004DCBAF */ .byte 0x00
-enddlabel D_004DCBA0
-
-nonmatching D_004DCBB0
-
-dlabel D_004DCBB0
-    /* 2DCBB0 004DCBB0 */ .byte 0x00
-    /* 2DCBB1 004DCBB1 */ .byte 0x00
-    /* 2DCBB2 004DCBB2 */ .byte 0x00
-    /* 2DCBB3 004DCBB3 */ .byte 0x00
-    /* 2DCBB4 004DCBB4 */ .byte 0x00
-    /* 2DCBB5 004DCBB5 */ .byte 0x00
-    /* 2DCBB6 004DCBB6 */ .byte 0x00
-    /* 2DCBB7 004DCBB7 */ .byte 0x00
-    /* 2DCBB8 004DCBB8 */ .byte 0x00
-    /* 2DCBB9 004DCBB9 */ .byte 0x00
-    /* 2DCBBA 004DCBBA */ .byte 0x00
-    /* 2DCBBB 004DCBBB */ .byte 0x00
-    /* 2DCBBC 004DCBBC */ .byte 0x00
-    /* 2DCBBD 004DCBBD */ .byte 0x00
-    /* 2DCBBE 004DCBBE */ .byte 0x00
-    /* 2DCBBF 004DCBBF */ .byte 0x00
-enddlabel D_004DCBB0
-
-nonmatching D_004DCBC0
-
-dlabel D_004DCBC0
-    /* 2DCBC0 004DCBC0 00000000 */ .word 0x00000000
-    /* 2DCBC4 004DCBC4 00000000 */ .word 0x00000000
-    /* 2DCBC8 004DCBC8 00000000 */ .word 0x00000000
-    /* 2DCBCC 004DCBCC 00000000 */ .word 0x00000000
-    /* 2DCBD0 004DCBD0 00000000 */ .word 0x00000000
-    /* 2DCBD4 004DCBD4 00000000 */ .word 0x00000000
-    /* 2DCBD8 004DCBD8 00000000 */ .word 0x00000000
-    /* 2DCBDC 004DCBDC 00000000 */ .word 0x00000000
-    /* 2DCBE0 004DCBE0 00000000 */ .word 0x00000000
-    /* 2DCBE4 004DCBE4 00000000 */ .word 0x00000000
-    /* 2DCBE8 004DCBE8 00000000 */ .word 0x00000000
-    /* 2DCBEC 004DCBEC 00000000 */ .word 0x00000000
-    /* 2DCBF0 004DCBF0 00000000 */ .word 0x00000000
-    /* 2DCBF4 004DCBF4 00000000 */ .word 0x00000000
-    /* 2DCBF8 004DCBF8 00000000 */ .word 0x00000000
-    /* 2DCBFC 004DCBFC 00000000 */ .word 0x00000000
-    /* 2DCC00 004DCC00 00000000 */ .word 0x00000000
-    /* 2DCC04 004DCC04 00000000 */ .word 0x00000000
-    /* 2DCC08 004DCC08 00000000 */ .word 0x00000000
-    /* 2DCC0C 004DCC0C 00000000 */ .word 0x00000000
-    /* 2DCC10 004DCC10 00000000 */ .word 0x00000000
-    /* 2DCC14 004DCC14 00000000 */ .word 0x00000000
-    /* 2DCC18 004DCC18 00000000 */ .word 0x00000000
-    /* 2DCC1C 004DCC1C 00000000 */ .word 0x00000000
-    /* 2DCC20 004DCC20 00000000 */ .word 0x00000000
-    /* 2DCC24 004DCC24 00000000 */ .word 0x00000000
-    /* 2DCC28 004DCC28 00000000 */ .word 0x00000000
-    /* 2DCC2C 004DCC2C 00000000 */ .word 0x00000000
-    /* 2DCC30 004DCC30 00000000 */ .word 0x00000000
-    /* 2DCC34 004DCC34 00000000 */ .word 0x00000000
-    /* 2DCC38 004DCC38 00000000 */ .word 0x00000000
-    /* 2DCC3C 004DCC3C 00000000 */ .word 0x00000000
-    /* 2DCC40 004DCC40 00000000 */ .word 0x00000000
-    /* 2DCC44 004DCC44 00000000 */ .word 0x00000000
-    /* 2DCC48 004DCC48 00000000 */ .word 0x00000000
-    /* 2DCC4C 004DCC4C 00000000 */ .word 0x00000000
-    /* 2DCC50 004DCC50 00000000 */ .word 0x00000000
-    /* 2DCC54 004DCC54 00000000 */ .word 0x00000000
-    /* 2DCC58 004DCC58 00000000 */ .word 0x00000000
-    /* 2DCC5C 004DCC5C 00000000 */ .word 0x00000000
-    /* 2DCC60 004DCC60 00000000 */ .word 0x00000000
-    /* 2DCC64 004DCC64 00000000 */ .word 0x00000000
-    /* 2DCC68 004DCC68 00000000 */ .word 0x00000000
-    /* 2DCC6C 004DCC6C 00000000 */ .word 0x00000000
-    /* 2DCC70 004DCC70 00000000 */ .word 0x00000000
-    /* 2DCC74 004DCC74 00000000 */ .word 0x00000000
-    /* 2DCC78 004DCC78 00000000 */ .word 0x00000000
-    /* 2DCC7C 004DCC7C 00000000 */ .word 0x00000000
-    /* 2DCC80 004DCC80 00000000 */ .word 0x00000000
-    /* 2DCC84 004DCC84 00000000 */ .word 0x00000000
-    /* 2DCC88 004DCC88 00000000 */ .word 0x00000000
-    /* 2DCC8C 004DCC8C 00000000 */ .word 0x00000000
-    /* 2DCC90 004DCC90 00000000 */ .word 0x00000000
-    /* 2DCC94 004DCC94 00000000 */ .word 0x00000000
-    /* 2DCC98 004DCC98 00000000 */ .word 0x00000000
-    /* 2DCC9C 004DCC9C 00000000 */ .word 0x00000000
-    /* 2DCCA0 004DCCA0 00000000 */ .word 0x00000000
-    /* 2DCCA4 004DCCA4 00000000 */ .word 0x00000000
-    /* 2DCCA8 004DCCA8 00000000 */ .word 0x00000000
-    /* 2DCCAC 004DCCAC 00000000 */ .word 0x00000000
-    /* 2DCCB0 004DCCB0 00000000 */ .word 0x00000000
-    /* 2DCCB4 004DCCB4 00000000 */ .word 0x00000000
-    /* 2DCCB8 004DCCB8 00000000 */ .word 0x00000000
-    /* 2DCCBC 004DCCBC 00000000 */ .word 0x00000000
-    /* 2DCCC0 004DCCC0 00000000 */ .word 0x00000000
-    /* 2DCCC4 004DCCC4 00000000 */ .word 0x00000000
-    /* 2DCCC8 004DCCC8 00000000 */ .word 0x00000000
-    /* 2DCCCC 004DCCCC 00000000 */ .word 0x00000000
-    /* 2DCCD0 004DCCD0 00000000 */ .word 0x00000000
-    /* 2DCCD4 004DCCD4 00000000 */ .word 0x00000000
-    /* 2DCCD8 004DCCD8 00000000 */ .word 0x00000000
-    /* 2DCCDC 004DCCDC 00000000 */ .word 0x00000000
-    /* 2DCCE0 004DCCE0 00000000 */ .word 0x00000000
-    /* 2DCCE4 004DCCE4 00000000 */ .word 0x00000000
-    /* 2DCCE8 004DCCE8 00000000 */ .word 0x00000000
-    /* 2DCCEC 004DCCEC 00000000 */ .word 0x00000000
-    /* 2DCCF0 004DCCF0 00000000 */ .word 0x00000000
-    /* 2DCCF4 004DCCF4 00000000 */ .word 0x00000000
-    /* 2DCCF8 004DCCF8 00000000 */ .word 0x00000000
-    /* 2DCCFC 004DCCFC 00000000 */ .word 0x00000000
-    /* 2DCD00 004DCD00 00000000 */ .word 0x00000000
-    /* 2DCD04 004DCD04 00000000 */ .word 0x00000000
-    /* 2DCD08 004DCD08 00000000 */ .word 0x00000000
-    /* 2DCD0C 004DCD0C 00000000 */ .word 0x00000000
-    /* 2DCD10 004DCD10 00000000 */ .word 0x00000000
-    /* 2DCD14 004DCD14 00000000 */ .word 0x00000000
-    /* 2DCD18 004DCD18 00000000 */ .word 0x00000000
-    /* 2DCD1C 004DCD1C 00000000 */ .word 0x00000000
-    /* 2DCD20 004DCD20 00000000 */ .word 0x00000000
-    /* 2DCD24 004DCD24 00000000 */ .word 0x00000000
-    /* 2DCD28 004DCD28 00000000 */ .word 0x00000000
-    /* 2DCD2C 004DCD2C 00000000 */ .word 0x00000000
-    /* 2DCD30 004DCD30 00000000 */ .word 0x00000000
-    /* 2DCD34 004DCD34 00000000 */ .word 0x00000000
-    /* 2DCD38 004DCD38 00000000 */ .word 0x00000000
-    /* 2DCD3C 004DCD3C 00000000 */ .word 0x00000000
-    /* 2DCD40 004DCD40 00000000 */ .word 0x00000000
-    /* 2DCD44 004DCD44 00000000 */ .word 0x00000000
-    /* 2DCD48 004DCD48 00000000 */ .word 0x00000000
-    /* 2DCD4C 004DCD4C 00000000 */ .word 0x00000000
-    /* 2DCD50 004DCD50 00000000 */ .word 0x00000000
-    /* 2DCD54 004DCD54 00000000 */ .word 0x00000000
-    /* 2DCD58 004DCD58 00000000 */ .word 0x00000000
-    /* 2DCD5C 004DCD5C 00000000 */ .word 0x00000000
-    /* 2DCD60 004DCD60 00000000 */ .word 0x00000000
-    /* 2DCD64 004DCD64 00000000 */ .word 0x00000000
-    /* 2DCD68 004DCD68 00000000 */ .word 0x00000000
-    /* 2DCD6C 004DCD6C 00000000 */ .word 0x00000000
-    /* 2DCD70 004DCD70 00000000 */ .word 0x00000000
-    /* 2DCD74 004DCD74 00000000 */ .word 0x00000000
-    /* 2DCD78 004DCD78 00000000 */ .word 0x00000000
-    /* 2DCD7C 004DCD7C 00000000 */ .word 0x00000000
-    /* 2DCD80 004DCD80 00000000 */ .word 0x00000000
-    /* 2DCD84 004DCD84 00000000 */ .word 0x00000000
-    /* 2DCD88 004DCD88 00000000 */ .word 0x00000000
-    /* 2DCD8C 004DCD8C 00000000 */ .word 0x00000000
-    /* 2DCD90 004DCD90 00000000 */ .word 0x00000000
-    /* 2DCD94 004DCD94 00000000 */ .word 0x00000000
-    /* 2DCD98 004DCD98 00000000 */ .word 0x00000000
-    /* 2DCD9C 004DCD9C 00000000 */ .word 0x00000000
-    /* 2DCDA0 004DCDA0 00000000 */ .word 0x00000000
-    /* 2DCDA4 004DCDA4 00000000 */ .word 0x00000000
-    /* 2DCDA8 004DCDA8 00000000 */ .word 0x00000000
-    /* 2DCDAC 004DCDAC 00000000 */ .word 0x00000000
-    /* 2DCDB0 004DCDB0 00000000 */ .word 0x00000000
-    /* 2DCDB4 004DCDB4 00000000 */ .word 0x00000000
-    /* 2DCDB8 004DCDB8 00000000 */ .word 0x00000000
-    /* 2DCDBC 004DCDBC 00000000 */ .word 0x00000000
-    /* 2DCDC0 004DCDC0 00000000 */ .word 0x00000000
-    /* 2DCDC4 004DCDC4 00000000 */ .word 0x00000000
-    /* 2DCDC8 004DCDC8 00000000 */ .word 0x00000000
-    /* 2DCDCC 004DCDCC 00000000 */ .word 0x00000000
-    /* 2DCDD0 004DCDD0 00000000 */ .word 0x00000000
-    /* 2DCDD4 004DCDD4 00000000 */ .word 0x00000000
-    /* 2DCDD8 004DCDD8 00000000 */ .word 0x00000000
-    /* 2DCDDC 004DCDDC 00000000 */ .word 0x00000000
-    /* 2DCDE0 004DCDE0 00000000 */ .word 0x00000000
-    /* 2DCDE4 004DCDE4 00000000 */ .word 0x00000000
-    /* 2DCDE8 004DCDE8 00000000 */ .word 0x00000000
-    /* 2DCDEC 004DCDEC 00000000 */ .word 0x00000000
-    /* 2DCDF0 004DCDF0 00000000 */ .word 0x00000000
-    /* 2DCDF4 004DCDF4 00000000 */ .word 0x00000000
-    /* 2DCDF8 004DCDF8 00000000 */ .word 0x00000000
-    /* 2DCDFC 004DCDFC 00000000 */ .word 0x00000000
-    /* 2DCE00 004DCE00 00000000 */ .word 0x00000000
-    /* 2DCE04 004DCE04 00000000 */ .word 0x00000000
-    /* 2DCE08 004DCE08 00000000 */ .word 0x00000000
-    /* 2DCE0C 004DCE0C 00000000 */ .word 0x00000000
-    /* 2DCE10 004DCE10 00000000 */ .word 0x00000000
-    /* 2DCE14 004DCE14 00000000 */ .word 0x00000000
-    /* 2DCE18 004DCE18 00000000 */ .word 0x00000000
-    /* 2DCE1C 004DCE1C 00000000 */ .word 0x00000000
-    /* 2DCE20 004DCE20 00000000 */ .word 0x00000000
-    /* 2DCE24 004DCE24 00000000 */ .word 0x00000000
-    /* 2DCE28 004DCE28 00000000 */ .word 0x00000000
-    /* 2DCE2C 004DCE2C 00000000 */ .word 0x00000000
-    /* 2DCE30 004DCE30 00000000 */ .word 0x00000000
-    /* 2DCE34 004DCE34 00000000 */ .word 0x00000000
-    /* 2DCE38 004DCE38 00000000 */ .word 0x00000000
-    /* 2DCE3C 004DCE3C 00000000 */ .word 0x00000000
-    /* 2DCE40 004DCE40 00000000 */ .word 0x00000000
-    /* 2DCE44 004DCE44 00000000 */ .word 0x00000000
-    /* 2DCE48 004DCE48 00000000 */ .word 0x00000000
-    /* 2DCE4C 004DCE4C 00000000 */ .word 0x00000000
-    /* 2DCE50 004DCE50 00000000 */ .word 0x00000000
-    /* 2DCE54 004DCE54 00000000 */ .word 0x00000000
-    /* 2DCE58 004DCE58 00000000 */ .word 0x00000000
-    /* 2DCE5C 004DCE5C 00000000 */ .word 0x00000000
-    /* 2DCE60 004DCE60 00000000 */ .word 0x00000000
-    /* 2DCE64 004DCE64 00000000 */ .word 0x00000000
-    /* 2DCE68 004DCE68 00000000 */ .word 0x00000000
-    /* 2DCE6C 004DCE6C 00000000 */ .word 0x00000000
-    /* 2DCE70 004DCE70 00000000 */ .word 0x00000000
-    /* 2DCE74 004DCE74 00000000 */ .word 0x00000000
-    /* 2DCE78 004DCE78 00000000 */ .word 0x00000000
-    /* 2DCE7C 004DCE7C 00000000 */ .word 0x00000000
-    /* 2DCE80 004DCE80 00000000 */ .word 0x00000000
-    /* 2DCE84 004DCE84 00000000 */ .word 0x00000000
-    /* 2DCE88 004DCE88 00000000 */ .word 0x00000000
-    /* 2DCE8C 004DCE8C 00000000 */ .word 0x00000000
-    /* 2DCE90 004DCE90 00000000 */ .word 0x00000000
-    /* 2DCE94 004DCE94 00000000 */ .word 0x00000000
-    /* 2DCE98 004DCE98 00000000 */ .word 0x00000000
-    /* 2DCE9C 004DCE9C 00000000 */ .word 0x00000000
-    /* 2DCEA0 004DCEA0 00000000 */ .word 0x00000000
-    /* 2DCEA4 004DCEA4 00000000 */ .word 0x00000000
-    /* 2DCEA8 004DCEA8 00000000 */ .word 0x00000000
-    /* 2DCEAC 004DCEAC 00000000 */ .word 0x00000000
-    /* 2DCEB0 004DCEB0 00000000 */ .word 0x00000000
-    /* 2DCEB4 004DCEB4 00000000 */ .word 0x00000000
-    /* 2DCEB8 004DCEB8 00000000 */ .word 0x00000000
-    /* 2DCEBC 004DCEBC 00000000 */ .word 0x00000000
-    /* 2DCEC0 004DCEC0 00000000 */ .word 0x00000000
-    /* 2DCEC4 004DCEC4 00000000 */ .word 0x00000000
-    /* 2DCEC8 004DCEC8 00000000 */ .word 0x00000000
-    /* 2DCECC 004DCECC 00000000 */ .word 0x00000000
-    /* 2DCED0 004DCED0 00000000 */ .word 0x00000000
-    /* 2DCED4 004DCED4 00000000 */ .word 0x00000000
-    /* 2DCED8 004DCED8 00000000 */ .word 0x00000000
-    /* 2DCEDC 004DCEDC 00000000 */ .word 0x00000000
-    /* 2DCEE0 004DCEE0 00000000 */ .word 0x00000000
-    /* 2DCEE4 004DCEE4 00000000 */ .word 0x00000000
-    /* 2DCEE8 004DCEE8 00000000 */ .word 0x00000000
-    /* 2DCEEC 004DCEEC 00000000 */ .word 0x00000000
-    /* 2DCEF0 004DCEF0 00000000 */ .word 0x00000000
-    /* 2DCEF4 004DCEF4 00000000 */ .word 0x00000000
-    /* 2DCEF8 004DCEF8 00000000 */ .word 0x00000000
-    /* 2DCEFC 004DCEFC 00000000 */ .word 0x00000000
-    /* 2DCF00 004DCF00 00000000 */ .word 0x00000000
-    /* 2DCF04 004DCF04 00000000 */ .word 0x00000000
-    /* 2DCF08 004DCF08 00000000 */ .word 0x00000000
-    /* 2DCF0C 004DCF0C 00000000 */ .word 0x00000000
-    /* 2DCF10 004DCF10 00000000 */ .word 0x00000000
-    /* 2DCF14 004DCF14 00000000 */ .word 0x00000000
-    /* 2DCF18 004DCF18 00000000 */ .word 0x00000000
-    /* 2DCF1C 004DCF1C 00000000 */ .word 0x00000000
-    /* 2DCF20 004DCF20 00000000 */ .word 0x00000000
-    /* 2DCF24 004DCF24 00000000 */ .word 0x00000000
-    /* 2DCF28 004DCF28 00000000 */ .word 0x00000000
-    /* 2DCF2C 004DCF2C 00000000 */ .word 0x00000000
-    /* 2DCF30 004DCF30 00000000 */ .word 0x00000000
-    /* 2DCF34 004DCF34 00000000 */ .word 0x00000000
-    /* 2DCF38 004DCF38 00000000 */ .word 0x00000000
-    /* 2DCF3C 004DCF3C 00000000 */ .word 0x00000000
-    /* 2DCF40 004DCF40 00000000 */ .word 0x00000000
-    /* 2DCF44 004DCF44 00000000 */ .word 0x00000000
-    /* 2DCF48 004DCF48 00000000 */ .word 0x00000000
-    /* 2DCF4C 004DCF4C 00000000 */ .word 0x00000000
-    /* 2DCF50 004DCF50 00000000 */ .word 0x00000000
-    /* 2DCF54 004DCF54 00000000 */ .word 0x00000000
-    /* 2DCF58 004DCF58 00000000 */ .word 0x00000000
-    /* 2DCF5C 004DCF5C 00000000 */ .word 0x00000000
-    /* 2DCF60 004DCF60 00000000 */ .word 0x00000000
-    /* 2DCF64 004DCF64 00000000 */ .word 0x00000000
-    /* 2DCF68 004DCF68 00000000 */ .word 0x00000000
-    /* 2DCF6C 004DCF6C 00000000 */ .word 0x00000000
-    /* 2DCF70 004DCF70 00000000 */ .word 0x00000000
-    /* 2DCF74 004DCF74 00000000 */ .word 0x00000000
-    /* 2DCF78 004DCF78 00000000 */ .word 0x00000000
-    /* 2DCF7C 004DCF7C 00000000 */ .word 0x00000000
-    /* 2DCF80 004DCF80 00000000 */ .word 0x00000000
-    /* 2DCF84 004DCF84 00000000 */ .word 0x00000000
-    /* 2DCF88 004DCF88 00000000 */ .word 0x00000000
-    /* 2DCF8C 004DCF8C 00000000 */ .word 0x00000000
-    /* 2DCF90 004DCF90 00000000 */ .word 0x00000000
-    /* 2DCF94 004DCF94 00000000 */ .word 0x00000000
-    /* 2DCF98 004DCF98 00000000 */ .word 0x00000000
-    /* 2DCF9C 004DCF9C 00000000 */ .word 0x00000000
-    /* 2DCFA0 004DCFA0 00000000 */ .word 0x00000000
-    /* 2DCFA4 004DCFA4 00000000 */ .word 0x00000000
-    /* 2DCFA8 004DCFA8 00000000 */ .word 0x00000000
-    /* 2DCFAC 004DCFAC 00000000 */ .word 0x00000000
-    /* 2DCFB0 004DCFB0 00000000 */ .word 0x00000000
-    /* 2DCFB4 004DCFB4 00000000 */ .word 0x00000000
-    /* 2DCFB8 004DCFB8 00000000 */ .word 0x00000000
-    /* 2DCFBC 004DCFBC 00000000 */ .word 0x00000000
-    /* 2DCFC0 004DCFC0 00000000 */ .word 0x00000000
-    /* 2DCFC4 004DCFC4 00000000 */ .word 0x00000000
-    /* 2DCFC8 004DCFC8 00000000 */ .word 0x00000000
-    /* 2DCFCC 004DCFCC 00000000 */ .word 0x00000000
-    /* 2DCFD0 004DCFD0 00000000 */ .word 0x00000000
-    /* 2DCFD4 004DCFD4 00000000 */ .word 0x00000000
-    /* 2DCFD8 004DCFD8 00000000 */ .word 0x00000000
-    /* 2DCFDC 004DCFDC 00000000 */ .word 0x00000000
-    /* 2DCFE0 004DCFE0 00000000 */ .word 0x00000000
-    /* 2DCFE4 004DCFE4 00000000 */ .word 0x00000000
-    /* 2DCFE8 004DCFE8 00000000 */ .word 0x00000000
-    /* 2DCFEC 004DCFEC 00000000 */ .word 0x00000000
-    /* 2DCFF0 004DCFF0 00000000 */ .word 0x00000000
-    /* 2DCFF4 004DCFF4 00000000 */ .word 0x00000000
-    /* 2DCFF8 004DCFF8 00000000 */ .word 0x00000000
-    /* 2DCFFC 004DCFFC 00000000 */ .word 0x00000000
-enddlabel D_004DCBC0
+enddlabel s_nIgnoreCulling
