@@ -1,0 +1,99 @@
+name: Xenosaga Episode I - Der Wille zur Macht (USA)
+sha1: 089939037ac563764ce8f8db0c7005ad5fde9656
+options:
+  basename: SLUS_204.69
+  target_path: config/SLUS_204.69.rom
+  elf_path: build/SLUS_204.69.elf
+  base_path: ..
+  platform: ps2
+  compiler: EEGCC
+
+  gp_value: 0x004DFB70
+  ld_gp_expression: cod_LIT4_START + 0x7FF0
+
+  # asm_path: asm
+  # src_path: src
+  # build_path: build
+
+  ld_script_path: config/SLUS_204.69.ld
+  ld_dependencies: True
+  ld_wildcard_sections: True
+  ld_bss_contains_common: True
+
+  create_asm_dependencies: True
+
+  find_file_boundaries: False
+
+  o_as_suffix: True
+
+  symbol_addrs_path:
+    - config/symbol_addrs.txt
+  reloc_addrs_path:
+    - config/reloc_addrs.txt
+
+  undefined_funcs_auto_path: config/undefined_funcs_auto.txt
+  undefined_syms_auto_path: config/undefined_syms_auto.txt
+
+  extensions_path: tools/splat_ext
+
+  string_encoding: ASCII
+  data_string_encoding: ASCII
+  rodata_string_guesser_level: 2
+  data_string_guesser_level: 2
+
+  named_regs_for_c_funcs: False
+
+  section_order:
+    - .text
+    - .data
+    # - .ctors
+    # - .dtors
+    # - .eh_frame
+    # - .vudata
+    - .rodata
+    - .lit4
+    - .sdata
+    - .sbss
+    - .bss
+
+  auto_link_sections:
+    - .data
+    # - .ctors
+    # - .dtors
+    # - .eh_frame
+    # - .vudata
+    - .rodata
+    - .lit4
+    - .sdata
+    - .sbss
+    - .bss
+
+segments:
+  - name: cod
+    type: code
+    start: 0x000000
+    vram: 0x00200000
+    bss_size: 0x4C13A4
+    subalign: null
+    subsegments:
+      - [0x000000, asm, cod/000000] # .text
+      - [0x138600, data, cod/138600] # .data
+      - [0x2ADE54, data, cod/2ADE54] # .ctors
+      - [0x2ADE5C, data, cod/2ADE5C] # .dtors
+      - [0x2ADE68, data, cod/2ADE68] # .eh_frame
+      - [0x2ADE70, databin, cod/2ADE70] # .vudata
+      - [0x2BE280, rodata, cod/2BE280] # .rodata
+      - [0x2D7B80, lit4, cod/2D7B80] # .lit4
+      - [0x2D8A00, sdata, cod/2D8A00] # .sdata
+      - { type: sbss, vram: 0x004DC500, name: cod/004DC500 } # .sbss
+      - { type: bss, vram: 0x004DC880, name: cod/004DC880 } # .bss
+
+  - name: ov02
+    type: code
+    start: 0x2DD000
+    vram: 0x00A00000
+    bss_size: 0x0
+    subalign: null
+    subsegments:
+      - [0x2DD000, asm, ov02/2DD000] # ov02
+  - [0x2F08EC]

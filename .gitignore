@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+
+# Game binary
+iso/
+
+# Generated ROM
+config/SLUS_204.69.rom
+
+# Build output
+build/
+expected/
+
+# Dependency files
+*.d
+
+# Python
+__pycache__/
+*.pyc
