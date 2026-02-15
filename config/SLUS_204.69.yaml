@@ -85,6 +85,7 @@ segments:
       - [0x2BE280, rodata, cod/2BE280] # .rodata
       - [0x2D7B80, lit4, cod/2D7B80] # .lit4
       - [0x2D8A00, sdata, cod/2D8A00] # .sdata
+      - [0x2DC4D8]
       - { type: sbss, vram: 0x004DC500, name: cod/004DC500 } # .sbss
       - { type: bss, vram: 0x004DC880, name: cod/004DC880 } # .bss
 
