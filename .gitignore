@@ -17,3 +17,6 @@ expected/
 # Python
 __pycache__/
 *.pyc
+build.ninja
+objdiff.json
+config/SLUS_204.69.ld
