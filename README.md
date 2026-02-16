@@ -8,7 +8,7 @@ A work-in-progress decompilation of **Xenosaga Episode I: Der Wille zur Macht** 
 
 The project currently has a **byte-matching build** of the full executable, with all code and data split into individual assembly files. 7,758 symbols have been extracted from the original ELF's symbol table, providing real function and data names throughout the disassembly.
 
-Decompilation (replacing assembly with C) has not yet begun.
+Decompilation is in early stages — functions are being rewritten in C and verified against the original binary.
 
 ## Prerequisites
 
@@ -16,6 +16,7 @@ Decompilation (replacing assembly with C) has not yet begun.
 - **Python 3.12+** with `venv`
 - **ninja-build**
 - **ps2dev binutils** (provides `mips64r5900el-ps2-elf-as` and `mips64r5900el-ps2-elf-ld`)
+- **mipsel-linux-gnu-gcc** (for compiling C — `sudo apt install gcc-mipsel-linux-gnu`)
 - A legally obtained copy of the game
 
 ### Installing ps2dev binutils
@@ -51,6 +52,20 @@ ninja
 
 The built ELF will be at `build/SLUS_204.69.elf`.
 
+### Verifying the build
+
+To confirm the build matches the original byte-for-byte:
+
+```bash
+/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .text iso/SLUS_204.69 build/orig_text.bin
+/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .cod build/SLUS_204.69.elf build/built_text.bin
+dd if=build/built_text.bin of=build/built_text_only.bin bs=1 count=1279344 2>/dev/null
+cmp -l build/orig_text.bin build/built_text_only.bin | wc -l
+rm build/orig_text.bin build/built_text.bin build/built_text_only.bin
+```
+
+This should print `0` (zero differences).
+
 ### After modifying Splat config
 
 Whenever you re-run `splat split`, you must also re-run `tools/post_split.sh` before building. This script:
@@ -59,17 +74,41 @@ Whenever you re-run `splat split`, you must also re-run `tools/post_split.sh` be
 2. Strips `//` comments from `symbol_addrs.txt` (linker can't parse them)
 3. Runs `fix_asm.py` to patch R5900 instruction encoding issues
 
+## Decompilation Workflow
+
+Functions are decompiled by writing equivalent C code in `src/` and verifying it produces identical machine code to the original.
+
+1. Pick a function from `asm/cod/000000.s`
+2. Write the C equivalent in the appropriate `src/*.c` file
+3. Add an entry to `config/decompiled.txt` with the function name, address, and size
+4. Build and verify:
+
+```bash
+ninja && python3 tools/verify.py
+```
+
+`verify.py` compiles your C, extracts the bytes, and compares them against the same address range in the original ELF. Functions are grouped by their original source file (inferred from naming prefixes and adjacency in the binary).
+
+### decompiled.txt format
+
+```
+# name = address, size; // source_file
+sceVif1PkInit = 0x0020AC68, 0x10; // sceVif1Pk
+```
+
 ## Project Structure
 
 ```
 ├── asm/                    # Disassembled code and data
-│   ├── cod/000000.s        # Main .text section
+│   ├── cod/000000.s        # Main .text section (~4,500 functions)
 │   ├── data/cod/           # .data, .rodata, .lit4, .sdata, .sbss, .bss
 │   └── ov02/2DD000.s       # Overlay segment
+├── src/                    # Decompiled C source files
 ├── assets/                 # Binary blobs (VU microcode)
 ├── config/
 │   ├── SLUS_204.69.yaml    # Splat configuration
 │   ├── SLUS_204.69.pinned.ld  # Linker script with pinned section addresses
+│   ├── decompiled.txt      # Tracks decompiled functions
 │   ├── symbol_addrs.txt    # 7,758 named symbols from original ELF
 │   ├── undefined_funcs_auto.txt  # Auto-generated function symbols
 │   └── undefined_syms_auto.txt   # Auto-generated data symbols
@@ -79,12 +118,22 @@ Whenever you re-run `splat split`, you must also re-run `tools/post_split.sh` be
 ├── tools/
 │   ├── extract_symbols.py  # Extracts symbols from original ELF
 │   ├── fix_asm.py          # Patches ld/sd instruction expansion
+│   ├── verify.py           # Verifies decompiled C matches original bytes
 │   └── post_split.sh       # Post-split automation
 ├── configure.py            # Build system generator (ninja)
 └── requirements.txt
 ```
 
 ## Technical Notes
+
+### Toolchain
+
+The project uses two toolchains:
+
+- **ps2dev ee-as / ee-ld** — assembles R5900 MIPS and links the final ELF. The ps2dev assembler properly handles R5900-specific instructions (`sq`, `lq`, etc.) that generic MIPS assemblers don't support.
+- **mipsel-linux-gnu-gcc** — compiles decompiled C files. The original game was compiled with Sony's EEGCC; instruction scheduling may differ with this compiler, but many functions still match.
+
+The linker uses `-m elf32lr5900` to select the correct emulation for o32 ABI objects, and `--noinhibit-exec` to push past ABI mismatch warnings between the two toolchains.
 
 ### R5900 Instruction Expansion
 
@@ -96,6 +145,10 @@ The PS2's Emotion Engine (MIPS R5900) has native 64-bit `ld`/`sd` instructions, 
 ### Pinned Linker Script
 
 Splat's auto-generated linker script places sections sequentially, but minor size differences from alignment cause downstream sections to shift, breaking GP-relative relocations. The pinned linker script forces each section to its exact original virtual address using separate output sections.
+
+### Symbol Extraction
+
+`tools/extract_symbols.py` reads the original ELF's `.symtab` section via `nm` and converts the symbols into Splat's `symbol_addrs.txt` format. It filters out compiler noise (`$L` labels, `.vif`/`.dma` hardware labels), deduplicates symbols sharing the same address (preferring global over local), and disambiguates `static` functions with identical names by appending the address.
 
 ## Disclaimer
 

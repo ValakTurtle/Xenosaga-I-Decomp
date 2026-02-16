@@ -1,0 +1,2 @@
+# Decompiled functions: name = address, size; // source_file
+sceVif1PkInit = 0x0020AC68, 0x10; // sceVif1Pk
