@@ -28,6 +28,12 @@ unsigned int sceVif1PkSize(unsigned int *p)
     return (p[0] - p[1]) >> 4;  // Divide byte difference by 16
 }
 
+/* Reserve space for a number of 32-bit words in the packet */
+void sceVif1PkReserve(unsigned int **p, unsigned int wordCount)
+{
+    *p += wordCount;
+}
+
 #ifdef PS2_HARDWARE
 
 /* Store a 128-bit quadword into the packet */

@@ -4,3 +4,4 @@ sceVif1PkInit = 0x0020AC68, 0x10; // sceVif1Pk
 sceVif1PkReset = 0x0020AC78, 0x10; // sceVif1Pk
 sceVif1PkSize = 0x0020ACE0, 0x14; // sceVif1Pk
 sceVif1PkAddGsPacked = 0x0020B568, 0x14; // sceVif1Pk HARDWARE
+sceVif1PkReserve = 0x0020B070, 0x14; // sceVif1Pk
