@@ -20,7 +20,6 @@ Decompilation is in early stages — functions are being rewritten in C and veri
 - A legally obtained copy of the game
 
 ### Installing ps2dev binutils
-
 ```bash
 sudo apt-get install -y build-essential bison flex texinfo
 git clone --depth 1 https://github.com/ps2dev/binutils-gdb.git /tmp/binutils-gdb
@@ -31,7 +30,6 @@ sudo make install
 ```
 
 ### Python setup
-
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -41,7 +39,6 @@ pip install -r requirements.txt
 ## Building
 
 Place the original ELF at `iso/SLUS_204.69`, then:
-
 ```bash
 source venv/bin/activate
 python3 -m splat split config/SLUS_204.69.yaml
@@ -55,7 +52,6 @@ The built ELF will be at `build/SLUS_204.69.elf`.
 ### Verifying the build
 
 To confirm the build matches the original byte-for-byte:
-
 ```bash
 /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .text iso/SLUS_204.69 build/orig_text.bin
 /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .cod build/SLUS_204.69.elf build/built_text.bin
@@ -82,7 +78,6 @@ Functions are decompiled by writing equivalent C code in `src/` and verifying it
 2. Write the C equivalent in the appropriate `src/*.c` file
 3. Add an entry to `config/decompiled.txt` with the function name, address, and size
 4. Build and verify:
-
 ```bash
 ninja && python3 tools/verify.py
 ```
@@ -90,14 +85,17 @@ ninja && python3 tools/verify.py
 `verify.py` compiles your C, extracts the bytes, and compares them against the same address range in the original ELF. Functions are grouped by their original source file (inferred from naming prefixes and adjacency in the binary).
 
 ### decompiled.txt format
-
 ```
-# name = address, size; // source_file
+# Verified match — name = address, size; // source_file
 sceVif1PkInit = 0x0020AC68, 0x10; // sceVif1Pk
+
+# PS2 hardware function — name = address, size; // source_file HARDWARE
+sceVif1PkAddGsPacked = 0x0020B568, 0x14; // sceVif1Pk HARDWARE
 ```
+
+Functions marked `HARDWARE` use PS2-specific instructions and are skipped by `verify.py`.
 
 ## Project Structure
-
 ```
 ├── asm/                    # Disassembled code and data
 │   ├── cod/000000.s        # Main .text section (~4,500 functions)
@@ -149,6 +147,15 @@ Splat's auto-generated linker script places sections sequentially, but minor siz
 ### Symbol Extraction
 
 `tools/extract_symbols.py` reads the original ELF's `.symtab` section via `nm` and converts the symbols into Splat's `symbol_addrs.txt` format. It filters out compiler noise (`$L` labels, `.vif`/`.dma` hardware labels), deduplicates symbols sharing the same address (preferring global over local), and disambiguates `static` functions with identical names by appending the address.
+
+### PS2 Hardware Functions
+
+Some functions use PS2-specific instructions (`sq`, `lq`, etc.) that cannot be compiled with `mipsel-linux-gnu-gcc`. These are documented in the source files inside `#ifdef PS2_HARDWARE` blocks with inline comments referencing the original instructions. They are tagged with `HARDWARE` in `decompiled.txt`, and `verify.py` skips them and reports them separately.
+
+To find all hardware-dependent functions:
+```bash
+grep -r "PS2_HARDWARE" src/
+```
 
 ## Disclaimer
 

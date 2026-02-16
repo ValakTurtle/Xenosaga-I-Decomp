@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Verify decompiled C functions match the original ELF."""
-import subprocess, sys, re
+import subprocess, sys, re, glob
 
 ELF = "iso/SLUS_204.69"
 BUILT = "build/src"
@@ -11,33 +11,33 @@ def get_bytes(cmd):
     result = subprocess.run(cmd, capture_output=True, text=True)
     raw = []
     for line in result.stdout.split('\n'):
-        # Extract hex bytes from objdump output
         m = re.match(r'\s+[0-9a-f]+:\s+((?:[0-9a-f]{2} )+)', line)
         if m:
             raw.extend(m.group(1).strip().split())
     return raw
 
 # Read decompiled.txt
+entries = []
+hardware = []
 with open("config/decompiled.txt") as f:
-    entries = []
     for line in f:
         line = line.strip()
         if not line or line.startswith('#'):
             continue
         m = re.match(r'(\w+)\s*=\s*(0x[0-9A-Fa-f]+),\s*(0x[0-9A-Fa-f]+);', line)
         if m:
-            entries.append((m.group(1), int(m.group(2), 16), int(m.group(3), 16)))
+            name = m.group(1)
+            addr = int(m.group(2), 16)
+            size = int(m.group(3), 16)
+            if 'HARDWARE' in line:
+                hardware.append(name)
+            else:
+                entries.append((name, addr, size))
 
 passed = 0
 failed = 0
+
 for name, addr, size in entries:
-    # Find which .o file contains this function
-    result = subprocess.run(
-        f"grep -rl 'T {name}$' {BUILT}/ 2>/dev/null || true",
-        shell=True, capture_output=True, text=True
-    )
-    # Search for the .o file by looking at nm output
-    import glob
     obj = None
     for o in glob.glob(f"{BUILT}/*.o"):
         nm = subprocess.run(
@@ -66,4 +66,7 @@ for name, addr, size in entries:
         print(f"    built: {' '.join(built[:16])}")
         failed += 1
 
-print(f"\n{passed} passed, {failed} failed, {len(entries)} total")
+for name in hardware:
+    print(f"  HW   {name}")
+
+print(f"\n{passed} passed, {failed} failed, {len(hardware)} hardware, {len(entries) + len(hardware)} total")
