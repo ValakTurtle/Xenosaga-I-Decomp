@@ -8,7 +8,15 @@ A work-in-progress decompilation of **Xenosaga Episode I: Der Wille zur Macht** 
 
 The project currently has a **byte-matching build** of the full executable, with all code and data split into individual assembly files. 7,758 symbols have been extracted from the original ELF's symbol table, providing real function and data names throughout the disassembly.
 
-Decompilation is in early stages — functions are being rewritten in C and verified against the original binary.
+### Decompilation Progress
+
+| Category | Functions | Bytes | % of .text |
+|----------|-----------|-------|------------|
+| Matched  | 4         | 72    | 0.006%     |
+| Hardware | 1         | 20    | 0.002%     |
+| **Total**| **5**     | **92**| **0.007%** |
+
+*Auto-updated on each push. Run `python3 tools/progress.py` locally for current stats.*
 
 ## Prerequisites
 
