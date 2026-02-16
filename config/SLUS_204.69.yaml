@@ -22,7 +22,7 @@ options:
 
   create_asm_dependencies: True
 
-  find_file_boundaries: False
+  find_file_boundaries: True
 
   o_as_suffix: True
 
