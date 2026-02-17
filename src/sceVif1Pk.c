@@ -4,7 +4,7 @@ typedef struct Vif1Packet
     unsigned int *current;   /* 0x00 - current write pointer */
     unsigned int *base;      /* 0x04 - base/start pointer */
     unsigned int  reserved;  /* 0x08 - state / unused */
-    unsigned int  unk0;      /* 0x0C */
+    unsigned int *openDirect;  /* 0x0C */
     unsigned int  unk1;      /* 0x10 */
     unsigned int *openGif;   /* 0x14 - pointer to open GIF tag */
 } Vif1Packet;
@@ -54,6 +54,67 @@ void sceVif1PkAddGsData(Vif1Packet *pkt, unsigned long long value)
     dest[1] = (unsigned int)(value >> 32);  /* high 32 bits */
 
     pkt->current += 2;  /* advance by 8 bytes */
+}
+
+/* Close a previously opened DIRECT code and patch its size */
+void sceVif1PkCloseDirectCode(Vif1Packet *pkt)
+{
+    unsigned int *current = pkt->current;
+    unsigned int *open    = pkt->openDirect;
+
+    current -= 1;                 /* exclude last word */
+    pkt->openDirect = 0;          /* clear open state */
+
+    open[0] += (unsigned int)(current - open);
+}
+
+/* Close a previously opened DIRECT HL code and patch its size */
+void sceVif1PkCloseDirectHLCode(Vif1Packet *pkt)
+{
+    unsigned int *current = pkt->current;
+    unsigned int *open    = pkt->openDirect;
+
+    current -= 1;               /* exclude last word */
+    pkt->openDirect = 0;        /* clear open state */
+
+    open[0] += (unsigned int)(current - open);
+}
+
+/* Append a GS A+D packet entry (64-bit data + 32-bit address) */
+void sceVif1PkAddGsAD(Vif1Packet *pkt, unsigned int addr, unsigned long long data)
+{
+    unsigned int *dest = pkt->current;
+
+    /* 64-bit data */
+    dest[0] = (unsigned int)data;          /* low 32 bits */
+    dest[1] = (unsigned int)(data >> 32);  /* high 32 bits */
+
+    /* GS register address */
+    dest[2] = addr;
+
+    /* padding */
+    dest[3] = 0;
+
+    pkt->current += 4;  /* advance by 16 bytes */
+}
+
+/* Append N 32-bit words to the packet */
+void sceVif1PkAddDataN(Vif1Packet *pkt, unsigned int *src, unsigned int count)
+{
+    if (count != 0)
+    {
+        unsigned int *dest = pkt->current;
+        unsigned int i = count;
+
+        do
+        {
+            *dest++ = *src++;
+            i--;
+        }
+        while (i != 0);
+
+        pkt->current = dest;
+    }
 }
 
 
