@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "=== Installing system dependencies ==="
 sudo apt update
-sudo apt install -y python3-venv ninja-build build-essential git bison flex texinfo gcc-mipsel-linux-gnu
+sudo apt install -y python3 python3-venv ninja-build build-essential git bison flex texinfo gcc-mipsel-linux-gnu binutils-mips-linux-gnu
 
 echo "=== Setting up Python venv ==="
 cd "$SCRIPT_DIR"
@@ -34,8 +34,10 @@ fi
 
 echo ""
 echo "=== Setup complete ==="
-echo "Place your SLUS_204.69 in iso/ then run:"
+echo ""
+echo "Place your SLUS_204.69 in the iso/ directory, then run:"
 echo "  source venv/bin/activate"
+echo "  mips-linux-gnu-objcopy -O binary --gap-fill=0x00 iso/SLUS_204.69 config/SLUS_204.69.rom"
 echo "  python3 -m splat split config/SLUS_204.69.yaml"
 echo "  bash tools/post_split.sh"
 echo "  python3 configure.py"
