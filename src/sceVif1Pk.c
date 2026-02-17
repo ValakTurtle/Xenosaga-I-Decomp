@@ -45,6 +45,17 @@ void sceVif1PkReserve(Vif1Packet *pkt, unsigned int count)
     pkt->current += count;
 }
 
+/* Append a 64-bit GS data value (written as two 32-bit words) */
+void sceVif1PkAddGsData(Vif1Packet *pkt, unsigned long long value)
+{
+    unsigned int *dest = pkt->current;
+
+    dest[0] = (unsigned int)value;          /* low 32 bits */
+    dest[1] = (unsigned int)(value >> 32);  /* high 32 bits */
+
+    pkt->current += 2;  /* advance by 8 bytes */
+}
+
 
 #ifdef PS2_HARDWARE
 
