@@ -12,9 +12,9 @@ The project currently has a **byte-matching build** of the full executable, with
 
 | Category | Functions | Bytes | % of .text |
 |----------|-----------|-------|------------|
-| Matched  | 6 | 132 | 0.010% |
+| Matched  | 10 | 332 | 0.026% |
 | Hardware | 2 | 44 | 0.003% |
-| **Total**| **8** | **176** | **0.014%** |
+| **Total**| **12** | **376** | **0.029%** |
 
 *Auto-updated on each push. Run `python3 tools/progress.py` locally for current stats.*
 
