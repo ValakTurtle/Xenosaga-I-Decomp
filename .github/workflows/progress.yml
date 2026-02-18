@@ -16,7 +16,56 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Update README progress
-        run: python3 tools/progress.py --update-readme
+        run: |
+          python3 -c "
+          import re
+
+          TOTAL = 1279344
+          matched = hw = mc = hc = 0
+          with open('config/decompiled.txt') as f:
+              for line in f:
+                  line = line.strip()
+                  if not line or line.startswith('#'): continue
+                  m = re.match(r'(\w+)\s*=\s*(0x[0-9A-Fa-f]+),\s*(0x[0-9A-Fa-f]+);', line)
+                  if m:
+                      size = int(m.group(3), 16)
+                      if 'HARDWARE' in line:
+                          hw += size; hc += 1
+                      else:
+                          matched += size; mc += 1
+
+          total = matched + hw
+          pct = (total / TOTAL) * 100
+          matched_pct = (matched / TOTAL) * 100
+          hw_pct = (hw / TOTAL) * 100
+
+          table = f'''<!--progress-start-->
+          ### Decompilation Progress
+
+          | Category | Functions | Bytes | % of .text |
+          |----------|-----------|-------|------------|
+          | Matched  | {mc:<9} | {matched:<5} | {matched_pct:.3f}%     |
+          | Hardware | {hc:<9} | {hw:<5} | {hw_pct:.3f}%     |
+          | **Total**| **{mc+hc}**    | **{total}**| **{pct:.3f}%** |
+
+          *Auto-updated on each push.*
+          <!--progress-end-->'''
+
+          table = '\n'.join(line.lstrip() for line in table.split('\n'))
+
+          with open('README.md') as f:
+              readme = f.read()
+
+          readme = re.sub(
+              r'<!--progress-start-->.*?<!--progress-end-->',
+              table,
+              readme,
+              flags=re.DOTALL
+          )
+
+          with open('README.md', 'w') as f:
+              f.write(readme)
+          "
 
       - name: Commit changes
         run: |
