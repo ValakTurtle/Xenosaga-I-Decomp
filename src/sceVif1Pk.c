@@ -14,8 +14,8 @@ typedef struct Vif1Packet
 void sceVif1PkInit(Vif1Packet *pkt, unsigned int *buffer)
 {
     pkt->current  = buffer;
-    pkt->base     = buffer;
     pkt->reserved = 0;
+    pkt->base     = buffer;
 }
 
 /* Reset packet write pointer to base */
@@ -35,8 +35,8 @@ void sceVif1PkAddCode(Vif1Packet *pkt, unsigned int value)
 /* Return number of 16-byte quadwords written */
 unsigned int sceVif1PkSize(Vif1Packet *pkt)
 {
-    return ((unsigned char*)pkt->current -
-            (unsigned char*)pkt->base) >> 4;
+    unsigned char *base = (unsigned char*)pkt->base;
+    return ((unsigned int)((unsigned char*)pkt->current - base)) >> 4;
 }
 
 /* Reserve space for a number of 32-bit values */
@@ -49,11 +49,9 @@ void sceVif1PkReserve(Vif1Packet *pkt, unsigned int count)
 void sceVif1PkAddGsData(Vif1Packet *pkt, unsigned long long value)
 {
     unsigned int *dest = pkt->current;
-
-    dest[0] = (unsigned int)value;          /* low 32 bits */
-    dest[1] = (unsigned int)(value >> 32);  /* high 32 bits */
-
-    pkt->current += 2;  /* advance by 8 bytes */
+    *dest++ = (unsigned int)value;
+    *dest = (unsigned int)(value >> 32);
+    pkt->current = dest + 1;
 }
 
 /* Close a previously opened DIRECT code and patch its size */
@@ -84,18 +82,11 @@ void sceVif1PkCloseDirectHLCode(Vif1Packet *pkt)
 void sceVif1PkAddGsAD(Vif1Packet *pkt, unsigned int addr, unsigned long long data)
 {
     unsigned int *dest = pkt->current;
-
-    /* 64-bit data */
-    dest[0] = (unsigned int)data;          /* low 32 bits */
-    dest[1] = (unsigned int)(data >> 32);  /* high 32 bits */
-
-    /* GS register address */
-    dest[2] = addr;
-
-    /* padding */
-    dest[3] = 0;
-
-    pkt->current += 4;  /* advance by 16 bytes */
+    *dest++ = (unsigned int)data;
+    *dest = (unsigned int)(data >> 32);
+    pkt->current = dest + 3;
+    dest[1] = addr;
+    dest[2] = 0;
 }
 
 /* Append N 32-bit words to the packet */
@@ -161,10 +152,10 @@ void sceVif1PkCloseUpkCode(Vif1Packet *pkt)
 }
 
 /* Finalize the VIF1 packet by aligning to 16 bytes and patching any open DIRECT/HL code sizes */
-void sceVif1PkTerminate(Vif1Packet *pkt)
+unsigned int sceVif1PkTerminate(Vif1Packet *pkt)
 {
     unsigned int *current = pkt->current;
-    unsigned int *open    = (unsigned int *)pkt->openDirect;
+    unsigned int *open    = (unsigned int *)pkt->reserved;
 
     /* Align current pointer to 16-byte boundary, filling padding words with zeros */
     while (((unsigned int)current & 0xC) != 0)
@@ -175,15 +166,17 @@ void sceVif1PkTerminate(Vif1Packet *pkt)
     /* Patch the size of an open DIRECT/HL code if one exists */
     if (open != 0)
     {
-        unsigned int size = ((current - open) >> 4) - 1;  /* in 16-byte units minus 1 */
-        open[0] += size;
+        int diff = (int)current - (int)open;
+        *open += (diff >> 4) - 1;
     }
 
     /* Clear open pointer */
-    pkt->openDirect = 0;
+    pkt->reserved = 0;
 
     /* Update packet write pointer */
     pkt->current = current;
+
+    return (unsigned int)current;
 }
 
 /* Finalize a packet segment and append a VIF1 control word with the given flags */
