@@ -3,7 +3,7 @@
 import subprocess
 
 result = subprocess.run(
-    ["/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-nm", "iso/SLUS_204.69"],
+    ["/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-nm", "elf/SLUS_204.69"],
     capture_output=True, text=True
 )
 

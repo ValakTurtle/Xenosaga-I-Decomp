@@ -2,7 +2,7 @@
 venv/
 
 # Game binary
-iso/
+elf/
 
 # Generated ROM
 config/SLUS_204.69.rom

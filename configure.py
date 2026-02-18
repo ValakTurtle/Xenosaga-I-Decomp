@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 CONFIG_DIR = ROOT / "config"
 SPLAT_YAML = CONFIG_DIR / "SLUS_204.69.yaml"
-ISO_DIR = ROOT / "iso"
+ISO_DIR = ROOT / "elf"
 BUILD_DIR = ROOT / "build"
 ELF_PATH = BUILD_DIR / "SLUS_204.69.elf"
 

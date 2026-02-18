@@ -32,14 +32,14 @@ if ! grep -q 'ps2dev' ~/.bashrc; then
     echo 'export PATH="$PATH:/usr/local/ps2dev/ee/bin"' >> ~/.bashrc
 fi
 
-mkdir -p "$SCRIPT_DIR/iso"
+mkdir -p "$SCRIPT_DIR/elf"
 
 echo ""
 echo "=== Setup complete ==="
 echo ""
-echo "Place your SLUS_204.69 in the iso/ directory, then run:"
+echo "Place your SLUS_204.69 in the elf/ directory, then run:"
 echo "  source venv/bin/activate"
-echo "  mips-linux-gnu-objcopy -O binary --gap-fill=0x00 iso/SLUS_204.69 config/SLUS_204.69.rom"
+echo "  mips-linux-gnu-objcopy -O binary --gap-fill=0x00 elf/SLUS_204.69 config/SLUS_204.69.rom"
 echo "  python3 -m splat split config/SLUS_204.69.yaml"
 echo "  bash tools/post_split.sh"
 echo "  python3 configure.py"

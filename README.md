@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 ## Building
 
-Place the original ELF at `iso/SLUS_204.69`, then:
+Place the original ELF at `elf/SLUS_204.69`, then:
 ```bash
 source venv/bin/activate
 python3 -m splat split config/SLUS_204.69.yaml
@@ -61,7 +61,7 @@ The built ELF will be at `build/SLUS_204.69.elf`.
 
 To confirm the build matches the original byte-for-byte:
 ```bash
-/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .text iso/SLUS_204.69 build/orig_text.bin
+/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .text elf/SLUS_204.69 build/orig_text.bin
 /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .cod build/SLUS_204.69.elf build/built_text.bin
 dd if=build/built_text.bin of=build/built_text_only.bin bs=1 count=1279344 2>/dev/null
 cmp -l build/orig_text.bin build/built_text_only.bin | wc -l

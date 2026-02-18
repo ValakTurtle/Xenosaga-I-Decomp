@@ -2,7 +2,7 @@
 """Verify decompiled C functions match the original ELF."""
 import subprocess, sys, re, glob
 
-ELF = "iso/SLUS_204.69"
+ELF = "elf/SLUS_204.69"
 BUILT = "build/src"
 OBJDUMP = "/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objdump"
 CC_OBJDUMP = "mipsel-linux-gnu-objdump"
