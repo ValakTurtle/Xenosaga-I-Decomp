@@ -31,14 +31,22 @@ config/
   symbol_addrs.txt          7,758 named symbols from original ELF
   undefined_funcs_auto.txt  Auto-generated function symbols
   undefined_syms_auto.txt   Auto-generated data symbols
+include/
+  macro.inc                 Assembly macros
+  labels.inc                Label macros
 tools/
   extract_symbols.py        Extracts symbols from original ELF
   fix_asm.py                Patches ld/sd instruction expansion
   verify.py                 Verifies decompiled C matches original bytes
   progress.py               Calculates decompilation progress
   post_split.sh             Post-split automation
+  setup_aliases.sh          Installs project aliases into venv
+.github/workflows/
+  progress.yml              Auto-updates README progress on push
 configure.py                Build system generator (ninja)
 setup.sh                    One-step environment setup
+SETUP.md                    Installation and build instructions
+CONTRIBUTING.md             Workflow, conventions, and technical notes
 ```
 
 ## Disclaimer
