@@ -18,7 +18,7 @@ jobs:
       - name: Update README progress
         run: |
           python3 -c "
-          import re
+          import re, urllib.parse
 
           TOTAL = 1279344
           matched = hw = mc = hc = 0
@@ -35,32 +35,35 @@ jobs:
                           matched += size; mc += 1
 
           total = matched + hw
+          total_count = mc + hc
           pct = (total / TOTAL) * 100
-          matched_pct = (matched / TOTAL) * 100
-          hw_pct = (hw / TOTAL) * 100
 
+          # Update progress table
           table = f'''<!--progress-start-->
           ### Decompilation Progress
 
-          | Category | Functions | Bytes | % of .text |
-          |----------|-----------|-------|------------|
-          | Matched  | {mc:<9} | {matched:<5} | {matched_pct:.3f}%     |
-          | Hardware | {hc:<9} | {hw:<5} | {hw_pct:.3f}%     |
-          | **Total**| **{mc+hc}**    | **{total}**| **{pct:.3f}%** |
+          | Version | Functions | Bytes | % of .text |
+          |---------|-----------|-------|------------|
+          | NTSC-U  | {total_count:<9} | {total:<5} | {pct:.3f}%     |
 
           *Auto-updated on each push.*
           <!--progress-end-->'''
-
           table = '\n'.join(line.lstrip() for line in table.split('\n'))
+
+          # Update badge
+          pct_encoded = urllib.parse.quote(f'{pct:.3f}%')
+          badge = f'<!--badge-start-->\n[![Progress](https://img.shields.io/badge/progress-{pct_encoded}-blue?style=flat)](https://github.com/ValakTurtle/Xenosaga-I-Decomp)\n<!--badge-end-->'
 
           with open('README.md') as f:
               readme = f.read()
 
           readme = re.sub(
               r'<!--progress-start-->.*?<!--progress-end-->',
-              table,
-              readme,
-              flags=re.DOTALL
+              table, readme, flags=re.DOTALL
+          )
+          readme = re.sub(
+              r'<!--badge-start-->.*?<!--badge-end-->',
+              badge, readme, flags=re.DOTALL
           )
 
           with open('README.md', 'w') as f:

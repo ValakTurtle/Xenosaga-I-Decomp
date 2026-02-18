@@ -1,31 +1,34 @@
 # Xenosaga Episode I: Der Wille zur Macht
 
-[![Build](https://img.shields.io/github/actions/workflow/status/ValakTurtle/Xenosaga-I-Decomp/progress.yml?branch=main&label=build)](https://github.com/ValakTurtle/Xenosaga-I-Decomp/actions)
+<!--badge-start-->
+[![Progress](https://img.shields.io/badge/progress-0.029%25-blue?style=flat)](https://github.com/ValakTurtle/Xenosaga-I-Decomp)
+<!--badge-end-->
 
 <!--progress-start-->
 ### Decompilation Progress
 
-| Category | Functions | Bytes | % of .text |
-|----------|-----------|-------|------------|
-| Matched  | 10        | 332   | 0.026%     |
-| Hardware | 2         | 44    | 0.003%     |
-| **Total**| **12**    | **376**| **0.029%** |
+| Version | Functions | Bytes | % of .text |
+|---------|-----------|-------|------------|
+| NTSC-U  | 12        | 376   | 0.029%     |
 
 *Auto-updated on each push.*
 <!--progress-end-->
 
-A work-in-progress decompilation of **Xenosaga Episode I** (PS2, NTSC-U).
+A work-in-progress decompilation of **Xenosaga Episode I** (PS2).
 
-**Target:** `SLUS_204.69` (SHA1: `fd206d5715a322830f7fa9285fb4a09276ac2a63`)
+| Version | Target | SHA1 | Status |
+|---------|--------|------|--------|
+| NTSC-U  | `SLUS_204.69` | `fd206d5715a322830f7fa9285fb4a09276ac2a63` | Active |
+| NTSC-J  | `SLPS_291.08` | TBD | Planned |
+| PAL     | `SLES_514.98` | TBD | Planned |
 
-The project has a **byte-matching build** of the full executable, with 7,758 named symbols extracted from the original ELF. Functions are being rewritten in C and verified against the original binary.
+The project has a **byte-matching build** of the full NTSC-U executable, with 7,758 named symbols extracted from the original ELF. Functions are being rewritten in C and verified against the original binary.
 
 To set up the repository, see [SETUP.md](SETUP.md).
 
 For information on how the project works and how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Project Structure
-
 ```
 asm/                        Disassembled code and data
   cod/000000.s              Main .text section (~4,500 functions)
