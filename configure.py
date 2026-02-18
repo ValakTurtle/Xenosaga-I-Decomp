@@ -20,15 +20,17 @@ ORIGINAL_ELF = ISO_DIR / "SLUS_204.69"
 ORIGINAL_SHA1 = "fd206d5715a322830f7fa9285fb4a09276ac2a63"
 
 # Tools
-CROSS = "/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-"
+PS2DEV = "/usr/local/ps2dev"
+CROSS = f"{PS2DEV}/ee/bin/mips64r5900el-ps2-elf-"
 AS = f"{CROSS}as"
 LD = "/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-ld"
-OBJCOPY = f"mips-linux-gnu-objcopy"
-CC = "mipsel-linux-gnu-gcc"
+OBJCOPY = f"{CROSS}objcopy"
+CC = f"{PS2DEV}/ee-gcc/bin/ee-gcc"
 
 # Flags
 ASFLAGS = "-march=r5900 -mabi=32 -Iinclude --no-warn"
-CFLAGS = "-O2 -G0 -mips2 -mabi=32"
+CC_ASFLAGS = "-march=r5900 -mabi=eabi -Iinclude --no-warn"
+CFLAGS = "-O2 -G0 -fno-schedule-insns"
 LDFLAGS = "--allow-multiple-definition -m elf32lr5900 --noinhibit-exec"
 
 
@@ -95,7 +97,7 @@ def generate_ninja(asm_files, src_files, asset_files):
         f.write(f"  description = AS $in\n\n")
 
         f.write(f"rule cc\n")
-        f.write(f"  command = {CC} {CFLAGS} -c -o $out $in\n")
+        f.write(f"  command = {CC} {CFLAGS} -S -o $out.s $in && sed -i 's/\\tmove\\t\\(\\$$[0-9]*\\),\\(\\$$[0-9]*\\)/\\tdaddu\\t\\1,\\2,$$0/' $out.s && {AS} {CC_ASFLAGS} -o $out $out.s\n")
         f.write(f"  description = CC $in\n\n")
 
         f.write(f"rule ld\n")

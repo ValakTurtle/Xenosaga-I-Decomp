@@ -28,7 +28,7 @@ echo "Xenosaga Episode I Decomp -- Setup"
 echo "-----------------------------------"
 
 # System packages
-(sudo apt update -qq > /dev/null 2>&1 && sudo apt install -y -qq python3 python3-venv ninja-build build-essential git bison flex texinfo gcc-mipsel-linux-gnu binutils-mips-linux-gnu > /dev/null 2>&1) &
+(sudo apt update -qq > /dev/null 2>&1 && sudo apt install -y -qq python3 python3-venv ninja-build build-essential git bison flex texinfo gcc-multilib > /dev/null 2>&1) &
 spin $! "Installing system packages"
 
 # Python venv
@@ -56,6 +56,24 @@ else
     spin $! "Building PS2DEV binutils (this takes a few minutes)"
 fi
 
+# EE-GCC (Sony PS2 compiler for decompilation matching)
+if [ -f "/usr/local/ps2dev/ee-gcc/bin/ee-gcc" ]; then
+    echo "  [+] EE-GCC already installed"
+else
+    rm -rf /tmp/ps2-ee-toolchain
+    (git clone --depth 1 -q https://github.com/SSXModding/ps2-ee-toolchain.git /tmp/ps2-ee-toolchain 2>/dev/null && \
+     cd /tmp/ps2-ee-toolchain && \
+     mkdir -p build_cygee && cd build_cygee && \
+     CC='gcc -m32' LDFLAGS='-static' ../ee/configure --target=ee --enable-c-cpplib --without-sim --disable-sim --host=i686-linux-gnu --prefix=/tmp/ps2-ee-toolchain/toolchain/ee > /dev/null 2>&1 && \
+     make -j$(nproc) > /dev/null 2>&1 && \
+     make install > /dev/null 2>&1 && \
+     sudo cp -r /tmp/ps2-ee-toolchain/toolchain/ee /usr/local/ps2dev/ee-gcc && \
+     sudo mv /usr/local/ps2dev/ee-gcc/bin/ee-as /usr/local/ps2dev/ee-gcc/bin/ee-as.old && \
+     sudo ln -s /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-as /usr/local/ps2dev/ee-gcc/bin/ee-as && \
+     sudo ln -sf /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-as /usr/local/ps2dev/ee-gcc/ee/bin/as) &
+    spin $! "Building EE-GCC compiler (this takes a few minutes)"
+fi
+
 # Persist PATH
 if ! grep -q 'ps2dev' ~/.bashrc; then
     echo 'export PATH="$PATH:/usr/local/ps2dev/ee/bin"' >> ~/.bashrc
@@ -67,7 +85,7 @@ echo "-----------------------------------"
 echo "Setup complete! Place your SLUS_204.69 in elf/, then run:"
 echo ""
 echo "  source venv/bin/activate"
-echo "  mips-linux-gnu-objcopy -O binary --gap-fill=0x00 elf/SLUS_204.69 config/SLUS_204.69.rom"
+echo "  /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary --gap-fill=0x00 elf/SLUS_204.69 config/SLUS_204.69.rom"
 echo "  python3 -m splat split config/SLUS_204.69.yaml"
 echo "  bash tools/post_split.sh"
 echo "  python3 configure.py"

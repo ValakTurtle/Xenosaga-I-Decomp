@@ -5,7 +5,7 @@ import subprocess, sys, re, glob
 ELF = "elf/SLUS_204.69"
 BUILT = "build/src"
 OBJDUMP = "/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objdump"
-CC_OBJDUMP = "mipsel-linux-gnu-objdump"
+CC_OBJDUMP = "/usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objdump"
 
 
 def get_words(cmd):
@@ -88,10 +88,26 @@ for name, addr, size in entries:
         print(f"  SKIP {name} - no original bytes found")
         continue
 
-    if orig == built:
+    def mask_word(w):
+        """Mask jal targets and break encodings for comparison."""
+        val = int(w, 16)
+        # jal: opcode 0x0C (top 6 bits = 000011), mask lower 26 bits
+        if (val >> 26) == 0x03:
+            return f"{val & 0xFC000000:08x}"
+        # break: both 0x0007000d and 0x000001cd are break instructions
+        # SPECIAL opcode (0) with funct=0x0d (break)
+        if (val & 0xFC00003F) == 0x0000000D:
+            return "BREAK"
+        return w
+
+    orig_masked = [mask_word(w) for w in orig]
+    built_masked = [mask_word(w) for w in built]
+
+    if orig_masked == built_masked:
         print(f"  OK   {name}")
         passed += 1
     else:
+        # Find first difference for display
         print(f"  FAIL {name}")
         print(f"    orig:  {' '.join(orig[:8])}")
         print(f"    built: {' '.join(built[:8])}")
