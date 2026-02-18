@@ -27,7 +27,7 @@ OBJCOPY = f"mips-linux-gnu-objcopy"
 CC = "mipsel-linux-gnu-gcc"
 
 # Flags
-ASFLAGS = "-march=r5900 -mabi=32 -Iinclude"
+ASFLAGS = "-march=r5900 -mabi=32 -Iinclude --no-warn"
 CFLAGS = "-O2 -G0 -mips2 -mabi=32"
 LDFLAGS = "--allow-multiple-definition -m elf32lr5900 --noinhibit-exec"
 
