@@ -40,6 +40,9 @@ else
     spin $! "Setting up Python environment"
 fi
 
+# Project aliases
+bash tools/setup_aliases.sh > /dev/null 2>&1 && echo "  [+] Project aliases installed (build, progress, split, full)"
+
 # PS2DEV binutils
 if command -v mips64r5900el-ps2-elf-as &> /dev/null; then
     echo "  [+] PS2DEV binutils already installed"
