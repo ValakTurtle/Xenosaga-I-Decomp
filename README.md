@@ -1,15 +1,11 @@
 # Xenosaga Episode I: Der Wille zur Macht
 
-<!--badge-start-->
-[![Progress](https://img.shields.io/badge/progress-0.029%25-blue?style=flat)](https://github.com/ValakTurtle/Xenosaga-I-Decomp)
-<!--badge-end-->
-
 A work-in-progress decompilation of **Xenosaga Episode I** (PS2).
 
 <!--progress-start-->
 | Version | Target | Bytes | Progress |
 |---------|--------|-------|----------|
-| NTSC-U  | `SLUS_204.69` | 376 / 1,279,344 | 0.029% |
+| NTSC-U  | `SLUS_204.69` | 376 / 1,279,344 | ![Progress](https://img.shields.io/badge/0.029%25-blue?style=flat) |
 | NTSC-J  | `SLPS_290.02` | — | Planned |
 | Reloaded | `SLPS_290.05` | — | Planned |
 <!--progress-end-->

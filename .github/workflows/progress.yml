@@ -36,20 +36,16 @@ jobs:
 
           total = matched + hw
           pct = (total / TOTAL) * 100
+          pct_encoded = urllib.parse.quote(f'{pct:.3f}%')
 
-          # Update progress table
           table = f'''<!--progress-start-->
           | Version | Target | Bytes | Progress |
           |---------|--------|-------|----------|
-          | NTSC-U  | \`SLUS_204.69\` | {total:,} / 1,279,344 | {pct:.3f}% |
+          | NTSC-U  | \`SLUS_204.69\` | {total:,} / 1,279,344 | ![Progress](https://img.shields.io/badge/{pct_encoded}-blue?style=flat) |
           | NTSC-J  | \`SLPS_290.02\` | — | Planned |
           | Reloaded | \`SLPS_290.05\` | — | Planned |
           <!--progress-end-->'''
           table = '\n'.join(line.lstrip() for line in table.split('\n'))
-
-          # Update badge
-          pct_encoded = urllib.parse.quote(f'{pct:.3f}%')
-          badge = f'<!--badge-start-->\n[![Progress](https://img.shields.io/badge/progress-{pct_encoded}-blue?style=flat)](https://github.com/ValakTurtle/Xenosaga-I-Decomp)\n<!--badge-end-->'
 
           with open('README.md') as f:
               readme = f.read()
@@ -57,10 +53,6 @@ jobs:
           readme = re.sub(
               r'<!--progress-start-->.*?<!--progress-end-->',
               table, readme, flags=re.DOTALL
-          )
-          readme = re.sub(
-              r'<!--badge-start-->.*?<!--badge-end-->',
-              badge, readme, flags=re.DOTALL
           )
 
           with open('README.md', 'w') as f:
