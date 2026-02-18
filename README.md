@@ -4,23 +4,15 @@
 [![Progress](https://img.shields.io/badge/progress-0.029%25-blue?style=flat)](https://github.com/ValakTurtle/Xenosaga-I-Decomp)
 <!--badge-end-->
 
-<!--progress-start-->
-### Decompilation Progress
-
-| Version | Functions | Bytes | % of .text |
-|---------|-----------|-------|------------|
-| NTSC-U  | 12        | 376   | 0.029%     |
-
-*Auto-updated on each push.*
-<!--progress-end-->
-
 A work-in-progress decompilation of **Xenosaga Episode I** (PS2).
 
-| Version | Target | SHA1 | Status |
-|---------|--------|------|--------|
-| NTSC-U  | `SLUS_204.69` | `fd206d5715a322830f7fa9285fb4a09276ac2a63` | Active |
-| NTSC-J  | `SLPS_291.08` | TBD | Planned |
-| PAL     | `SLES_514.98` | TBD | Planned |
+<!--progress-start-->
+| Version | Target | Bytes | Progress |
+|---------|--------|-------|----------|
+| NTSC-U  | `SLUS_204.69` | 376 / 1,279,344 | 0.029% |
+| NTSC-J  | `SLPS_290.02` | — | Planned |
+| Reloaded | `SLPS_290.05` | — | Planned |
+<!--progress-end-->
 
 The project has a **byte-matching build** of the full NTSC-U executable, with 7,758 named symbols extracted from the original ELF. Functions are being rewritten in C and verified against the original binary.
 
