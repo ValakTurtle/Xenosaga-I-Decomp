@@ -18,7 +18,7 @@ jobs:
       - name: Update README progress
         run: |
           python3 -c "
-          import re, urllib.parse
+          import re
 
           TOTAL = 1279344
           matched = hw = mc = hc = 0
@@ -36,12 +36,11 @@ jobs:
 
           total = matched + hw
           pct = (total / TOTAL) * 100
-          pct_encoded = urllib.parse.quote(f'{pct:.3f}%')
 
           table = f'''<!--progress-start-->
           | Version | Target | Bytes | Progress |
           |---------|--------|-------|----------|
-          | NTSC-U  | \`SLUS_204.69\` | {total:,} / 1,279,344 | ![Progress](https://img.shields.io/badge/{pct_encoded}-blue?style=flat) |
+          | NTSC-U  | \`SLUS_204.69\` | {total:,} / 1,279,344 | {pct:.3f}% |
           | NTSC-J  | \`SLPS_290.02\` | — | Planned |
           | Reloaded | \`SLPS_290.05\` | — | Planned |
           <!--progress-end-->'''
