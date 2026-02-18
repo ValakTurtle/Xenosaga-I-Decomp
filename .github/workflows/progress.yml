@@ -35,18 +35,15 @@ jobs:
                           matched += size; mc += 1
 
           total = matched + hw
-          total_count = mc + hc
           pct = (total / TOTAL) * 100
 
           # Update progress table
           table = f'''<!--progress-start-->
-          ### Decompilation Progress
-
-          | Version | Functions | Bytes | % of .text |
-          |---------|-----------|-------|------------|
-          | NTSC-U  | {total_count:<9} | {total:<5} | {pct:.3f}%     |
-
-          *Auto-updated on each push.*
+          | Version | Target | Bytes | Progress |
+          |---------|--------|-------|----------|
+          | NTSC-U  | \`SLUS_204.69\` | {total:,} / 1,279,344 | {pct:.3f}% |
+          | NTSC-J  | \`SLPS_290.02\` | — | Planned |
+          | Reloaded | \`SLPS_290.05\` | — | Planned |
           <!--progress-end-->'''
           table = '\n'.join(line.lstrip() for line in table.split('\n'))
 
