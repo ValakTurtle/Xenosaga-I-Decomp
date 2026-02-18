@@ -270,6 +270,7 @@ void sceVif1PkOpenDirectCode(Vif1Packet *pkt, unsigned int flags)
 {
     unsigned int *cur;
     unsigned int *start;
+    unsigned int directCode;
 
     /* Align the current pointer to a quadword boundary for DIRECT packet */
     sceVif1PkAlign(pkt, 2, 3);
@@ -281,7 +282,7 @@ void sceVif1PkOpenDirectCode(Vif1Packet *pkt, unsigned int flags)
     start = cur;
 
     /* Compute the DIRECT header value */
-    unsigned int directCode = 0x50000000;  /* VIF1 DIRECT code base */
+    directCode = 0x50000000;  /* VIF1 DIRECT code base */
     if (flags != 0)
         directCode = 0xD0000000;           /* VIF1 DIRECT code if flags set */
 
@@ -296,6 +297,7 @@ void sceVif1PkOpenDirectHLCode(Vif1Packet *pkt, unsigned int flags)
 {
     unsigned int *cur;
     unsigned int *start;
+    unsigned int directHLCode;
 
     /* Align the current pointer to a quadword boundary for DIRECT HL packet */
     sceVif1PkAlign(pkt, 2, 3);
@@ -307,7 +309,7 @@ void sceVif1PkOpenDirectHLCode(Vif1Packet *pkt, unsigned int flags)
     start = cur;
 
     /* Compute the DIRECT HL header value */
-    unsigned int directHLCode = 0x51000000;  /* VIF1 DIRECT HL base code */
+    directHLCode = 0x51000000;  /* VIF1 DIRECT HL base code */
     if (flags != 0)
         directHLCode = 0xD1000000;          /* VIF1 DIRECT HL if flags set */
 
@@ -485,18 +487,19 @@ void sceVif1PkRefLoadImage(Vif1Packet *pkt, unsigned int a1, unsigned int a2, un
 
         do
         {
-            unsigned int s0_reg = (fp < fp) ? fp : fp;
+            unsigned int s0_reg, v1, a1, a2, a0, t0, v1_alt;
+            s0_reg = (fp < fp) ? fp : fp;
             sceVif1PkCnt(s7, 0);
             sceVif1PkAlign(s7, 2, 3);
             sceVif1PkAddCode(s7, 0x51000001);
             sceVif1PkReserve(s7, 4);
 
-            unsigned int v1 = s0_reg;
-            unsigned int a1 = s0_reg ^ fp;
-            unsigned int a2 = s0_reg;
-            unsigned int a0 = v1 | s5_reg;
-            unsigned int t0 = s0_reg | s2_reg;
-            unsigned int v1_alt = v1 | s3_reg;
+            v1 = s0_reg;
+            a1 = s0_reg ^ fp;
+            a2 = s0_reg;
+            a0 = v1 | s5_reg;
+            t0 = s0_reg | s2_reg;
+            v1_alt = v1 | s3_reg;
 
             /* reference the image chunk */
             sceVif1PkRef(s7, s4, a1, a2, s0, fp);
