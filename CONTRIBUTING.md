@@ -13,6 +13,8 @@ Functions are decompiled by writing equivalent C code in `src/` and verifying it
 ninja && python3 tools/verify.py
 ```
 
+If you have aliases set up (see [SETUP.md](SETUP.md#aliases)), step 4 is just `build`.
+
 `verify.py` compiles your C, extracts the bytes, and compares them against the same address range in the original ELF.
 
 ## decompiled.txt Format

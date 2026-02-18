@@ -1,7 +1,6 @@
 # Setup
 
 ## Quick Start
-
 ```bash
 git clone https://github.com/ValakTurtle/Xenosaga-I-Decomp.git xenosaga
 cd xenosaga
@@ -26,7 +25,6 @@ Everything else is installed automatically by `setup.sh`, including:
 ## Building
 
 After running `setup.sh`, place the original ELF in the `elf/` directory and run:
-
 ```bash
 source venv/bin/activate
 mips-linux-gnu-objcopy -O binary --gap-fill=0x00 elf/SLUS_204.69 config/SLUS_204.69.rom
@@ -41,7 +39,6 @@ The built ELF will be at `build/SLUS_204.69.elf`.
 ## Verifying the Build
 
 To confirm the build matches the original byte-for-byte:
-
 ```bash
 /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .text elf/SLUS_204.69 build/orig_text.bin
 /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary -j .cod build/SLUS_204.69.elf build/built_text.bin
@@ -53,13 +50,11 @@ rm build/orig_text.bin build/built_text.bin build/built_text_only.bin
 This should print `0` (zero differences).
 
 To verify decompiled functions match:
-
 ```bash
 python3 tools/verify.py
 ```
 
 To check overall progress:
-
 ```bash
 python3 tools/progress.py
 ```
@@ -67,13 +62,11 @@ python3 tools/progress.py
 ## Rebuilding After Changes
 
 If you only changed C files in `src/`, just run:
-
 ```bash
 ninja && python3 tools/verify.py
 ```
 
 If you modified the Splat config (`config/SLUS_204.69.yaml`), you need to re-split:
-
 ```bash
 python3 -m splat split config/SLUS_204.69.yaml
 bash tools/post_split.sh
@@ -83,10 +76,21 @@ ninja
 
 `tools/post_split.sh` copies the pinned linker script over Splat's auto-generated one, strips comments from `symbol_addrs.txt`, and runs `fix_asm.py` to patch R5900 instruction encoding issues.
 
+## Aliases
+
+The setup script installs project aliases into the venv. They activate when you `source venv/bin/activate`. To install them manually, run `bash tools/setup_aliases.sh`.
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| `build` | `ninja && python3 tools/verify.py` | Build and verify decompiled functions |
+| `progress` | `python3 tools/progress.py` | Show decompilation progress |
+| `split` | `splat split` + `post_split.sh` + `configure.py` | Re-split and reconfigure after YAML changes |
+| `full` | `split` + `build` | Full rebuild from scratch |
+| `aliases` | — | Show this list |
+
 ## Manual Setup
 
 If you prefer not to use `setup.sh`, install the following manually:
-
 ```bash
 # System packages
 sudo apt install -y python3 python3-venv ninja-build build-essential git bison flex texinfo gcc-mipsel-linux-gnu binutils-mips-linux-gnu
@@ -106,4 +110,7 @@ sudo make install
 # Add to PATH
 echo 'export PATH="$PATH:/usr/local/ps2dev/ee/bin"' >> ~/.bashrc
 source ~/.bashrc
+
+# Install aliases
+bash tools/setup_aliases.sh
 ```
