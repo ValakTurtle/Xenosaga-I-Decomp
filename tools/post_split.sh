@@ -7,7 +7,4 @@ cp config/SLUS_204.69.pinned.ld config/SLUS_204.69.ld
 # 2. Strip comments from symbol_addrs.txt (linker can't parse //)
 sed -i 's|//.*||' config/symbol_addrs.txt
 
-# 3. Fix asm $at issues
-python3 tools/fix_asm.py
-
 echo "Post-split patches applied."

@@ -42,7 +42,7 @@ unsigned int sceVif1PkSize(Vif1Packet *pkt)
 /* Reserve space for a number of 32-bit values */
 void sceVif1PkReserve(Vif1Packet *pkt, unsigned int count)
 {
-    pkt->current += count;
+    pkt->current += count << 2;
 }
 
 /* Append a 64-bit GS data value (written as two 32-bit words) */

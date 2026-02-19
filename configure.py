@@ -28,7 +28,7 @@ OBJCOPY = f"{CROSS}objcopy"
 CC = f"{PS2DEV}/ee-gcc/bin/ee-gcc"
 
 # Flags
-ASFLAGS = "-march=r5900 -mabi=32 -Iinclude --no-warn"
+ASFLAGS = "-march=r5900 -mabi=eabi -Iinclude --no-warn"
 CC_ASFLAGS = "-march=r5900 -mabi=eabi -Iinclude --no-warn"
 CFLAGS = "-O2 -G0 -fno-schedule-insns"
 LDFLAGS = "--allow-multiple-definition -m elf32lr5900 --noinhibit-exec"
@@ -104,9 +104,9 @@ def generate_ninja(asm_files, src_files, asset_files):
         f.write(f"  command = {LD} {LDFLAGS} -o $out -T $ldscript $in\n")
         f.write(f"  description = LD $out\n\n")
 
-        f.write(f"rule objcopy_bin\n")
-        f.write(f"  command = {CROSS}objcopy -I binary -O elf32-littlemips -B mips $in $out\n")
-        f.write(f"  description = OBJCOPY $in\n\n")
+        f.write(f"rule incbin\n")
+        f.write(f"  command = echo \'.section .data\\n.balign 16\\n.incbin \"$in\"\' | {AS} {ASFLAGS} -o $out -\n")
+        f.write(f"  description = INCBIN $in\n\n")
 
         obj_files = []
 
@@ -123,7 +123,7 @@ def generate_ninja(asm_files, src_files, asset_files):
         for asset in asset_files:
             obj = BUILD_DIR / asset.with_suffix(".o")
             obj_files.append(str(obj))
-            f.write(f"build {obj}: objcopy_bin {asset}\n")
+            f.write(f"build {obj}: incbin {asset}\n")
 
         f.write("\n")
         f.write(f"build {ELF_PATH}: ld {' '.join(obj_files)}\n")
