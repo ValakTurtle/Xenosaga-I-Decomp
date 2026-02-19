@@ -3,7 +3,7 @@ A work-in-progress decompilation of **Xenosaga Episode I** (PS2).
 <!--progress-start-->
 | Version | Target | Bytes | Progress |
 |---------|--------|-------|----------|
-| NTSC-U  | `SLUS_204.69` | 252 / 1,279,344 | 0.020% |
+| NTSC-U  | `SLUS_204.69` | 1,980 / 1,279,344 | 0.155% |
 | NTSC-J  | `SLPS_290.02` | — | Planned |
 | Reloaded | `SLPS_290.05` | — | Planned |
 <!--progress-end-->
