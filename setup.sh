@@ -24,6 +24,9 @@ spin() {
     fi
 }
 
+# Cache sudo credentials upfront
+sudo -v
+
 echo "Xenosaga Episode I Decomp -- Setup"
 echo "-----------------------------------"
 
@@ -85,8 +88,11 @@ echo "-----------------------------------"
 echo "Setup complete! Place your SLUS_204.69 in elf/, then run:"
 echo ""
 echo "  source venv/bin/activate"
-echo "  /usr/local/ps2dev/ee/bin/mips64r5900el-ps2-elf-objcopy -O binary --gap-fill=0x00 elf/SLUS_204.69 config/SLUS_204.69.rom"
+echo "  mips64r5900el-ps2-elf-objcopy -O binary --gap-fill=0x00 elf/SLUS_204.69 config/SLUS_204.69.rom"
 echo "  python3 -m splat split config/SLUS_204.69.yaml"
 echo "  bash tools/post_split.sh"
 echo "  python3 configure.py"
 echo "  ninja"
+
+# Export PATH for current shell session
+export PATH="$PATH:/usr/local/ps2dev/ee/bin"
