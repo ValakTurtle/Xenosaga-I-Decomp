@@ -13,6 +13,8 @@ SECTIONS
         FILL(0x00000000);
         cod_TEXT_START = .;
         build/asm/cod/000000.o(.text*);
+        build/src/sceVif1Pk.o(.text*);
+        build/asm/cod/0B57C.o(.text*);
         . = ALIGN(., 16);
         cod_TEXT_END = .;
         cod_TEXT_SIZE = ABSOLUTE(cod_TEXT_END - cod_TEXT_START);

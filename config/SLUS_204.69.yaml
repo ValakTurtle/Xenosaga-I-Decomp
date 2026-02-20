@@ -76,7 +76,9 @@ segments:
     bss_size: 0x4C13A4
     subalign: null
     subsegments:
-      - [0x000000, asm, cod/000000] # .text
+      - [0x000000, asm, cod/000000] # .text (before sceVif1Pk)
+      - [0x0AC68, c, sceVif1Pk] # sceVif1Pk.c
+      - [0x0B57C, asm, cod/0B57C] # .text (after sceVif1Pk)
       - [0x138600, data, cod/138600] # .data
       - [0x2ADE54, data, cod/2ADE54] # .ctors
       - [0x2ADE5C, data, cod/2ADE5C] # .dtors
