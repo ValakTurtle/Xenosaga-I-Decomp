@@ -30,7 +30,7 @@ CC = f"{PS2DEV}/ee-gcc/bin/ee-gcc"
 # Flags
 ASFLAGS = "-march=r5900 -mabi=eabi -Iinclude --no-warn"
 CC_ASFLAGS = "-march=r5900 -mabi=eabi -Iinclude --no-warn"
-CFLAGS = "-O2 -G0 -fno-schedule-insns"
+CFLAGS = "-O2 -G0 -fno-schedule-insns -Iinclude"
 LDFLAGS = "--allow-multiple-definition -m elf32lr5900 --noinhibit-exec"
 
 
@@ -60,7 +60,8 @@ def split():
 def find_asm_files():
     asm_files = []
     for path in sorted(ROOT.rglob("asm/**/*.s")):
-        asm_files.append(path.relative_to(ROOT))
+        if "nonmatchings" not in str(path):
+            asm_files.append(path.relative_to(ROOT))
     return asm_files
 
 
@@ -97,7 +98,7 @@ def generate_ninja(asm_files, src_files, asset_files):
         f.write(f"  description = AS $in\n\n")
 
         f.write(f"rule cc\n")
-        f.write(f"  command = {CC} {CFLAGS} -S -o $out.s $in && sed -i 's/\\tmove\\t\\(\\$$[0-9]*\\),\\(\\$$[0-9]*\\)/\\tdaddu\\t\\1,\\2,$$0/' $out.s && {AS} {CC_ASFLAGS} -o $out $out.s\n")
+        f.write(f"  command = {CC} {CFLAGS} -S -o $out.s $in && sed -i -e 's/\\tmove\\t\\(\\$$[0-9]*\\),\\(\\$$[0-9]*\\)/\\tdaddu\\t\\1,\\2,$$0/' -e '/\\.p2align/d' $out.s && {AS} {CC_ASFLAGS} -o $out $out.s\n")
         f.write(f"  description = CC $in\n\n")
 
         f.write(f"rule ld\n")
