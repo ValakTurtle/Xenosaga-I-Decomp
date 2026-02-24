@@ -98,7 +98,7 @@ def generate_ninja(asm_files, src_files, asset_files):
         f.write(f"  description = AS $in\n\n")
 
         f.write(f"rule cc\n")
-        f.write(f"  command = {CC} {CFLAGS} -S -o $out.s $in && sed -i -e 's/\\tmove\\t\\(\\$$[0-9]*\\),\\(\\$$[0-9]*\\)/\\tdaddu\\t\\1,\\2,$$0/' -e '/\\.p2align/d' $out.s && {AS} {CC_ASFLAGS} -o $out $out.s\n")
+        f.write(f"  command = {CC} {CFLAGS} -S -o $out.s $in && sed -i -e 's/\\tmove\\t\\(\\$$[0-9]*\\),\\(\\$$[0-9]*\\)/\\tdaddu\\t\\1,\\2,$$0/' -e '/\\.p2align/d' -e '/\\.ent /d' -e '/\\.end /d' -e '/\\.frame/d' -e '/\\.mask/d' -e '/\\.fmask/d' $out.s && {AS} {CC_ASFLAGS} -o $out $out.s\n")
         f.write(f"  description = CC $in\n\n")
 
         f.write(f"rule ld\n")
